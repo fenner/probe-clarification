@@ -23,6 +23,15 @@ kw: Ping
 date: 2024-01-08
 
 author:
+- name: Bill Fenner
+  org: Arista Networks
+  street: 5453 Great America Parkway
+  city: Santa Clara
+  code: '95054'
+  region: California
+  country: USA
+  email: fenner@fenron.com
+  role: editor
 - name: Ron Bonica
   org: Juniper Networks
   street: 2251 Corporate Park Drive
