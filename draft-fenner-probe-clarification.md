@@ -3,6 +3,7 @@ v: 3
 docname: draft-fenner-probe-clarification-latest
 cat: std
 updates: '4884'
+obsoletes: '8335'
 stream: IETF
 pi:
   toc: 'yes'
@@ -76,6 +77,7 @@ normative:
   RFC4861:
   RFC7223:
   RFC4443:
+  RFC8335:
 informative:
   RFC2151:
   RFC4594:
@@ -581,6 +583,29 @@ Section 4.6 of {{RFC4884}} provides a list of extensible ICMP messages
 document adds the ICMP Extended Echo Request message and the ICMP
 Extended Echo Reply message to that list.
 
+# Changes from RFC 8335
+
+This document updates {{RFC8335}} to clarify the handling of
+extra data beyond the ICMP Extension Structure, that data is
+echoed in the response packet, and checksum handling in the ICMP
+Extension Structure.
+
+Specifically,
+
+* Updated {{ICMPEchoFIG}} to reflect the presence of the ICMP Extension Object
+  and additional data.
+
+* Updated {{ExtendedEcho}} to mention the ICMP Extension Structure checksum,
+  and extra verbosity about how the Extension Structure does not cover the
+  rest of the packet.
+
+* Updated {{ICMPEchoReplyFIG}} to reflect the presence of the ICMP Extension
+  Structure and additional data.
+
+* Added a step in {{proc}} about copying data from the request to the
+  response.
+
+* Added a step in {{code}} about validating the ICMP Extension Structure checksum.
 
 # IANA Considerations {#IANA}
 
