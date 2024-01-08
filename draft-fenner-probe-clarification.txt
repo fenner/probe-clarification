@@ -2,11 +2,13 @@
 
 
 
-INTAREA                                                        R. Bonica
-Internet-Draft                                                 R. Thomas
-Updates: 4884 (if approved)                             Juniper Networks
-Intended status: Standards Track                              J. Linkova
-Expires: 11 July 2024                                             Google
+INTAREA                                                   B. Fenner, Ed.
+Internet-Draft                                           Arista Networks
+Updates: 4884 (if approved)                                    R. Bonica
+Intended status: Standards Track                               R. Thomas
+Expires: 11 July 2024                                   Juniper Networks
+                                                              J. Linkova
+                                                                  Google
                                                                C. Lenart
                                                                  Verizon
                                                             M. Boucadair
@@ -205,7 +207,7 @@ Table of Contents
    IP Header fields:
 
    *  Source Address: The Source Address identifies the probing
-      interface.  It MUST be valid IPv4 or IPv6 unicast address.
+      interface.  It MUST be a valid IPv4 or IPv6 unicast address.
 
    *  Destination Address: The Destination Address identifies the proxy
       interface.  It MUST be a unicast address.
@@ -765,7 +767,7 @@ Appendix A.  The PROBE Application
    *  an interface name;
 
    *  an address from any address family (e.g., IPv4, IPv6, IEEE 802,
-      48-bit MAC, 64-bit MAC); or
+      48-bit MAC, or 64-bit MAC); or
 
    *  an if-index.
 
@@ -782,6 +784,14 @@ Acknowledgments
    thoughtful review of this document.
 
 Authors' Addresses
+
+   Bill Fenner (editor)
+   Arista Networks
+   5453 Great America Parkway
+   Santa Clara, California 95054
+   United States of America
+   Email: fenner@fenron.com
+
 
    Ron Bonica
    Juniper Networks

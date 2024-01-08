@@ -5,6 +5,7 @@
 <meta content="Common,Latin" name="scripts">
 <meta content="initial-scale=1.0" name="viewport">
 <title>PROBE: A Utility for Probing Interfaces</title>
+<meta content="Bill Fenner" name="author">
 <meta content="Ron Bonica" name="author">
 <meta content="Reji Thomas" name="author">
 <meta content="Jen Linkova" name="author">
@@ -26,19 +27,19 @@ the probed interface is directly connected. This document updates RFC
 <meta content="draft-fenner-probe-clarification-latest" name="ietf.draft">
 <!-- Generator version information:
   xml2rfc 3.19.0
-    Python 3.11.2
+    Python 3.11.6
     ConfigArgParse 1.7
     google-i18n-address 3.1.0
     intervaltree 3.1.0
     Jinja2 3.1.2
-    lxml 5.1.0
+    lxml 4.9.3
     platformdirs 4.1.0
-    pycountry 23.12.11
+    pycountry 22.3.5
     PyYAML 6.0.1
     requests 2.31.0
-    setuptools 69.0.3
+    setuptools 68.2.2
     six 1.16.0
-    wcwidth 0.2.13
+    wcwidth 0.2.12
 -->
 <link href="draft-fenner-probe-clarification.xml" rel="alternate" type="application/rfc+xml">
 <link href="#copyright" rel="license">
@@ -1040,7 +1041,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <td class="right">January 2024</td>
 </tr></thead>
 <tfoot><tr>
-<td class="left">Bonica, et al.</td>
+<td class="left">Fenner, et al.</td>
 <td class="center">Expires 11 July 2024</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
@@ -1065,6 +1066,11 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <dd class="expires"><time datetime="2024-07-11">11 July 2024</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
+<div class="author">
+      <div class="author-name">B. Fenner, <span class="editor">Ed.</span>
+</div>
+<div class="org">Arista Networks</div>
+</div>
 <div class="author">
       <div class="author-name">R. Bonica</div>
 <div class="org">Juniper Networks</div>
@@ -1375,7 +1381,7 @@ message.<a href="#section-2-2" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-2-5.1">
           <p id="section-2-5.1.1">Source Address: The Source Address identifies the probing
-interface. It <span class="bcp14">MUST</span> be valid IPv4 or IPv6 unicast address.<a href="#section-2-5.1.1" class="pilcrow">¶</a></p>
+interface. It <span class="bcp14">MUST</span> be a valid IPv4 or IPv6 unicast address.<a href="#section-2-5.1.1" class="pilcrow">¶</a></p>
 </li>
         <li class="normal" id="section-2-5.2">
           <p id="section-2-5.2.1">Destination Address: The Destination Address identifies the proxy
@@ -2093,7 +2099,7 @@ is one of the following:<a href="#appendix-A-10" class="pilcrow">¶</a></p>
 </li>
         <li class="normal" id="appendix-A-11.2">
           <p id="appendix-A-11.2.1">an address from any address family (e.g., IPv4, IPv6, IEEE 802,
-48-bit MAC, 64-bit MAC); or<a href="#appendix-A-11.2.1" class="pilcrow">¶</a></p>
+48-bit MAC, or 64-bit MAC); or<a href="#appendix-A-11.2.1" class="pilcrow">¶</a></p>
 </li>
         <li class="normal" id="appendix-A-11.3">
           <p id="appendix-A-11.3.1">an if-index.<a href="#appendix-A-11.3.1" class="pilcrow">¶</a></p>
@@ -2121,6 +2127,19 @@ thoughtful review of this document.<a href="#appendix-B-1" class="pilcrow">¶</a
       <h2 id="name-authors-addresses">
 <a href="#name-authors-addresses" class="section-name selfRef">Authors' Addresses</a>
       </h2>
+<address class="vcard">
+        <div dir="auto" class="left"><span class="fn nameRole">Bill Fenner (<span class="role">editor</span>)</span></div>
+<div dir="auto" class="left"><span class="org">Arista Networks</span></div>
+<div dir="auto" class="left"><span class="street-address">5453 Great America Parkway</span></div>
+<div dir="auto" class="left">
+<span class="locality">Santa Clara</span>, <span class="region">California</span> <span class="postal-code">95054</span>
+</div>
+<div dir="auto" class="left"><span class="country-name">United States of America</span></div>
+<div class="email">
+<span>Email:</span>
+<a href="mailto:fenner@fenron.com" class="email">fenner@fenron.com</a>
+</div>
+</address>
 <address class="vcard">
         <div dir="auto" class="left"><span class="fn nameRole">Ron Bonica</span></div>
 <div dir="auto" class="left"><span class="org">Juniper Networks</span></div>
