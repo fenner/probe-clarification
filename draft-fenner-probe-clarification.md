@@ -214,9 +214,10 @@ message.
    |           Identifier          |Sequence Number|   Reserved  |L|
    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
    |   ICMP Extension Structure
-
-
-
+   +-+-+-+-+-
+   |   ICMP Extension Object
+   +-+-+-+-+-
+   |   Data...
 ~~~~
 {: #ICMPEchoFIG title='ICMP Extended Echo Request Message'}
 
@@ -254,8 +255,10 @@ ICMP fields:
   the proxy node. The L-bit is clear if the probed interface is
   directly connected to the proxy node.
 
-* ICMP Extension Structure: The ICMP Extension Structure identifies
-  the probed interface.
+* ICMP Extension Structure: The ICMP Extension Structure contains an
+  Interface Identification Object that identifies the probed interface.
+  The checksum in the ICMP Extension structure covers the Interface
+  Identification Object but not any (optional) data that follows.
 
 
 Section 7 of {{RFC4884}} defines the ICMP Extension
@@ -263,6 +266,10 @@ Structure. As per RFC 4884, the Extension Structure contains exactly one
 Extension Header followed by one or more objects. When applied to the
 ICMP Extended Echo Request message, the ICMP Extension Structure MUST
 contain exactly one instance of the [Interface Identification Object](#IntIdObj).
+Unlike other applications of RFC 4884, the ICMP Extension Structure
+does not cover the rest of the packet; it ends at the end of the
+single Interface Identification Object, and what follows is simply optional
+data.
 
 If the L-bit is set, the Interface Identification Object can identify
 the probed interface by name, index, or address. If the L-bit is clear,
@@ -276,6 +283,10 @@ an Interface Identification Object that identifies the probed interface
 by IPv4, IPv6, or IEEE 802 address. Likewise, an ICMPv6 Extended Echo
 Request message can carry an Interface Identification Object that
 identifies the probed interface by IPv4, IPv6, or IEEE 802 address.
+
+The Interface Identification Object MAY be followed by an optional
+data section, which is not interpreted but is simply present to be
+copied to the ICMP Extended Echo Reply.
 
 ## Interface Identification Object {#IntIdObj}
 
@@ -357,6 +368,11 @@ Reply message.
    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
    |           Identifier          |Sequence Number|State|Res|A|4|6|
    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+   |   ICMP Extension Structure
+   +-+-+-+-+-
+   |   ICMP Extension Object
+   +-+-+-+-+-
+   |   Data...
 ~~~~
 {: #ICMPEchoReplyFIG title='ICMP Extended Echo Reply Message'}
 
@@ -486,6 +502,9 @@ In either case, the responding node MUST do the following:
   clear, then set the State field to reflect the state of the ARP table or
   Neighbor Cache entry that represents the probed interface.
 
+* Copy the ICMP Extension Structure, ICMP Extension Object, and Data
+  (if any) from the Extended Echo Request message.
+
 * Set the Checksum appropriately.
 
 * Forward the ICMP Extended Echo Reply to its destination.
@@ -501,6 +520,8 @@ following conditions apply:
 
 * The ICMP Extension Structure does not include exactly one
   Interface Identification Object.
+
+* The ICMP Extension Structure checksum is 0 or incorrect.
 
 * The L-bit is clear and the Interface Identification Object
   identifies the probed interface by ifName or ifIndex.
