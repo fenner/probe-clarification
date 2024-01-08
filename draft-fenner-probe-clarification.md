@@ -1,6 +1,6 @@
 ---
 v: 3
-docname: rfc8335
+docname: draft-fenner-probe-clarification-latest
 cat: std
 updates: '4884'
 stream: IETF
@@ -20,7 +20,7 @@ abbrev: PROBE
 area: Internet
 wg: INTAREA
 kw: Ping
-date: 2018-02
+date: 2024-01-08
 
 author:
 - name: Ron Bonica
