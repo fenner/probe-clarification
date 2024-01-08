@@ -17,7 +17,7 @@ pi:
   subcompact: 'no'
 title: 'PROBE: A Utility for Probing Interfaces'
 abbrev: PROBE
-area: Internet
+# area: Internet
 wg: INTAREA
 kw: Ping
 date: 2024-01-08
