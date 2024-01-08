@@ -1,6 +1,6 @@
 ---
 v: 3
-docname: draft-ietf-intarea-probe-10
+docname: rfc8335
 cat: std
 updates: '4884'
 stream: IETF
@@ -15,12 +15,12 @@ pi:
   inline: 'yes'
   compact: 'yes'
   subcompact: 'no'
-title: 'PROBE: A Utility For Probing Interfaces'
+title: 'PROBE: A Utility for Probing Interfaces'
 abbrev: PROBE
 area: Internet
 wg: INTAREA
 kw: Ping
-date: 2017-12-15
+date: 2018-02
 
 author:
 - name: Ron Bonica
@@ -76,12 +76,12 @@ informative:
 
 
 This document describes a network diagnostic tool called PROBE. PROBE
-is similar to PING, in that it can be used to query the status of a
-probed interface. It differs from PING in that it does not require
+is similar to PING in that it can be used to query the status of a
+probed interface, but it differs from PING in that it does not require
 bidirectional connectivity between the probing and probed interfaces.
 Instead, PROBE requires bidirectional connectivity between the probing
 interface and a proxy interface. The proxy interface can reside on the
-same node as the probed interface or it can reside on a node to which
+same node as the probed interface, or it can reside on a node to which
 the probed interface is directly connected. This document updates RFC
 4884.
 
@@ -91,7 +91,7 @@ the probed interface is directly connected. This document updates RFC
 
 Network operators use [PING](#RFC2151) to test
 bidirectional connectivity between two interfaces. For the purposes of
-this document, we will call these interfaces the probing and probed
+this document, these interfaces are called the probing and probed
 interfaces. PING sends an [ICMP](#RFC0792) {{RFC4443}} Echo Request
 message from the probing interface to
 the probed interface. The probing interface resides on a probing node
@@ -102,22 +102,22 @@ returns an ICMP Echo Reply. When the probing interface receives the ICMP
 Echo Reply, it has verified bidirectional connectivity between the
 probing and probed interfaces. Specifically, it has verified that:
 
-* The probing node can reach the probed interface
+* The probing node can reach the probed interface.
 
-* The probed interface is active
+* The probed interface is active.
 
-* The probed node can reach the probing interface
+* The probed node can reach the probing interface.
 
-* The probing interface is active
+* The probing interface is active.
 
 
 This document describes a network diagnostic tool called PROBE. PROBE
-is similar to PING, in that it can be used to query the status of a
-probed interface. It differs from PING in that it does not require
+is similar to PING in that it can be used to query the status of a
+probed interface, but it differs from PING in that it does not require
 bidirectional connectivity between the probing and probed interfaces.
 Instead, PROBE requires bidirectional connectivity between the probing
 interface and a proxy interface. The proxy interface can reside on the
-same node as the probed interface or it can reside on a node to which
+same node as the probed interface, or it can reside on a node to which
 the probed interface is directly connected. {{usecase}} of
 this document describes scenarios in which this characteristic is
 useful.
@@ -130,24 +130,24 @@ node.
 The ICMP Extended Echo Request contains an ICMP Extension Structure
 and the ICMP Extension Structure contains an Interface Identification
 Object. The Interface Identification Object identifies the probed
-interface. The probed interface can reside on the proxy node or it can
-be directly connected to the proxy node.
+interface. The probed interface can reside on or
+directly connect to the proxy node.
 
 When the proxy interface receives the ICMP Extended Echo Request, the
 proxy node executes access control procedures. If access is granted, the
 proxy node determines the status of the probed interface and returns an
-ICMP Extended Echo Reply Message. The ICMP Extended Echo Reply indicates
+ICMP Extended Echo Reply message. The ICMP Extended Echo Reply indicates
 the status of the probed interface.
 
 If the probed interface resides on the proxy node, PROBE determines
 the status of the probed interface as it would determine its
 [oper-status](#RFC7223).
-If oper-status is equal to up (1),
+If oper-status is equal to 'up' (1),
 PROBE reports that the probed interface is active. Otherwise, PROBE
 reports that the probed interface is inactive.
 
 If the probed interface resides on a node that is directly connected
-to the probed node, and the probed interface appears in the [IPv4
+to the proxy node, and the probed interface appears in the [IPv4
 Address Resolution Protocol (ARP) table](#RFC0826) or [IPv6 Neighbor
 Cache](#RFC4861), PROBE reports
 interface reachability. Otherwise, PROBE reports that the table entry
@@ -157,22 +157,22 @@ does not exist.
 
 This document uses the following terms:
 
-* Probing interface - The interface that sends the ICMP Extended
-  Echo Request
+* Probing interface: The interface that sends the ICMP Extended
+  Echo Request.
 
-* Probing node - The node upon which the probing interface
-  resides
+* Probing node: The node upon which the probing interface
+  resides.
 
-* Proxy interface - The interface to which the ICMP Extended Echo
-  Request message is sent
+* Proxy interface: The interface to which the ICMP Extended Echo
+  Request message is sent.
 
-* Proxy node - The node upon which the proxy interface
-  resides
+* Proxy node: The node upon which the proxy interface
+  resides.
 
-* Probed interface - The interface whose status is being
-  queried
+* Probed interface: The interface whose status is being
+  queried.
 
-* Probed node - The node upon which the probed interface resides.
+* Probed node: The node upon which the probed interface resides.
   If the proxy interface and the probed interface reside upon the
   same node, the proxy node is also the probed node. Otherwise, the
   proxy node is directly connected to the probed node.
@@ -217,34 +217,31 @@ IP Header fields:
 
 
 * Source Address: The Source Address identifies the probing
-  interface. It MUST be valid IPv4 or IPv6 unicast address.
+  interface. It MUST be a valid IPv4 or IPv6 unicast address.
 
 * Destination Address: The Destination Address identifies the proxy
-  interface. It can be a unicast, multicast or anycast address.
+  interface. It MUST be a unicast address.
 
 
 ICMP fields:
 
-* Type: Extended Echo Request. The value for ICMPv4 is TTT0.
-  \<RFC Editor: Please replace TTT0 with the ICMPv4 type number for
-  Extended Echo Request>. The value for ICMPv6 is TTT1.
-  \<RFC Editor: Please replace TTT1 with the ICMPv6 type number for
-  Extended Echo Request> .
+* Type: Extended Echo Request. The value for ICMPv4 is 42.
+  The value for ICMPv6 is 160.
 
 * Code: MUST be set to 0 and MUST be ignored upon receipt.
 
 * Checksum: For ICMPv4, see RFC 792. For ICMPv6, see RFC 4443.
 
-* Identifier: An identifier to aid in matching Extended Echo
-  Replies to Extended Echo Requests. May be zero.
+* Identifier: An Identifier to aid in matching Extended Echo
+  Replies to Extended Echo Requests. May be 0.
 
-* Sequence Number: A sequence number to aid in matching Extended
-  Echo Replies to Extended Echo Requests. May be zero.
+* Sequence Number: A Sequence Number to aid in matching Extended
+  Echo Replies to Extended Echo Requests. May be 0.
 
-* Reserved: This field MUST be set to zero and ignored upon
+* Reserved: This field MUST be set to 0 and ignored upon
   receipt.
 
-* L (local) - The L-bit is set if the probed interface resides on
+* L (local): The L-bit is set if the probed interface resides on
   the proxy node. The L-bit is clear if the probed interface is
   directly connected to the proxy node.
 
@@ -259,7 +256,7 @@ ICMP Extended Echo Request message, the ICMP Extension Structure MUST
 contain exactly one instance of the [Interface Identification Object](#IntIdObj).
 
 If the L-bit is set, the Interface Identification Object can identify
-the probed interface by name, index or address. It the L-bit is clear,
+the probed interface by name, index, or address. If the L-bit is clear,
 the Interface Identification Object MUST identify the probed interface
 by address.
 
@@ -267,9 +264,9 @@ If the Interface Identification Object identifies the probed
 interface by address, that address can be a member of any address
 family. For example, an ICMPv4 Extended Echo Request message can carry
 an Interface Identification Object that identifies the probed interface
-by IPv4, IPv6 or IEEE 802 address. Likewise, an ICMPv6 Extended Echo
+by IPv4, IPv6, or IEEE 802 address. Likewise, an ICMPv6 Extended Echo
 Request message can carry an Interface Identification Object that
-identifies the probed interface by IPv4, IPv6 or IEEE 802 address.
+identifies the probed interface by IPv4, IPv6, or IEEE 802 address.
 
 ## Interface Identification Object {#IntIdObj}
 
@@ -278,21 +275,19 @@ by name, index, or address. Like any other ICMP Extension Object, it
 contains an Object Header and Object Payload. The Object Header
 contains the following fields:
 
-* Class-Num: Interface Identification Object. Value is TTT2.
-  \<RFC Editor: Please replace TTT2 with the Class-Num for the
-  Interface Identification Object>
+* Class-Num: Interface Identification Object. The value is 3.
 
-* C-type: Values are: (1) Identifies Interface By Name, (2)
-  Identifies Interface By Index, and (3) Identifies Interface By
-  Address
+* C-Type: Values are (1) Identifies Interface by Name, (2)
+  Identifies Interface by Index, and (3) Identifies Interface by
+  Address.
 
 * Length: Length of the object, measured in octets, including the
-  object header and object payload.
+  Object Header and Object Payload.
 
 
 If the Interface Identification Object identifies the probed
-interface by name, the object payload MUST be the interface name as
-defined in [RFC7223]. If the object payload would not otherwise
+interface by name, the Object Payload MUST be the interface name as
+defined in [RFC7223]. If the Object Payload would not otherwise
 terminate on a 32-bit boundary, it MUST be padded with ASCII NULL
 characters.
 
@@ -311,7 +306,7 @@ interface by address, the payload is as depicted in {{addrFig}}.
 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 |                Address   ....
 ~~~~
-{: #addrFig title='Interface Identification Object - C-type 3 Payload'}
+{: #addrFig title='Interface Identification Object - C-Type 3 Payload'}
 
 Payload fields are defined as follows:
 
@@ -321,20 +316,20 @@ Payload fields are defined as follows:
   from {{IANA.address-family-numbers}})
   are valid in this field.
 
-* Address Length - Number of significant bytes contained by the
-  Address field. (The address field contains significant bytes and
-  padding bytes)
+* Address Length: Number of significant bytes contained by the
+  Address field. (The Address field contains significant bytes and
+  padding bytes.)
 
-* Reserved: This field MUST be set to zero and ignored upon
+* Reserved: This field MUST be set to 0 and ignored upon
   receipt.
 
 * Address: This variable-length field represents an address
   associated with the probed interface. If the address field would
   not otherwise terminate on a 32-bit boundary, it MUST be padded
-  with zeros.
+  with zeroes.
 
 
-# ICMP Extended Echo Reply {#ExtenedEchoReply}
+# ICMP Extended Echo Reply {#ExtendedEchoReply}
 
 The ICMP Extended Echo Reply message is defined for both ICMPv4 and
 ICMPv6. Like any ICMP message, the ICMP Extended Echo Reply message is
@@ -354,55 +349,52 @@ Reply message.
    |           Identifier          |Sequence Number|State|Res|A|4|6|
    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 ~~~~
-{: #ICMPEchoReplyFIG title='ICMP Extened Echo Reply Message'}
+{: #ICMPEchoReplyFIG title='ICMP Extended Echo Reply Message'}
 
 
 IP Header fields:
 
-* Source address: Copied from the Destination Address field of the
-  invoking Extended Echo Request message
+* Source Address: Copied from the Destination Address field of the
+  invoking Extended Echo Request message.
 
-* Destination address: Copied from the Source Address field of the
-  invoking Extended Echo Request message
+* Destination Address: Copied from the Source Address field of the
+  invoking Extended Echo Request message.
 
 
 ICMP fields:
 
-* Type: Extended Echo Reply. The value for ICMPv4 is TTT3.
-  \<RFC Editor: Please replace TTT3 with the ICMPv4 type number for
-  Extended Echo Reply>. The value for ICMPv6 is TTT4.
-  \<RFC Editor: Please replace TTT4 with the ICMPv6 type number for
-  Extended Echo Reply>.
+* Type: Extended Echo Reply. The value for ICMPv4 is 43.
+  The value for ICMPv6 is 161.
 
-* Code: (0) No Error, (1) Malformed Query, (2) No Such Interface,
-  (3) No Such Table Entry, (4) Multiple Interfaces Satisfy Query
+* Code: Values are (0) No Error, (1) Malformed Query, (2) No Such Interface,
+  (3) No Such Table Entry, and (4) Multiple Interfaces Satisfy Query.
 
-* Checksum: For ICMPv4, see RFC 792. For ICMPv6, see RFC 4443
+* Checksum: For ICMPv4, see RFC 792. For ICMPv6, see RFC 4443.
 
 * Identifier: Copied from the Identifier field of the invoking
-  Extended Echo Request packet
+  Extended Echo Request packet.
 
 * Sequence Number: Copied from the Sequence Number field of the
-  invoking Extended Echo Request packet
+  invoking Extended Echo Request packet.
 
-* State - If Code is not equal to 0, this field MUST be set to 0
+* State: If Code is not equal to 0, this field MUST be set to 0
   and ignored upon receipt. Likewise, if the probed interface resides
   upon the proxy node, this field MUST be set to 0 and ignored upon
-  receipt. Otherwise, this field reflects the state of the ARP Table
+  receipt. Otherwise, this field reflects the state of the ARP table
   or Neighbor Cache entry associated with the probed interface. Values
-  are (0) Reserved (1) Incomplete (2) Reachable (3) Stale (4) Delay
-  (5) Probe (6) Failed
+  are (0) Reserved, (1) Incomplete, (2) Reachable, (3) Stale, (4) Delay,
+  (5) Probe, and (6) Failed.
 
-* Res - This field MUST be set to 0 and ignored upon receipt.
+* Res: This field MUST be set to 0 and ignored upon receipt.
 
-* A (Active) - The A-bit is set if Code is equal to zero, the
+* A (Active): The A-bit is set if the Code is equal to 0, the
   probed interface resides on the proxy node, and the probed interface
   is active. Otherwise, the A-bit is clear.
 
-* 4 (IPv4) - The 4-bit is set if the A-bit is also set and IPv4 is
+* 4 (IPv4): The 4-bit is set if the A-bit is also set and IPv4 is
   running on the probed interface. Otherwise, the 4-bit is clear.
 
-* 6 (IPv6) - The 6-bit is set if the A-bit is also set and IPv6 is
+* 6 (IPv6): The 6-bit is set if the A-bit is also set and IPv6 is
   running on the probed interface. Otherwise, the 6-bit is clear.
 
 
@@ -414,26 +406,29 @@ the following conditions apply, the node MUST silently discard the
 incoming message:
 
 * The node does not recognize ICMP Extended Echo Request
-  messages
+  messages.
 
 * The node has not explicitly enabled ICMP Extended Echo
-  functionality
+  functionality.
 
-* The incoming ICMP Extend Echo Request carries a source address
+* The incoming ICMP Extend Echo Request carries a Source Address
+  that is not explicitly authorized for the L-bit setting of the
+  incoming ICMP Extended Echo Request.
+
+* The incoming ICMP Extend Echo Request carries a Source Address
   that is not explicitly authorized for the incoming ICMP Extended
-  Echo Request L-bit setting
+  Echo Request type (i.e., by ifName, by IfIndex, or by Address).
 
-* The incoming ICMP Extend Echo Request carries a source address
-  that is not explicitly authorized for the incoming ICMP Extended
-  Echo Request type (i.e., by ifName, by IfIndex, by Address)
+* The Source Address of the incoming message is not a unicast
+  address.
 
-* The Source Address of the incoming messages is not a unicast
-  address
+* The Destination Address of the incoming message is a multicast
+  address.
 
 Otherwise, when a node receives an ICMPv4 Extended Echo Request, it
 MUST format an ICMP Extended Echo Reply as follows:
 
-* Don't Fragment flag (DF) is 1
+* Don't Fragment (DF) flag is 1
 
 * More Fragments flag is 0
 
@@ -450,41 +445,41 @@ format an ICMPv6 Extended Echo Reply as follows:
 
 * Next Header is ICMPv6
 
-In either case, the responding node MUST:
+In either case, the responding node MUST do the following:
 
-* Copy the source address from the Extended Echo Request message to
-  the destination address of the Extended Echo Reply
+* Copy the Source Address from the Extended Echo Request message to
+  the Destination Address of the Extended Echo Reply.
 
-* Copy the destination address from the Extended Echo Request
-  message to the source address of the Extended Echo Reply
+* Copy the Destination Address from the Extended Echo Request
+  message to the Source Address of the Extended Echo Reply.
 
-* Set the DiffServ codepoint to [CS0](#RFC4594)
+* Set the DiffServ codepoint to [CS0](#RFC4594).
 
-* Set the ICMP Type to Extended Echo Reply
+* Set the ICMP Type to Extended Echo Reply.
 
 * Copy the Identifier from the Extended Echo Request message to the
-  Extended Echo Reply
+  Extended Echo Reply.
 
 * Copy the Sequence Number from the Extended Echo Request message
-  to the Extended Echo Reply
+  to the Extended Echo Reply.
 
-* Set the Code field as described {{code}}
+* Set the Code field as described in {{code}}.
 
 * Set the State field to 0.
 
-* Clear the A-bit, the 4-bit and the 6-bit.
+* Clear the A-bit, the 4-bit, and the 6-bit.
 
-* If the Code Field is equal to (0) No Error and the L-bit is set
-  and the probed interface is active, set the A-bit. Also set the
+* If (1) the Code Field is equal to (0) No Error, (2) the L-bit is set,
+  and (3) the probed interface is active, set the A-bit. Also, set the
   4-bit and the 6-bit as appropriate.
 
-* If the Code Field is equal to (0) No Error and the L-bit is
-  clear, set the State field to reflect the state of the ARP Table or
+* If the Code field is equal to (0) No Error and the L-bit is
+  clear, then set the State field to reflect the state of the ARP table or
   Neighbor Cache entry that represents the probed interface.
 
-* Set the checksum appropriately
+* Set the Checksum appropriately.
 
-* Forward the ICMP Extended Echo Reply to its destination
+* Forward the ICMP Extended Echo Reply to its destination.
 
 
 ## Code Field Processing {#code}
@@ -493,15 +488,15 @@ The Code field MUST be set to (1) Malformed Query if any of the
 following conditions apply:
 
 * The ICMP Extended Echo Request does not include an ICMP
-  Extension Structure
+  Extension Structure.
 
 * The ICMP Extension Structure does not include exactly one
-  Interface Identification Object
+  Interface Identification Object.
 
 * The L-bit is clear and the Interface Identification Object
-  identifies the probed interface by ifName or ifIndex
+  identifies the probed interface by ifName or ifIndex.
 
-* The query is otherwise malformed
+* The query is otherwise malformed.
 
 The Code field MUST be set to (2) No Such Interface if the
 L-bit is set and the ICMP Extension Structure does not identify an
@@ -509,41 +504,41 @@ interface that resides on the proxy node.
 
 The Code field MUST be set to (3) No Such Table Entry if the L-bit
 is clear and the address found in the Interface Identification Object
-does not appear in the IPv4 Address Resolution Protocol (ARP) Table or
+does not appear in the IPv4 Address Resolution Protocol (ARP) table or
 the IPv6 Neighbor Cache.
 
 The Code field MUST be set to (4) Multiple Interfaces Satisfy Query
 if any of the following conditions apply:
 
 * The L-bit is set and the ICMP Extension Structure identifies
-  more than one interface that resides in the proxy node
+  more than one interface that resides in the proxy node.
 
 * The L-bit is clear and the address found in the Interface
   Identification Object maps to multiple IPv4 ARP or IPv6 Neighbor
-  Cache entries
+  Cache entries.
 
-Otherwise, the Code field MUST be set to (0) No Error
+Otherwise, the Code field MUST be set to (0) No Error.
 
 
-# Use-Cases {#usecase}
+# Use Cases {#usecase}
 
 In the scenarios listed below, network operators can use PROBE to
-determine the status of a probed interface, but cannot use PING for the
+determine the status of a probed interface but cannot use PING for the
 same purpose. In all scenarios, assume bidirectional connectivity
 between the probing and proxy interfaces. However, bidirectional
 connectivity between the probing and probed interfaces is lacking.
 
-* The probed interface is unnumbered
+* The probed interface is unnumbered.
 
 * The probing and probed interfaces are not directly connected to
-  one another. The probed interface has an IPv6 link-local address,
-  but does not have a more globally scoped address
+  one another. The probed interface has an IPv6 link-local address
+  but does not have a more globally scoped address.
 
 * The probing interface runs IPv4 only while the probed interface
-  runs IPv6 only
+  runs IPv6 only.
 
 * The probing interface runs IPv6 only while the probed interface
-  runs IPv4 only
+  runs IPv4 only.
 
 * For lack of a route, the probing node cannot reach the probed
   interface.
@@ -551,7 +546,7 @@ connectivity between the probing and probed interfaces is lacking.
 
 # Updates to RFC 4884
 
-Section 4.6 of RFC 4884 provides a list of extensible ICMP messages
+Section 4.6 of {{RFC4884}} provides a list of extensible ICMP messages
 (i.e., messages that can carry the ICMP Extension Structure). This
 document adds the ICMP Extended Echo Request message and the ICMP
 Extended Echo Reply message to that list.
@@ -559,46 +554,87 @@ Extended Echo Reply message to that list.
 
 # IANA Considerations {#IANA}
 
-This document requests the following actions from IANA:
+IANA has performed the following actions:
 
-* Add an entry to the "ICMP Type Number" registry, representing the
-  Extended Echo Request. This entry has one code (0) No Error.
+*  Added the following to the "ICMP Type Numbers" registry:
 
-* Add an entry to the "ICMPv6 "type" Numbers" registry,
-  representing the Extended Echo Request. This entry has one code (0)
-  No Error. As ICMPv6 distinguishes between informational and error
-  messages, and this is an informational message, the value must be
-  assigned from the range 128-255.
+          42 Extended Echo Request
 
-* Add an entry to the "ICMP Type Number" registry, representing the
-  Extended Echo Reply. This entry has the following codes: (0) No
-  Error, (1) Malformed Query, (2) No Such Interface, (3) No Such Table
-  Entry, (4) Multiple Interfaces Satisfy Query.
+   Added the following to the "Type 42 - Extended Echo Request"
+   subregistry:
 
-* Add an entry to the "ICMPv6 "type" Numbers" registry,
-  representing the Extended Echo Reply. This entry has the following
-  codes: (0) No Error, (1) Malformed Query, (2) No Such Interface, (3)
-  No Such Table Entry, (4) Multiple Interfaces Satisfy Query.
+          (0) No Error
 
-* Add an entry to the "ICMP Extension Object Classes and Class
-  Sub-types" registry, representing the Interface Identification
-  Object. It has C-types Reserved (0), Identifies Interface By Name
-  (1), Identifies Interface By Index (2), Identifies Interface By
-  Address (3). C-Type values are assignable on a
-  first-come-first-serve (FCFS) basis with a range of 0-255.
+*  Added the following to the "ICMPv6 'type' Numbers" registry:
 
-All codes mentioned above are assigned on a First Come First Serve
-(FCFS) basis with a range of 0 -255.
+          160 Extended Echo Request
 
+          As ICMPv6 distinguishes between informational and error
+          messages, and this is an informational message, the value has
+          been assigned from the range 128-255.
+
+   Added the following to the "Type 160 - Extended Echo Request"
+   subregistry:
+
+          (0) No Error
+
+*  Added the following to the "ICMP Type Numbers" registry:
+
+          43 Extended Echo Reply
+
+   Added the following to the "Type 43 - Extended Echo Reply"
+   subregistry:
+
+          (0) No Error
+          (1) Malformed Query
+          (2) No Such Interface
+          (3) No Such Table Entry
+          (4) Multiple Interfaces Satisfy Query
+
+*  Added the following to the "ICMPv6 'type' Numbers" registry:
+
+          161 Extended Echo Reply
+
+          As ICMPv6 distinguishes between informational and error
+          messages, and this is an informational message, the value has
+          been assigned from the range 128-255.
+
+   Added the following to the "Type 161 - Extended Echo Reply"
+   subregistry:
+
+          (0) No Error
+          (1) Malformed Query
+          (2) No Such Interface
+          (3) No Such Table Entry
+          (4) Multiple Interfaces Satisfy Query
+
+*  Added the following to the "ICMP Extension Object Classes and
+   Class Sub-types" registry:
+
+          (3) Interface Identification Object
+
+   Added the following C-types to the "Sub-types - Class 3 -
+   Interface Identification Object" subregistry:
+
+          (0) Reserved
+          (1) Identifies Interface by Name
+          (2) Identifies Interface by Index
+          (3) Identifies Interface by Address
+
+   C-Type values are assigned on a First Come First Serve (FCFS)
+   basis with a range of 0-255.
+
+All codes mentioned above are assigned on an FCFS basis with a range
+of 0-255.
 
 # Security Considerations {#security}
 
 The following are legitimate uses of PROBE:
 
-* to determine the operational status of an interface
+* to determine the operational status of an interface.
 
-* to determine which protocols (e.g., IPv4, IPv6) are active on an
-  interface
+* to determine which protocols (e.g., IPv4 or IPv6) are active on an
+  interface.
 
 However, malicious parties can use PROBE to obtain additional
 information. For example, a malicious party can use PROBE to discover
@@ -616,23 +652,23 @@ information may include:
 
 Understanding this risk, network operators establish policies that
 restrict access to ICMP Extended Echo functionality. In order to enforce
-these polices, nodes that support ICMP Extended Echo functionality MUST
+these policies, nodes that support ICMP Extended Echo functionality MUST
 support the following configuration options:
 
 * Enable/disable ICMP Extended Echo functionality. By default, ICMP
   Extend Echo functionality is disabled.
 
-* Define enabled L-bit settings. By default, L-bit set is enabled
-  and L-bit clear is disabled.
+* Define enabled L-bit settings. By default, the option to set the L-bit
+  is enabled and the option to clear the L-bit is disabled.
 
-* Define enabled query types (i.e., by name, by index, by address).
-  By default, all query types are disabled.
+* Define enabled query types (i.e., by name, by index, or by address);
+  by default, all query types are disabled.
 
 * For each enabled query type, define the prefixes from which ICMP
-  Extended Echo Request messages are permitted
+  Extended Echo Request messages are permitted.
 
 * For each interface, determine whether ICMP Echo Request messages
-  are accepted
+  are accepted.
 
 When a node receives an ICMP Extended Echo Request message that it is
 not configured to support, it MUST silently discard the message. See {{proc}} for details.
@@ -651,16 +687,16 @@ rate-limit incoming ICMP Extended Echo Request messages.
 
 # The PROBE Application {#application}
 
-The PROBE application accepts input parameters, sets a counter and
-enters a loop to be exited when the counter is equal to zero. On each
+The PROBE application accepts input parameters, sets a counter, and
+enters a loop to be exited when the counter is equal to 0. On each
 iteration of the loop, PROBE emits an ICMP Extended Echo Request,
-decrements the counter, sets a timer and waits. The ICMP Extended Echo
+decrements the counter, sets a timer, and waits. The ICMP Extended Echo
 Request includes an Identifier and a Sequence Number.
 
 If an ICMP Extended Echo Reply carrying the same Identifier and
 Sequence Number arrives, PROBE relays information returned by that
 message to its user. However, on each iteration of the loop, PROBE waits
-for the timer to expire, regardless of whether an Extended Echo Reply
+for the timer to expire regardless of whether an Extended Echo Reply
 message arrives.
 
 PROBE accepts the following parameters:
@@ -687,14 +723,14 @@ Wait is a positive integer whose minimum and default values are 1.
 Wait determines the duration of the above-mentioned timer, measured in
 seconds.
 
-Probing Interface Address specifies the source address of ICMP
+Probing Interface Address specifies the Source Address of the ICMP
 Extended Echo Request. The Probing Interface Address MUST be a unicast
 address and MUST identify an interface that resides on the probing
 node.
 
 The Proxy Interface Address identifies the interface to which the
-ICMP Extended Echo Request message is sent. It can be an IPv4 or IPv6
-address. If it is an IPv4 address, PROBE emits an ICMPv4 message. If it
+ICMP Extended Echo Request message is sent. It must be an IPv4 or IPv6
+unicast address. If it is an IPv4 address, PROBE emits an ICMPv4 message. If it
 is an IPv6 address, PROBE emits an ICMPv6 message.
 
 Local is a boolean value. It is TRUE if the proxy and probed
@@ -703,17 +739,17 @@ interfaces both reside on the same node. Otherwise, it is FALSE.
 The Probed Interface Identifier identifies the probed interface. It
 is one of the following:
 
-* an interface name
+* an interface name;
 
 * an address from any address family (e.g., IPv4, IPv6, IEEE 802,
-  48-bit MAC, 64-bit MAC)
+  48-bit MAC, or 64-bit MAC); or
 
-* an if-index
+* an if-index.
 
 If the Probed Interface Identifier is an address, it does not need to
 be of the same address family as the proxy interface address. For
 example, PROBE accepts an IPv4 Proxy Interface Address and an IPv6
-Probed Interface Identifier
+Probed Interface Identifier.
 
 
 # Acknowledgments {#Acknowledgements}
@@ -721,5 +757,5 @@ Probed Interface Identifier
 
 Thanks to Sowmini Varadhan, Jeff Haas, Carlos Pignataro, Jonathan
 Looney, Dave Thaler, Mikio Hara, Joel Halpern, Yaron Sheffer, Stefan
-Winter, Jean-Michel Combes, Amanda Barber and Joe Touch for their
+Winter, Jean-Michel Combes, Amanda Barber, and Joe Touch for their
 thoughtful review of this document.
