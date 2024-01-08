@@ -4,10 +4,10 @@
 
 INTAREA                                                   B. Fenner, Ed.
 Internet-Draft                                           Arista Networks
-Updates: 4884 (if approved)                                    R. Bonica
-Intended status: Standards Track                               R. Thomas
-Expires: 11 July 2024                                   Juniper Networks
-                                                              J. Linkova
+Obsoletes: 8335 (if approved)                                  R. Bonica
+Updates: 4884 (if approved)                                    R. Thomas
+Intended status: Standards Track                        Juniper Networks
+Expires: 11 July 2024                                         J. Linkova
                                                                   Google
                                                                C. Lenart
                                                                  Verizon
@@ -81,11 +81,12 @@ Table of Contents
      4.1.  Code Field Processing
    5.  Use Cases
    6.  Updates to RFC 4884
-   7.  IANA Considerations
-   8.  Security Considerations
-   9.  References
-     9.1.  Normative References
-     9.2.  Informative References
+   7.  Changes from RFC 8335
+   8.  IANA Considerations
+   9.  Security Considerations
+   10. References
+     10.1.  Normative References
+     10.2.  Informative References
    Appendix A.  The PROBE Application
    Acknowledgments
    Authors' Addresses
@@ -551,66 +552,99 @@ Table of Contents
    document adds the ICMP Extended Echo Request message and the ICMP
    Extended Echo Reply message to that list.
 
-7.  IANA Considerations
+7.  Changes from RFC 8335
+
+   This document updates [RFC8335] to clarify the handling of extra data
+   beyond the ICMP Extension Structure, that data is echoed in the
+   response packet, and checksum handling in the ICMP Extension
+   Structure.
+
+   Specifically,
+
+   *  Updated Figure 1 to reflect the presence of the ICMP Extension
+      Object and additional data.
+
+   *  Updated Section 2 to mention the ICMP Extension Structure
+      checksum, and extra verbosity about how the Extension Structure
+      does not cover the rest of the packet.
+
+   *  Updated Figure 3 to reflect the presence of the ICMP Extension
+      Structure and additional data.
+
+   *  Added a step in Section 4 about copying data from the request to
+      the response.
+
+   *  Added a step in Section 4.1 about validating the ICMP Extension
+      Structure checksum.
+
+8.  IANA Considerations
 
    IANA has performed the following actions:
 
    *  Added the following to the "ICMP Type Numbers" registry:
 
-      42 Extended Echo Request
+         42 Extended Echo Request
 
       Added the following to the "Type 42 - Extended Echo Request"
       subregistry:
 
-      (0) No Error
+         (0) No Error
 
    *  Added the following to the "ICMPv6 'type' Numbers" registry:
 
-      160 Extended Echo Request
+         160 Extended Echo Request
 
-      As ICMPv6 distinguishes between informational and error messages,
-      and this is an informational message, the value has been assigned
-      from the range 128-255.
+         As ICMPv6 distinguishes between informational and error
+         messages, and this is an informational message, the value has
+         been assigned from the range 128-255.
 
       Added the following to the "Type 160 - Extended Echo Request"
       subregistry:
 
-      (0) No Error
+         (0) No Error
 
    *  Added the following to the "ICMP Type Numbers" registry:
 
-      43 Extended Echo Reply
+         43 Extended Echo Reply
 
       Added the following to the "Type 43 - Extended Echo Reply"
       subregistry:
 
-      (0) No Error (1) Malformed Query (2) No Such Interface (3) No Such
-      Table Entry (4) Multiple Interfaces Satisfy Query
+         (0) No Error
+         (1) Malformed Query
+         (2) No Such Interface
+         (3) No Such Table Entry
+         (4) Multiple Interfaces Satisfy Query
 
    *  Added the following to the "ICMPv6 'type' Numbers" registry:
 
-      161 Extended Echo Reply
+         161 Extended Echo Reply
 
-      As ICMPv6 distinguishes between informational and error messages,
-      and this is an informational message, the value has been assigned
-      from the range 128-255.
+         As ICMPv6 distinguishes between informational and error
+         messages, and this is an informational message, the value has
+         been assigned from the range 128-255.
 
       Added the following to the "Type 161 - Extended Echo Reply"
       subregistry:
 
-      (0) No Error (1) Malformed Query (2) No Such Interface (3) No Such
-      Table Entry (4) Multiple Interfaces Satisfy Query
+         (0) No Error
+         (1) Malformed Query
+         (2) No Such Interface
+         (3) No Such Table Entry
+         (4) Multiple Interfaces Satisfy Query
 
    *  Added the following to the "ICMP Extension Object Classes and
       Class Sub-types" registry:
 
-      (3) Interface Identification Object
+         (3) Interface Identification Object
 
       Added the following C-types to the "Sub-types - Class 3 -
       Interface Identification Object" subregistry:
 
-      (0) Reserved (1) Identifies Interface by Name (2) Identifies
-      Interface by Index (3) Identifies Interface by Address
+         (0) Reserved
+         (1) Identifies Interface by Name
+         (2) Identifies Interface by Index
+         (3) Identifies Interface by Address
 
       C-Type values are assigned on a First Come First Serve (FCFS)
       basis with a range of 0-255.
@@ -618,7 +652,7 @@ Table of Contents
    All codes mentioned above are assigned on an FCFS basis with a range
    of 0-255.
 
-8.  Security Considerations
+9.  Security Considerations
 
    The following are legitimate uses of PROBE:
 
@@ -674,9 +708,9 @@ Table of Contents
    In order to protect local resources, implementations SHOULD rate-
    limit incoming ICMP Extended Echo Request messages.
 
-9.  References
+10.  References
 
-9.1.  Normative References
+10.1.  Normative References
 
    [RFC0792]  Postel, J., "Internet Control Message Protocol", STD 5,
               RFC 792, DOI 10.17487/RFC0792, September 1981,
@@ -717,7 +751,12 @@ Table of Contents
               2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
               May 2017, <https://www.rfc-editor.org/rfc/rfc8174>.
 
-9.2.  Informative References
+   [RFC8335]  Bonica, R., Thomas, R., Linkova, J., Lenart, C., and M.
+              Boucadair, "PROBE: A Utility for Probing Interfaces",
+              RFC 8335, DOI 10.17487/RFC8335, February 2018,
+              <https://www.rfc-editor.org/rfc/rfc8335>.
+
+10.2.  Informative References
 
    [IANA.address-family-numbers]
               IANA, "Address Family Numbers",

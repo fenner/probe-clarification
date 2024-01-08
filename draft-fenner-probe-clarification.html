@@ -1053,6 +1053,9 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <dd class="workgroup">INTAREA</dd>
 <dt class="label-internet-draft">Internet-Draft:</dt>
 <dd class="internet-draft">draft-fenner-probe-clarification-latest</dd>
+<dt class="label-obsoletes">Obsoletes:</dt>
+<dd class="obsoletes">
+<a href="https://www.rfc-editor.org/rfc/rfc8335" class="eref">8335</a> (if approved)</dd>
 <dt class="label-updates">Updates:</dt>
 <dd class="updates">
 <a href="https://www.rfc-editor.org/rfc/rfc4884" class="eref">4884</a> (if approved)</dd>
@@ -1200,30 +1203,33 @@ the probed interface is directly connected. This document updates RFC
             <p id="section-toc.1-1.6.1"><a href="#section-6" class="auto internal xref">6</a>.  <a href="#name-updates-to-rfc-4884" class="internal xref">Updates to RFC 4884</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7">
-            <p id="section-toc.1-1.7.1"><a href="#section-7" class="auto internal xref">7</a>.  <a href="#name-iana-considerations" class="internal xref">IANA Considerations</a></p>
+            <p id="section-toc.1-1.7.1"><a href="#section-7" class="auto internal xref">7</a>.  <a href="#name-changes-from-rfc-8335" class="internal xref">Changes from RFC 8335</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.8">
-            <p id="section-toc.1-1.8.1"><a href="#section-8" class="auto internal xref">8</a>.  <a href="#name-security-considerations" class="internal xref">Security Considerations</a></p>
+            <p id="section-toc.1-1.8.1"><a href="#section-8" class="auto internal xref">8</a>.  <a href="#name-iana-considerations" class="internal xref">IANA Considerations</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.9">
-            <p id="section-toc.1-1.9.1"><a href="#section-9" class="auto internal xref">9</a>.  <a href="#name-references" class="internal xref">References</a></p>
-<ul class="compact toc ulBare ulEmpty">
-<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.9.2.1">
-                <p id="section-toc.1-1.9.2.1.1"><a href="#section-9.1" class="auto internal xref">9.1</a>.  <a href="#name-normative-references" class="internal xref">Normative References</a></p>
+            <p id="section-toc.1-1.9.1"><a href="#section-9" class="auto internal xref">9</a>.  <a href="#name-security-considerations" class="internal xref">Security Considerations</a></p>
 </li>
-              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.9.2.2">
-                <p id="section-toc.1-1.9.2.2.1"><a href="#section-9.2" class="auto internal xref">9.2</a>.  <a href="#name-informative-references" class="internal xref">Informative References</a></p>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.10">
+            <p id="section-toc.1-1.10.1"><a href="#section-10" class="auto internal xref">10</a>. <a href="#name-references" class="internal xref">References</a></p>
+<ul class="compact toc ulBare ulEmpty">
+<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.10.2.1">
+                <p id="section-toc.1-1.10.2.1.1"><a href="#section-10.1" class="auto internal xref">10.1</a>.  <a href="#name-normative-references" class="internal xref">Normative References</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.10.2.2">
+                <p id="section-toc.1-1.10.2.2.1"><a href="#section-10.2" class="auto internal xref">10.2</a>.  <a href="#name-informative-references" class="internal xref">Informative References</a></p>
 </li>
             </ul>
 </li>
-          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.10">
-            <p id="section-toc.1-1.10.1"><a href="#appendix-A" class="auto internal xref">Appendix A</a>.  <a href="#name-the-probe-application" class="internal xref">The PROBE Application</a></p>
-</li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.11">
-            <p id="section-toc.1-1.11.1"><a href="#appendix-B" class="auto internal xref"></a><a href="#name-acknowledgments" class="internal xref">Acknowledgments</a></p>
+            <p id="section-toc.1-1.11.1"><a href="#appendix-A" class="auto internal xref">Appendix A</a>.  <a href="#name-the-probe-application" class="internal xref">The PROBE Application</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.12">
-            <p id="section-toc.1-1.12.1"><a href="#appendix-C" class="auto internal xref"></a><a href="#name-authors-addresses" class="internal xref">Authors' Addresses</a></p>
+            <p id="section-toc.1-1.12.1"><a href="#appendix-B" class="auto internal xref"></a><a href="#name-acknowledgments" class="internal xref">Acknowledgments</a></p>
+</li>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.13">
+            <p id="section-toc.1-1.13.1"><a href="#appendix-C" class="auto internal xref"></a><a href="#name-authors-addresses" class="internal xref">Authors' Addresses</a></p>
 </li>
         </ul>
 </nav>
@@ -1836,169 +1842,233 @@ document adds the ICMP Extended Echo Request message and the ICMP
 Extended Echo Reply message to that list.<a href="#section-6-1" class="pilcrow">¶</a></p>
 </section>
 </div>
-<div id="IANA">
+<div id="changes-from-rfc-8335">
 <section id="section-7">
-      <h2 id="name-iana-considerations">
-<a href="#section-7" class="section-number selfRef">7. </a><a href="#name-iana-considerations" class="section-name selfRef">IANA Considerations</a>
+      <h2 id="name-changes-from-rfc-8335">
+<a href="#section-7" class="section-number selfRef">7. </a><a href="#name-changes-from-rfc-8335" class="section-name selfRef">Changes from RFC 8335</a>
       </h2>
-<p id="section-7-1">IANA has performed the following actions:<a href="#section-7-1" class="pilcrow">¶</a></p>
+<p id="section-7-1">This document updates <span>[<a href="#RFC8335" class="cite xref">RFC8335</a>]</span> to clarify the handling of
+extra data beyond the ICMP Extension Structure, that data is
+echoed in the response packet, and checksum handling in the ICMP
+Extension Structure.<a href="#section-7-1" class="pilcrow">¶</a></p>
+<p id="section-7-2">Specifically,<a href="#section-7-2" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="section-7-2.1">
-          <p id="section-7-2.1.1">Added the following to the "ICMP Type Numbers" registry:<a href="#section-7-2.1.1" class="pilcrow">¶</a></p>
-<p id="section-7-2.1.2">
-42 Extended Echo Request<a href="#section-7-2.1.2" class="pilcrow">¶</a></p>
-<p id="section-7-2.1.3">
-Added the following to the "Type 42 - Extended Echo Request"
-subregistry:<a href="#section-7-2.1.3" class="pilcrow">¶</a></p>
-<p id="section-7-2.1.4">
-(0) No Error<a href="#section-7-2.1.4" class="pilcrow">¶</a></p>
+<li class="normal" id="section-7-3.1">
+          <p id="section-7-3.1.1">Updated <a href="#ICMPEchoFIG" class="auto internal xref">Figure 1</a> to reflect the presence of the ICMP Extension Object
+and additional data.<a href="#section-7-3.1.1" class="pilcrow">¶</a></p>
 </li>
-        <li class="normal" id="section-7-2.2">
-          <p id="section-7-2.2.1">Added the following to the "ICMPv6 'type' Numbers" registry:<a href="#section-7-2.2.1" class="pilcrow">¶</a></p>
-<p id="section-7-2.2.2">
-160 Extended Echo Request<a href="#section-7-2.2.2" class="pilcrow">¶</a></p>
-<p id="section-7-2.2.3">
-As ICMPv6 distinguishes between informational and error
-   messages, and this is an informational message, the value has
-   been assigned from the range 128-255.<a href="#section-7-2.2.3" class="pilcrow">¶</a></p>
-<p id="section-7-2.2.4">
-Added the following to the "Type 160 - Extended Echo Request"
-subregistry:<a href="#section-7-2.2.4" class="pilcrow">¶</a></p>
-<p id="section-7-2.2.5">
-(0) No Error<a href="#section-7-2.2.5" class="pilcrow">¶</a></p>
+        <li class="normal" id="section-7-3.2">
+          <p id="section-7-3.2.1">Updated <a href="#ExtendedEcho" class="auto internal xref">Section 2</a> to mention the ICMP Extension Structure checksum,
+and extra verbosity about how the Extension Structure does not cover the
+rest of the packet.<a href="#section-7-3.2.1" class="pilcrow">¶</a></p>
 </li>
-        <li class="normal" id="section-7-2.3">
-          <p id="section-7-2.3.1">Added the following to the "ICMP Type Numbers" registry:<a href="#section-7-2.3.1" class="pilcrow">¶</a></p>
-<p id="section-7-2.3.2">
-43 Extended Echo Reply<a href="#section-7-2.3.2" class="pilcrow">¶</a></p>
-<p id="section-7-2.3.3">
-Added the following to the "Type 43 - Extended Echo Reply"
-subregistry:<a href="#section-7-2.3.3" class="pilcrow">¶</a></p>
-<p id="section-7-2.3.4">
-(0) No Error
-   (1) Malformed Query
-   (2) No Such Interface
-   (3) No Such Table Entry
-   (4) Multiple Interfaces Satisfy Query<a href="#section-7-2.3.4" class="pilcrow">¶</a></p>
+        <li class="normal" id="section-7-3.3">
+          <p id="section-7-3.3.1">Updated <a href="#ICMPEchoReplyFIG" class="auto internal xref">Figure 3</a> to reflect the presence of the ICMP Extension
+Structure and additional data.<a href="#section-7-3.3.1" class="pilcrow">¶</a></p>
 </li>
-        <li class="normal" id="section-7-2.4">
-          <p id="section-7-2.4.1">Added the following to the "ICMPv6 'type' Numbers" registry:<a href="#section-7-2.4.1" class="pilcrow">¶</a></p>
-<p id="section-7-2.4.2">
-161 Extended Echo Reply<a href="#section-7-2.4.2" class="pilcrow">¶</a></p>
-<p id="section-7-2.4.3">
-As ICMPv6 distinguishes between informational and error
-   messages, and this is an informational message, the value has
-   been assigned from the range 128-255.<a href="#section-7-2.4.3" class="pilcrow">¶</a></p>
-<p id="section-7-2.4.4">
-Added the following to the "Type 161 - Extended Echo Reply"
-subregistry:<a href="#section-7-2.4.4" class="pilcrow">¶</a></p>
-<p id="section-7-2.4.5">
-(0) No Error
-   (1) Malformed Query
-   (2) No Such Interface
-   (3) No Such Table Entry
-   (4) Multiple Interfaces Satisfy Query<a href="#section-7-2.4.5" class="pilcrow">¶</a></p>
+        <li class="normal" id="section-7-3.4">
+          <p id="section-7-3.4.1">Added a step in <a href="#proc" class="auto internal xref">Section 4</a> about copying data from the request to the
+response.<a href="#section-7-3.4.1" class="pilcrow">¶</a></p>
 </li>
-        <li class="normal" id="section-7-2.5">
-          <p id="section-7-2.5.1">Added the following to the "ICMP Extension Object Classes and
-Class Sub-types" registry:<a href="#section-7-2.5.1" class="pilcrow">¶</a></p>
-<p id="section-7-2.5.2">
-(3) Interface Identification Object<a href="#section-7-2.5.2" class="pilcrow">¶</a></p>
-<p id="section-7-2.5.3">
-Added the following C-types to the "Sub-types - Class 3 -
-Interface Identification Object" subregistry:<a href="#section-7-2.5.3" class="pilcrow">¶</a></p>
-<p id="section-7-2.5.4">
-(0) Reserved
-   (1) Identifies Interface by Name
-   (2) Identifies Interface by Index
-   (3) Identifies Interface by Address<a href="#section-7-2.5.4" class="pilcrow">¶</a></p>
-<p id="section-7-2.5.5">
-C-Type values are assigned on a First Come First Serve (FCFS)
-basis with a range of 0-255.<a href="#section-7-2.5.5" class="pilcrow">¶</a></p>
+        <li class="normal" id="section-7-3.5">
+          <p id="section-7-3.5.1">Added a step in <a href="#code" class="auto internal xref">Section 4.1</a> about validating the ICMP Extension Structure checksum.<a href="#section-7-3.5.1" class="pilcrow">¶</a></p>
 </li>
       </ul>
-<p id="section-7-3">All codes mentioned above are assigned on an FCFS basis with a range
-of 0-255.<a href="#section-7-3" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="IANA">
+<section id="section-8">
+      <h2 id="name-iana-considerations">
+<a href="#section-8" class="section-number selfRef">8. </a><a href="#name-iana-considerations" class="section-name selfRef">IANA Considerations</a>
+      </h2>
+<p id="section-8-1">IANA has performed the following actions:<a href="#section-8-1" class="pilcrow">¶</a></p>
+<ul class="normal">
+<li class="normal" id="section-8-2.1">
+          <p id="section-8-2.1.1">Added the following to the "ICMP Type Numbers" registry:<a href="#section-8-2.1.1" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="section-8-2.1.2">
+<pre>
+   42 Extended Echo Request
+</pre><a href="#section-8-2.1.2" class="pilcrow">¶</a>
+</div>
+<p id="section-8-2.1.3">
+Added the following to the "Type 42 - Extended Echo Request"
+subregistry:<a href="#section-8-2.1.3" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="section-8-2.1.4">
+<pre>
+   (0) No Error
+</pre><a href="#section-8-2.1.4" class="pilcrow">¶</a>
+</div>
+</li>
+        <li class="normal" id="section-8-2.2">
+          <p id="section-8-2.2.1">Added the following to the "ICMPv6 'type' Numbers" registry:<a href="#section-8-2.2.1" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="section-8-2.2.2">
+<pre>
+   160 Extended Echo Request
+
+   As ICMPv6 distinguishes between informational and error
+   messages, and this is an informational message, the value has
+   been assigned from the range 128-255.
+</pre><a href="#section-8-2.2.2" class="pilcrow">¶</a>
+</div>
+<p id="section-8-2.2.3">
+Added the following to the "Type 160 - Extended Echo Request"
+subregistry:<a href="#section-8-2.2.3" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="section-8-2.2.4">
+<pre>
+   (0) No Error
+</pre><a href="#section-8-2.2.4" class="pilcrow">¶</a>
+</div>
+</li>
+        <li class="normal" id="section-8-2.3">
+          <p id="section-8-2.3.1">Added the following to the "ICMP Type Numbers" registry:<a href="#section-8-2.3.1" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="section-8-2.3.2">
+<pre>
+   43 Extended Echo Reply
+</pre><a href="#section-8-2.3.2" class="pilcrow">¶</a>
+</div>
+<p id="section-8-2.3.3">
+Added the following to the "Type 43 - Extended Echo Reply"
+subregistry:<a href="#section-8-2.3.3" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="section-8-2.3.4">
+<pre>
+   (0) No Error
+   (1) Malformed Query
+   (2) No Such Interface
+   (3) No Such Table Entry
+   (4) Multiple Interfaces Satisfy Query
+</pre><a href="#section-8-2.3.4" class="pilcrow">¶</a>
+</div>
+</li>
+        <li class="normal" id="section-8-2.4">
+          <p id="section-8-2.4.1">Added the following to the "ICMPv6 'type' Numbers" registry:<a href="#section-8-2.4.1" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="section-8-2.4.2">
+<pre>
+   161 Extended Echo Reply
+
+   As ICMPv6 distinguishes between informational and error
+   messages, and this is an informational message, the value has
+   been assigned from the range 128-255.
+</pre><a href="#section-8-2.4.2" class="pilcrow">¶</a>
+</div>
+<p id="section-8-2.4.3">
+Added the following to the "Type 161 - Extended Echo Reply"
+subregistry:<a href="#section-8-2.4.3" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="section-8-2.4.4">
+<pre>
+   (0) No Error
+   (1) Malformed Query
+   (2) No Such Interface
+   (3) No Such Table Entry
+   (4) Multiple Interfaces Satisfy Query
+</pre><a href="#section-8-2.4.4" class="pilcrow">¶</a>
+</div>
+</li>
+        <li class="normal" id="section-8-2.5">
+          <p id="section-8-2.5.1">Added the following to the "ICMP Extension Object Classes and
+Class Sub-types" registry:<a href="#section-8-2.5.1" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="section-8-2.5.2">
+<pre>
+   (3) Interface Identification Object
+</pre><a href="#section-8-2.5.2" class="pilcrow">¶</a>
+</div>
+<p id="section-8-2.5.3">
+Added the following C-types to the "Sub-types - Class 3 -
+Interface Identification Object" subregistry:<a href="#section-8-2.5.3" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="section-8-2.5.4">
+<pre>
+   (0) Reserved
+   (1) Identifies Interface by Name
+   (2) Identifies Interface by Index
+   (3) Identifies Interface by Address
+</pre><a href="#section-8-2.5.4" class="pilcrow">¶</a>
+</div>
+<p id="section-8-2.5.5">
+C-Type values are assigned on a First Come First Serve (FCFS)
+basis with a range of 0-255.<a href="#section-8-2.5.5" class="pilcrow">¶</a></p>
+</li>
+      </ul>
+<p id="section-8-3">All codes mentioned above are assigned on an FCFS basis with a range
+of 0-255.<a href="#section-8-3" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="security">
-<section id="section-8">
+<section id="section-9">
       <h2 id="name-security-considerations">
-<a href="#section-8" class="section-number selfRef">8. </a><a href="#name-security-considerations" class="section-name selfRef">Security Considerations</a>
+<a href="#section-9" class="section-number selfRef">9. </a><a href="#name-security-considerations" class="section-name selfRef">Security Considerations</a>
       </h2>
-<p id="section-8-1">The following are legitimate uses of PROBE:<a href="#section-8-1" class="pilcrow">¶</a></p>
+<p id="section-9-1">The following are legitimate uses of PROBE:<a href="#section-9-1" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="section-8-2.1">
-          <p id="section-8-2.1.1">to determine the operational status of an interface.<a href="#section-8-2.1.1" class="pilcrow">¶</a></p>
+<li class="normal" id="section-9-2.1">
+          <p id="section-9-2.1.1">to determine the operational status of an interface.<a href="#section-9-2.1.1" class="pilcrow">¶</a></p>
 </li>
-        <li class="normal" id="section-8-2.2">
-          <p id="section-8-2.2.1">to determine which protocols (e.g., IPv4 or IPv6) are active on an
-interface.<a href="#section-8-2.2.1" class="pilcrow">¶</a></p>
+        <li class="normal" id="section-9-2.2">
+          <p id="section-9-2.2.1">to determine which protocols (e.g., IPv4 or IPv6) are active on an
+interface.<a href="#section-9-2.2.1" class="pilcrow">¶</a></p>
 </li>
       </ul>
-<p id="section-8-3">However, malicious parties can use PROBE to obtain additional
+<p id="section-9-3">However, malicious parties can use PROBE to obtain additional
 information. For example, a malicious party can use PROBE to discover
 interface names. Having discovered an interface name, the malicious
 party may be able to infer additional information. Additional
-information may include:<a href="#section-8-3" class="pilcrow">¶</a></p>
+information may include:<a href="#section-9-3" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="section-8-4.1">
-          <p id="section-8-4.1.1">interface bandwidth<a href="#section-8-4.1.1" class="pilcrow">¶</a></p>
+<li class="normal" id="section-9-4.1">
+          <p id="section-9-4.1.1">interface bandwidth<a href="#section-9-4.1.1" class="pilcrow">¶</a></p>
 </li>
-        <li class="normal" id="section-8-4.2">
-          <p id="section-8-4.2.1">the type of device that supports the interface (e.g., vendor
-identity)<a href="#section-8-4.2.1" class="pilcrow">¶</a></p>
+        <li class="normal" id="section-9-4.2">
+          <p id="section-9-4.2.1">the type of device that supports the interface (e.g., vendor
+identity)<a href="#section-9-4.2.1" class="pilcrow">¶</a></p>
 </li>
-        <li class="normal" id="section-8-4.3">
-          <p id="section-8-4.3.1">the operating system version that the above-mentioned device
-executes<a href="#section-8-4.3.1" class="pilcrow">¶</a></p>
+        <li class="normal" id="section-9-4.3">
+          <p id="section-9-4.3.1">the operating system version that the above-mentioned device
+executes<a href="#section-9-4.3.1" class="pilcrow">¶</a></p>
 </li>
       </ul>
-<p id="section-8-5">Understanding this risk, network operators establish policies that
+<p id="section-9-5">Understanding this risk, network operators establish policies that
 restrict access to ICMP Extended Echo functionality. In order to enforce
 these policies, nodes that support ICMP Extended Echo functionality <span class="bcp14">MUST</span>
-support the following configuration options:<a href="#section-8-5" class="pilcrow">¶</a></p>
+support the following configuration options:<a href="#section-9-5" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="section-8-6.1">
-          <p id="section-8-6.1.1">Enable/disable ICMP Extended Echo functionality. By default, ICMP
-Extend Echo functionality is disabled.<a href="#section-8-6.1.1" class="pilcrow">¶</a></p>
+<li class="normal" id="section-9-6.1">
+          <p id="section-9-6.1.1">Enable/disable ICMP Extended Echo functionality. By default, ICMP
+Extend Echo functionality is disabled.<a href="#section-9-6.1.1" class="pilcrow">¶</a></p>
 </li>
-        <li class="normal" id="section-8-6.2">
-          <p id="section-8-6.2.1">Define enabled L-bit settings. By default, the option to set the L-bit
-is enabled and the option to clear the L-bit is disabled.<a href="#section-8-6.2.1" class="pilcrow">¶</a></p>
+        <li class="normal" id="section-9-6.2">
+          <p id="section-9-6.2.1">Define enabled L-bit settings. By default, the option to set the L-bit
+is enabled and the option to clear the L-bit is disabled.<a href="#section-9-6.2.1" class="pilcrow">¶</a></p>
 </li>
-        <li class="normal" id="section-8-6.3">
-          <p id="section-8-6.3.1">Define enabled query types (i.e., by name, by index, or by address);
-by default, all query types are disabled.<a href="#section-8-6.3.1" class="pilcrow">¶</a></p>
+        <li class="normal" id="section-9-6.3">
+          <p id="section-9-6.3.1">Define enabled query types (i.e., by name, by index, or by address);
+by default, all query types are disabled.<a href="#section-9-6.3.1" class="pilcrow">¶</a></p>
 </li>
-        <li class="normal" id="section-8-6.4">
-          <p id="section-8-6.4.1">For each enabled query type, define the prefixes from which ICMP
-Extended Echo Request messages are permitted.<a href="#section-8-6.4.1" class="pilcrow">¶</a></p>
+        <li class="normal" id="section-9-6.4">
+          <p id="section-9-6.4.1">For each enabled query type, define the prefixes from which ICMP
+Extended Echo Request messages are permitted.<a href="#section-9-6.4.1" class="pilcrow">¶</a></p>
 </li>
-        <li class="normal" id="section-8-6.5">
-          <p id="section-8-6.5.1">For each interface, determine whether ICMP Echo Request messages
-are accepted.<a href="#section-8-6.5.1" class="pilcrow">¶</a></p>
+        <li class="normal" id="section-9-6.5">
+          <p id="section-9-6.5.1">For each interface, determine whether ICMP Echo Request messages
+are accepted.<a href="#section-9-6.5.1" class="pilcrow">¶</a></p>
 </li>
       </ul>
-<p id="section-8-7">When a node receives an ICMP Extended Echo Request message that it is
-not configured to support, it <span class="bcp14">MUST</span> silently discard the message. See <a href="#proc" class="auto internal xref">Section 4</a> for details.<a href="#section-8-7" class="pilcrow">¶</a></p>
-<p id="section-8-8">PROBE must not leak information about one Virtual Private Network
+<p id="section-9-7">When a node receives an ICMP Extended Echo Request message that it is
+not configured to support, it <span class="bcp14">MUST</span> silently discard the message. See <a href="#proc" class="auto internal xref">Section 4</a> for details.<a href="#section-9-7" class="pilcrow">¶</a></p>
+<p id="section-9-8">PROBE must not leak information about one Virtual Private Network
 (VPN) into another. Therefore, when a node receives an ICMP Extended
 Echo Request and the proxy interface is in a different VPN than the
 probed interface, the node <span class="bcp14">MUST</span> return an ICMP Extended Echo Reply with
-error code equal to (2) No Such Interface.<a href="#section-8-8" class="pilcrow">¶</a></p>
-<p id="section-8-9">In order to protect local resources, implementations <span class="bcp14">SHOULD</span>
-rate-limit incoming ICMP Extended Echo Request messages.<a href="#section-8-9" class="pilcrow">¶</a></p>
+error code equal to (2) No Such Interface.<a href="#section-9-8" class="pilcrow">¶</a></p>
+<p id="section-9-9">In order to protect local resources, implementations <span class="bcp14">SHOULD</span>
+rate-limit incoming ICMP Extended Echo Request messages.<a href="#section-9-9" class="pilcrow">¶</a></p>
 </section>
 </div>
-<section id="section-9">
+<section id="section-10">
       <h2 id="name-references">
-<a href="#section-9" class="section-number selfRef">9. </a><a href="#name-references" class="section-name selfRef">References</a>
+<a href="#section-10" class="section-number selfRef">10. </a><a href="#name-references" class="section-name selfRef">References</a>
       </h2>
 <div id="sec-normative-references">
-<section id="section-9.1">
+<section id="section-10.1">
         <h3 id="name-normative-references">
-<a href="#section-9.1" class="section-number selfRef">9.1. </a><a href="#name-normative-references" class="section-name selfRef">Normative References</a>
+<a href="#section-10.1" class="section-number selfRef">10.1. </a><a href="#name-normative-references" class="section-name selfRef">Normative References</a>
         </h3>
 <dl class="references">
 <dt id="RFC0792">[RFC0792]</dt>
@@ -2030,16 +2100,20 @@ rate-limit incoming ICMP Extended Echo Request messages.<a href="#section-8-9" c
 <span class="refAuthor">Bjorklund, M.</span>, <span class="refTitle">"A YANG Data Model for Interface Management"</span>, <span class="seriesInfo">RFC 7223</span>, <span class="seriesInfo">DOI 10.17487/RFC7223</span>, <time datetime="2014-05" class="refDate">May 2014</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc7223">https://www.rfc-editor.org/rfc/rfc7223</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="RFC8174">[RFC8174]</dt>
-      <dd>
+        <dd>
 <span class="refAuthor">Leiba, B.</span>, <span class="refTitle">"Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words"</span>, <span class="seriesInfo">BCP 14</span>, <span class="seriesInfo">RFC 8174</span>, <span class="seriesInfo">DOI 10.17487/RFC8174</span>, <time datetime="2017-05" class="refDate">May 2017</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8174">https://www.rfc-editor.org/rfc/rfc8174</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC8335">[RFC8335]</dt>
+      <dd>
+<span class="refAuthor">Bonica, R.</span>, <span class="refAuthor">Thomas, R.</span>, <span class="refAuthor">Linkova, J.</span>, <span class="refAuthor">Lenart, C.</span>, and <span class="refAuthor">M. Boucadair</span>, <span class="refTitle">"PROBE: A Utility for Probing Interfaces"</span>, <span class="seriesInfo">RFC 8335</span>, <span class="seriesInfo">DOI 10.17487/RFC8335</span>, <time datetime="2018-02" class="refDate">February 2018</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8335">https://www.rfc-editor.org/rfc/rfc8335</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 </dl>
 </section>
 </div>
 <div id="sec-informative-references">
-<section id="section-9.2">
+<section id="section-10.2">
         <h3 id="name-informative-references">
-<a href="#section-9.2" class="section-number selfRef">9.2. </a><a href="#name-informative-references" class="section-name selfRef">Informative References</a>
+<a href="#section-10.2" class="section-number selfRef">10.2. </a><a href="#name-informative-references" class="section-name selfRef">Informative References</a>
         </h3>
 <dl class="references">
 <dt id="IANA.address-family-numbers">[IANA.address-family-numbers]</dt>
