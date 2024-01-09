@@ -75,7 +75,7 @@ normative:
   RFC0826:
   RFC0792:
   RFC4861:
-  RFC7223:
+  RFC8343:
   RFC4443:
   RFC8335:
 informative:
@@ -94,7 +94,7 @@ Instead, PROBE requires bidirectional connectivity between the probing
 interface and a proxy interface. The proxy interface can reside on the
 same node as the probed interface, or it can reside on a node to which
 the probed interface is directly connected. This document updates RFC
-4884.
+4884 and obsoletes RFC 8335.
 
 --- middle
 
@@ -152,7 +152,7 @@ the status of the probed interface.
 
 If the probed interface resides on the proxy node, PROBE determines
 the status of the probed interface as it would determine its
-[oper-status](#RFC7223).
+[oper-status](#RFC8343).
 If oper-status is equal to 'up' (1),
 PROBE reports that the probed interface is active. Otherwise, PROBE
 reports that the probed interface is inactive.
@@ -309,13 +309,13 @@ contains the following fields:
 
 If the Interface Identification Object identifies the probed
 interface by name, the Object Payload MUST be the interface name as
-defined in [RFC7223]. If the Object Payload would not otherwise
+defined in [RFC8343]. If the Object Payload would not otherwise
 terminate on a 32-bit boundary, it MUST be padded with ASCII NULL
 characters.
 
 If the Interface Identification Object identifies the probed
 interface by index, the length is equal to 8 and the payload contains
-the if-index [RFC7223].
+the if-index [RFC8343].
 
 If the Interface Identification Object identifies the probed
 interface by address, the payload is as depicted in {{addrFig}}.
