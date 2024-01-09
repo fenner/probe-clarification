@@ -20,7 +20,7 @@ Instead, PROBE requires bidirectional connectivity between the probing
 interface and a proxy interface. The proxy interface can reside on the
 same node as the probed interface, or it can reside on a node to which
 the probed interface is directly connected. This document updates RFC
-4884. 
+4884 and obsoletes RFC 8335. 
     " name="description">
 <meta content="xml2rfc 3.19.0" name="generator">
 <meta content="Ping" name="keyword">
@@ -1108,7 +1108,7 @@ Instead, PROBE requires bidirectional connectivity between the probing
 interface and a proxy interface. The proxy interface can reside on the
 same node as the probed interface, or it can reside on a node to which
 the probed interface is directly connected. This document updates RFC
-4884.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
+4884 and obsoletes RFC 8335.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
 </section>
 <section class="note rfcEditorRemove" id="section-note.1">
       <h2 id="name-discussion-venues">
@@ -1291,7 +1291,7 @@ ICMP Extended Echo Reply message. The ICMP Extended Echo Reply indicates
 the status of the probed interface.<a href="#section-1-7" class="pilcrow">¶</a></p>
 <p id="section-1-8">If the probed interface resides on the proxy node, PROBE determines
 the status of the probed interface as it would determine its
-<span><a href="#RFC7223" class="internal xref">oper-status</a> [<a href="#RFC7223" class="cite xref">RFC7223</a>]</span>.
+<span><a href="#RFC8343" class="internal xref">oper-status</a> [<a href="#RFC8343" class="cite xref">RFC8343</a>]</span>.
 If oper-status is equal to 'up' (1),
 PROBE reports that the probed interface is active. Otherwise, PROBE
 reports that the probed interface is inactive.<a href="#section-1-8" class="pilcrow">¶</a></p>
@@ -1479,12 +1479,12 @@ Object Header and Object Payload.<a href="#section-2.1-2.3.1" class="pilcrow">¶
         </ul>
 <p id="section-2.1-3">If the Interface Identification Object identifies the probed
 interface by name, the Object Payload <span class="bcp14">MUST</span> be the interface name as
-defined in <span>[<a href="#RFC7223" class="cite xref">RFC7223</a>]</span>. If the Object Payload would not otherwise
+defined in <span>[<a href="#RFC8343" class="cite xref">RFC8343</a>]</span>. If the Object Payload would not otherwise
 terminate on a 32-bit boundary, it <span class="bcp14">MUST</span> be padded with ASCII NULL
 characters.<a href="#section-2.1-3" class="pilcrow">¶</a></p>
 <p id="section-2.1-4">If the Interface Identification Object identifies the probed
 interface by index, the length is equal to 8 and the payload contains
-the if-index <span>[<a href="#RFC7223" class="cite xref">RFC7223</a>]</span>.<a href="#section-2.1-4" class="pilcrow">¶</a></p>
+the if-index <span>[<a href="#RFC8343" class="cite xref">RFC8343</a>]</span>.<a href="#section-2.1-4" class="pilcrow">¶</a></p>
 <p id="section-2.1-5">If the Interface Identification Object identifies the probed
 interface by address, the payload is as depicted in <a href="#addrFig" class="auto internal xref">Figure 2</a>.<a href="#section-2.1-5" class="pilcrow">¶</a></p>
 <span id="name-interface-identification-obj"></span><div id="addrFig">
@@ -2095,17 +2095,17 @@ rate-limit incoming ICMP Extended Echo Request messages.<a href="#section-9-9" c
         <dd>
 <span class="refAuthor">Bonica, R.</span>, <span class="refAuthor">Gan, D.</span>, <span class="refAuthor">Tappan, D.</span>, and <span class="refAuthor">C. Pignataro</span>, <span class="refTitle">"Extended ICMP to Support Multi-Part Messages"</span>, <span class="seriesInfo">RFC 4884</span>, <span class="seriesInfo">DOI 10.17487/RFC4884</span>, <time datetime="2007-04" class="refDate">April 2007</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc4884">https://www.rfc-editor.org/rfc/rfc4884</a>&gt;</span>. </dd>
 <dd class="break"></dd>
-<dt id="RFC7223">[RFC7223]</dt>
-        <dd>
-<span class="refAuthor">Bjorklund, M.</span>, <span class="refTitle">"A YANG Data Model for Interface Management"</span>, <span class="seriesInfo">RFC 7223</span>, <span class="seriesInfo">DOI 10.17487/RFC7223</span>, <time datetime="2014-05" class="refDate">May 2014</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc7223">https://www.rfc-editor.org/rfc/rfc7223</a>&gt;</span>. </dd>
-<dd class="break"></dd>
 <dt id="RFC8174">[RFC8174]</dt>
         <dd>
 <span class="refAuthor">Leiba, B.</span>, <span class="refTitle">"Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words"</span>, <span class="seriesInfo">BCP 14</span>, <span class="seriesInfo">RFC 8174</span>, <span class="seriesInfo">DOI 10.17487/RFC8174</span>, <time datetime="2017-05" class="refDate">May 2017</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8174">https://www.rfc-editor.org/rfc/rfc8174</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="RFC8335">[RFC8335]</dt>
-      <dd>
+        <dd>
 <span class="refAuthor">Bonica, R.</span>, <span class="refAuthor">Thomas, R.</span>, <span class="refAuthor">Linkova, J.</span>, <span class="refAuthor">Lenart, C.</span>, and <span class="refAuthor">M. Boucadair</span>, <span class="refTitle">"PROBE: A Utility for Probing Interfaces"</span>, <span class="seriesInfo">RFC 8335</span>, <span class="seriesInfo">DOI 10.17487/RFC8335</span>, <time datetime="2018-02" class="refDate">February 2018</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8335">https://www.rfc-editor.org/rfc/rfc8335</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC8343">[RFC8343]</dt>
+      <dd>
+<span class="refAuthor">Bjorklund, M.</span>, <span class="refTitle">"A YANG Data Model for Interface Management"</span>, <span class="seriesInfo">RFC 8343</span>, <span class="seriesInfo">DOI 10.17487/RFC8343</span>, <time datetime="2018-03" class="refDate">March 2018</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8343">https://www.rfc-editor.org/rfc/rfc8343</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 </dl>
 </section>

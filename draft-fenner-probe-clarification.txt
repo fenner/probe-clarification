@@ -29,7 +29,7 @@ Abstract
    between the probing interface and a proxy interface.  The proxy
    interface can reside on the same node as the probed interface, or it
    can reside on a node to which the probed interface is directly
-   connected.  This document updates RFC 4884.
+   connected.  This document updates RFC 4884 and obsoletes RFC 8335.
 
 Discussion Venues
 
@@ -145,7 +145,7 @@ Table of Contents
 
    If the probed interface resides on the proxy node, PROBE determines
    the status of the probed interface as it would determine its
-   oper-status [RFC7223].  If oper-status is equal to 'up' (1), PROBE
+   oper-status [RFC8343].  If oper-status is equal to 'up' (1), PROBE
    reports that the probed interface is active.  Otherwise, PROBE
    reports that the probed interface is inactive.
 
@@ -290,13 +290,13 @@ Table of Contents
 
    If the Interface Identification Object identifies the probed
    interface by name, the Object Payload MUST be the interface name as
-   defined in [RFC7223].  If the Object Payload would not otherwise
+   defined in [RFC8343].  If the Object Payload would not otherwise
    terminate on a 32-bit boundary, it MUST be padded with ASCII NULL
    characters.
 
    If the Interface Identification Object identifies the probed
    interface by index, the length is equal to 8 and the payload contains
-   the if-index [RFC7223].
+   the if-index [RFC8343].
 
    If the Interface Identification Object identifies the probed
    interface by address, the payload is as depicted in Figure 2.
@@ -743,10 +743,6 @@ Table of Contents
               DOI 10.17487/RFC4884, April 2007,
               <https://www.rfc-editor.org/rfc/rfc4884>.
 
-   [RFC7223]  Bjorklund, M., "A YANG Data Model for Interface
-              Management", RFC 7223, DOI 10.17487/RFC7223, May 2014,
-              <https://www.rfc-editor.org/rfc/rfc7223>.
-
    [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
               2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
               May 2017, <https://www.rfc-editor.org/rfc/rfc8174>.
@@ -755,6 +751,10 @@ Table of Contents
               Boucadair, "PROBE: A Utility for Probing Interfaces",
               RFC 8335, DOI 10.17487/RFC8335, February 2018,
               <https://www.rfc-editor.org/rfc/rfc8335>.
+
+   [RFC8343]  Bjorklund, M., "A YANG Data Model for Interface
+              Management", RFC 8343, DOI 10.17487/RFC8343, March 2018,
+              <https://www.rfc-editor.org/rfc/rfc8343>.
 
 10.2.  Informative References
 
