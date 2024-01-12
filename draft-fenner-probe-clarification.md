@@ -42,13 +42,13 @@ author:
   country: USA
   email: rbonica@juniper.net
 - name: Reji Thomas
-  org: Juniper Networks
-  street: Elnath-Exora Business Park Survey
+  org: Arista Networks
+  street: Global Tech Park
   city: Bangalore
   region: Karnataka
   code: '560103'
   country: India
-  email: rejithomas@juniper.net
+  email: reji.thomas@arista.com
 - name: Jen Linkova
   org: Google
   street: 1600 Amphitheatre Parkway
@@ -217,8 +217,6 @@ message.
    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
    |   ICMP Extension Structure
    +-+-+-+-+-
-   |   ICMP Extension Object
-   +-+-+-+-+-
    |   Data...
 ~~~~
 {: #ICMPEchoFIG title='ICMP Extended Echo Request Message'}
@@ -268,7 +266,7 @@ Structure. As per RFC 4884, the Extension Structure contains exactly one
 Extension Header followed by one or more objects. When applied to the
 ICMP Extended Echo Request message, the ICMP Extension Structure MUST
 contain exactly one instance of the [Interface Identification Object](#IntIdObj).
-Unlike other applications of RFC 4884, the ICMP Extension Structure
+The ICMP Extension Structure
 does not cover the rest of the packet; it ends at the end of the
 single Interface Identification Object, and what follows is simply optional
 data.
@@ -371,8 +369,6 @@ Reply message.
    |           Identifier          |Sequence Number|State|Res|A|4|6|
    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
    |   ICMP Extension Structure
-   +-+-+-+-+-
-   |   ICMP Extension Object
    +-+-+-+-+-
    |   Data...
 ~~~~
