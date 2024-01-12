@@ -5,9 +5,10 @@
 INTAREA                                                   B. Fenner, Ed.
 Internet-Draft                                           Arista Networks
 Obsoletes: 8335 (if approved)                                  R. Bonica
-Updates: 4884 (if approved)                                    R. Thomas
-Intended status: Standards Track                        Juniper Networks
-Expires: 11 July 2024                                         J. Linkova
+Updates: 4884 (if approved)                             Juniper Networks
+Intended status: Standards Track                               R. Thomas
+Expires: 11 July 2024                                    Arista Networks
+                                                              J. Linkova
                                                                   Google
                                                                C. Lenart
                                                                  Verizon
@@ -203,8 +204,6 @@ Table of Contents
       +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
       |   ICMP Extension Structure
       +-+-+-+-+-
-      |   ICMP Extension Object
-      +-+-+-+-+-
       |   Data...
 
                 Figure 1: ICMP Extended Echo Request Message
@@ -249,10 +248,9 @@ Table of Contents
    Header followed by one or more objects.  When applied to the ICMP
    Extended Echo Request message, the ICMP Extension Structure MUST
    contain exactly one instance of the Interface Identification Object
-   (Section 2.1).  Unlike other applications of RFC 4884, the ICMP
-   Extension Structure does not cover the rest of the packet; it ends at
-   the end of the single Interface Identification Object, and what
-   follows is simply optional data.
+   (Section 2.1).  The ICMP Extension Structure does not cover the rest
+   of the packet; it ends at the end of the single Interface
+   Identification Object, and what follows is simply optional data.
 
    If the L-bit is set, the Interface Identification Object can identify
    the probed interface by name, index, or address.  If the L-bit is
@@ -346,8 +344,6 @@ Table of Contents
       |           Identifier          |Sequence Number|State|Res|A|4|6|
       +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
       |   ICMP Extension Structure
-      +-+-+-+-+-
-      |   ICMP Extension Object
       +-+-+-+-+-
       |   Data...
 
@@ -865,12 +861,12 @@ Authors' Addresses
 
 
    Reji Thomas
-   Juniper Networks
-   Elnath-Exora Business Park Survey
+   Arista Networks
+   Global Tech Park
    Bangalore 560103
    Karnataka
    India
-   Email: rejithomas@juniper.net
+   Email: reji.thomas@arista.com
 
 
    Jen Linkova
