@@ -1,6 +1,6 @@
 ---
 v: 3
-docname: draft-fenner-probe-clarification-latest
+docname: draft-fenner-int-probe-clarification-latest
 cat: std
 updates: '4884'
 obsoletes: '8335'
@@ -18,7 +18,7 @@ pi:
   subcompact: 'no'
 title: 'PROBE: A Utility for Probing Interfaces'
 abbrev: PROBE
-# area: Internet
+area: Internet
 wg: INTAREA
 kw: Ping
 date: 2024-01-08
