@@ -802,6 +802,38 @@ be of the same address family as the proxy interface address. For
 example, PROBE accepts an IPv4 Proxy Interface Address and an IPv6
 Probed Interface Identifier.
 
+## Information Display
+
+For the PING application, the primary available piece of information
+is the fact that we received an ICMP Echo Reply.  Therefore, the
+appropriate information to display is all of the available information
+about the received reply, e.g., size, ttl, etc.  However, with
+PROBE, the primary piece of information is the reported status of
+the probed interface: the code, status, A, 4, and 6 fields.
+It's appropriate to convert the combination of the returned values
+into a "human-readable" response.
+
+For example, an application may perform these steps:
+
+* If the code field is non-zero, print the code value as described
+  in {{ExtendedEchoReply}}.
+
+* If the code field is zero, then if the L field sent is zero,
+  print the state value as described in {{ExtendedEchoReply}}.
+
+* Otherwise, the L field sent is 1; print the state represented
+  by the A, 4, and 6
+  bits.  Sample textual translations for these bits are shown
+  in {{BitCombinationTable}}.
+
+| A | 4 | 6 | Text |
+| 0 | 0 | 0 | Interface inactive |
+| 1 | 0 | 0 | Interface active, with no ipv4 or ipv6 configuration |
+| 1 | 0 | 1 | Interface active, with ipv6 configuration |
+| 1 | 1 | 0 | Interface active, with ipv4 configuration |
+| 1 | 1 | 1 | Interface active, with ipv4 and ipv6 configuration |
+{: #BitCombinationTable title='Sample translations for bit settings' }
+
 
 # Acknowledgments {#Acknowledgements}
 {: numbered="no"}
