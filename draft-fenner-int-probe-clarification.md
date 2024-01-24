@@ -828,10 +828,10 @@ For example, an application may perform these steps:
 
 | A | 4 | 6 | Text |
 | 0 | 0 | 0 | Interface inactive |
-| 1 | 0 | 0 | Interface active, with no ipv4 or ipv6 configuration |
-| 1 | 0 | 1 | Interface active, with ipv6 configuration |
-| 1 | 1 | 0 | Interface active, with ipv4 configuration |
-| 1 | 1 | 1 | Interface active, with ipv4 and ipv6 configuration |
+| 1 | 0 | 0 | Interface active, with no ipv4 or ipv6 running |
+| 1 | 0 | 1 | Interface active, with ipv6 running |
+| 1 | 1 | 0 | Interface active, with ipv4 running |
+| 1 | 1 | 1 | Interface active, with ipv4 and ipv6 running |
 {: #BitCombinationTable title='Sample translations for bit settings' }
 
 
