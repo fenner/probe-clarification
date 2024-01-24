@@ -22,11 +22,11 @@ same node as the probed interface, or it can reside on a node to which
 the probed interface is directly connected. This document updates RFC
 4884 and obsoletes RFC 8335. 
     " name="description">
-<meta content="xml2rfc 3.19.0" name="generator">
+<meta content="xml2rfc 3.19.1" name="generator">
 <meta content="Ping" name="keyword">
 <meta content="draft-fenner-int-probe-clarification-latest" name="ietf.draft">
 <!-- Generator version information:
-  xml2rfc 3.19.0
+  xml2rfc 3.19.1
     Python 3.11.6
     ConfigArgParse 1.7
     google-i18n-address 3.1.0
@@ -39,7 +39,7 @@ the probed interface is directly connected. This document updates RFC
     requests 2.31.0
     setuptools 68.2.2
     six 1.16.0
-    wcwidth 0.2.12
+    wcwidth 0.2.13
 -->
 <link href="draft-fenner-int-probe-clarification.xml" rel="alternate" type="application/rfc+xml">
 <link href="#copyright" rel="license">
@@ -1224,6 +1224,11 @@ the probed interface is directly connected. This document updates RFC
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.11">
             <p id="section-toc.1-1.11.1"><a href="#appendix-A" class="auto internal xref">Appendix A</a>.  <a href="#name-the-probe-application" class="internal xref">The PROBE Application</a></p>
+<ul class="compact toc ulBare ulEmpty">
+<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.11.2.1">
+                <p id="section-toc.1-1.11.2.1.1"><a href="#appendix-A.1" class="auto internal xref">A.1</a>.  <a href="#name-information-display" class="internal xref">Information Display</a></p>
+</li>
+            </ul>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.12">
             <p id="section-toc.1-1.12.1"><a href="#appendix-B" class="auto internal xref"></a><a href="#name-acknowledgments" class="internal xref">Acknowledgments</a></p>
@@ -2201,6 +2206,86 @@ is one of the following:<a href="#appendix-A-10" class="pilcrow">¶</a></p>
 be of the same address family as the proxy interface address. For
 example, PROBE accepts an IPv4 Proxy Interface Address and an IPv6
 Probed Interface Identifier.<a href="#appendix-A-12" class="pilcrow">¶</a></p>
+<div id="information-display">
+<section id="appendix-A.1">
+        <h3 id="name-information-display">
+<a href="#appendix-A.1" class="section-number selfRef">A.1. </a><a href="#name-information-display" class="section-name selfRef">Information Display</a>
+        </h3>
+<p id="appendix-A.1-1">For the PING application, the primary available piece of information
+is the fact that we received an ICMP Echo Reply.  Therefore, the
+appropriate information to display is all of the available information
+about the received reply, e.g., size, ttl, etc.  However, with
+PROBE, the primary piece of information is the reported status of
+the probed interface: the code, status, A, 4, and 6 fields.
+It's appropriate to convert the combination of the returned values
+into a "human-readable" response.<a href="#appendix-A.1-1" class="pilcrow">¶</a></p>
+<p id="appendix-A.1-2">For example, an application may perform these steps:<a href="#appendix-A.1-2" class="pilcrow">¶</a></p>
+<ul class="normal">
+<li class="normal" id="appendix-A.1-3.1">
+            <p id="appendix-A.1-3.1.1">If the code field is non-zero, print the code value as described
+in <a href="#ExtendedEchoReply" class="auto internal xref">Section 3</a>.<a href="#appendix-A.1-3.1.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="appendix-A.1-3.2">
+            <p id="appendix-A.1-3.2.1">If the code field is zero, then if the L field sent is zero,
+print the state value as described in <a href="#ExtendedEchoReply" class="auto internal xref">Section 3</a>.<a href="#appendix-A.1-3.2.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="appendix-A.1-3.3">
+            <p id="appendix-A.1-3.3.1">Otherwise, the L field sent is 1; print the state represented
+by the A, 4, and 6
+bits.  Sample textual translations for these bits are shown
+in <a href="#BitCombinationTable" class="auto internal xref">Table 1</a>.<a href="#appendix-A.1-3.3.1" class="pilcrow">¶</a></p>
+</li>
+        </ul>
+<span id="name-sample-translations-for-bit"></span><div id="BitCombinationTable">
+<table class="center" id="table-1">
+          <caption>
+<a href="#table-1" class="selfRef">Table 1</a>:
+<a href="#name-sample-translations-for-bit" class="selfRef">Sample translations for bit settings</a>
+          </caption>
+<thead>
+            <tr>
+              <th class="text-left" rowspan="1" colspan="1">A</th>
+              <th class="text-left" rowspan="1" colspan="1">4</th>
+              <th class="text-left" rowspan="1" colspan="1">6</th>
+              <th class="text-left" rowspan="1" colspan="1">Text</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">0</td>
+              <td class="text-left" rowspan="1" colspan="1">0</td>
+              <td class="text-left" rowspan="1" colspan="1">0</td>
+              <td class="text-left" rowspan="1" colspan="1">Interface inactive</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">1</td>
+              <td class="text-left" rowspan="1" colspan="1">0</td>
+              <td class="text-left" rowspan="1" colspan="1">0</td>
+              <td class="text-left" rowspan="1" colspan="1">Interface active, with no ipv4 or ipv6 configuration</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">1</td>
+              <td class="text-left" rowspan="1" colspan="1">0</td>
+              <td class="text-left" rowspan="1" colspan="1">1</td>
+              <td class="text-left" rowspan="1" colspan="1">Interface active, with ipv6 configuration</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">1</td>
+              <td class="text-left" rowspan="1" colspan="1">1</td>
+              <td class="text-left" rowspan="1" colspan="1">0</td>
+              <td class="text-left" rowspan="1" colspan="1">Interface active, with ipv4 configuration</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">1</td>
+              <td class="text-left" rowspan="1" colspan="1">1</td>
+              <td class="text-left" rowspan="1" colspan="1">1</td>
+              <td class="text-left" rowspan="1" colspan="1">Interface active, with ipv4 and ipv6 configuration</td>
+            </tr>
+          </tbody>
+        </table>
+</div>
+</section>
+</div>
 </section>
 </div>
 <div id="Acknowledgements">
