@@ -21,7 +21,13 @@ abbrev: PROBE
 area: Internet
 wg: INTAREA
 kw: Ping
-date: 2024-01-08
+date: 2024-01-26
+venue:
+  group: "int-area"
+  type: "Area"
+  mail: int-area@ietf.org
+  github: "fenner/probe-clarification"
+  latest: "https://fenner.github.io/probe-clarification/draft-fenner-int-probe-clarification.html"
 
 author:
 - name: Bill Fenner
