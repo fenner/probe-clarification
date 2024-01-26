@@ -574,6 +574,12 @@ Table of Contents
    *  Added a step in Section 4.1 about validating the ICMP Extension
       Structure checksum.
 
+   *  Added section Appendix A.1 to suggest human-readable display of
+      PROBE responses
+
+   *  Clarified in Section 2.1 that the length of an ifName Object is
+      adjusted when padding is added.
+
 8.  IANA Considerations
 
    IANA has performed the following actions:
