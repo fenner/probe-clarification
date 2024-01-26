@@ -19,13 +19,13 @@ pi:
 title: 'PROBE: A Utility for Probing Interfaces'
 abbrev: PROBE
 area: "Internet Engineering Steering Group"
-wg: INTAREA
+wg: int-area
 kw: Ping
 date: 2024-01-26
 venue:
   group: "Internet Area"
   type: "Area"
-  mail: ""
+  mail: "int-area@ietf.org"
   github: "fenner/probe-clarification"
   latest: "https://fenner.github.io/probe-clarification/draft-fenner-int-probe-clarification.html"
 
