@@ -7,14 +7,14 @@ Internet-Draft                                           Arista Networks
 Obsoletes: 8335 (if approved)                                  R. Bonica
 Updates: 4884 (if approved)                             Juniper Networks
 Intended status: Standards Track                               R. Thomas
-Expires: 11 July 2024                                    Arista Networks
+Expires: 29 July 2024                                    Arista Networks
                                                               J. Linkova
                                                                   Google
                                                                C. Lenart
                                                                  Verizon
                                                             M. Boucadair
                                                                   Orange
-                                                          8 January 2024
+                                                         26 January 2024
 
 
                 PROBE: A Utility for Probing Interfaces
@@ -32,9 +32,16 @@ Abstract
    can reside on a node to which the probed interface is directly
    connected.  This document updates RFC 4884 and obsoletes RFC 8335.
 
-Discussion Venues
+About This Document
 
    This note is to be removed before publishing as an RFC.
+
+   The latest revision of this draft can be found at
+   https://fenner.github.io/probe-clarification/draft-fenner-int-probe-
+   clarification.html.  Status information for this document may be
+   found at https://datatracker.ietf.org/doc/draft-fenner-int-probe-
+   clarification/.
+
 
    Source for this draft and an issue tracker can be found at
    https://github.com/fenner/probe-clarification.
@@ -54,7 +61,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 11 July 2024.
+   This Internet-Draft will expire on 29 July 2024.
 
 Copyright Notice
 
