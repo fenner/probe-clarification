@@ -309,7 +309,7 @@ If the Interface Identification Object identifies the probed
 interface by name, the Object Payload MUST be the interface name as
 defined in [RFC8343]. If the Object Payload would not otherwise
 terminate on a 32-bit boundary, it MUST be padded with ASCII NULL
-characters.
+characters, adjusting the Length accordingly.
 
 If the Interface Identification Object identifies the probed
 interface by index, the length is equal to 8 and the payload contains
