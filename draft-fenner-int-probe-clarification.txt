@@ -2,7 +2,7 @@
 
 
 
-INTAREA                                                   B. Fenner, Ed.
+int-area                                                  B. Fenner, Ed.
 Internet-Draft                                           Arista Networks
 Obsoletes: 8335 (if approved)                                  R. Bonica
 Updates: 4884 (if approved)                             Juniper Networks
@@ -42,6 +42,10 @@ About This Document
    found at https://datatracker.ietf.org/doc/draft-fenner-int-probe-
    clarification/.
 
+   Discussion of this document takes place on the Internet Area Area
+   mailing list (mailto:int-area@ietf.org), which is archived at
+   https://mailarchive.ietf.org/arch/browse/int-area/.  Subscribe at
+   https://www.ietf.org/mailman/listinfo/int-area/.
 
    Source for this draft and an issue tracker can be found at
    https://github.com/fenner/probe-clarification.
