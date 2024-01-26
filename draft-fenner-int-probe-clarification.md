@@ -603,6 +603,12 @@ Specifically,
 
 * Added a step in {{code}} about validating the ICMP Extension Structure checksum.
 
+* Added section {{applicationDisplay}} to suggest human-readable display
+  of PROBE responses
+
+* Clarified in {{IntIdObj}} that the length of an ifName Object is adjusted
+  when padding is added.
+
 # IANA Considerations {#IANA}
 
 IANA has performed the following actions:
@@ -802,7 +808,7 @@ be of the same address family as the proxy interface address. For
 example, PROBE accepts an IPv4 Proxy Interface Address and an IPv6
 Probed Interface Identifier.
 
-## Information Display
+## Information Display {#applicationDisplay}
 
 For the PING application, the primary available piece of information
 is the fact that we received an ICMP Echo Reply.  Therefore, the
