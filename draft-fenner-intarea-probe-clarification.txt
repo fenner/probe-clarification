@@ -18,7 +18,7 @@ Expires: 29 July 2024                                    Arista Networks
 
 
                 PROBE: A Utility for Probing Interfaces
-              draft-fenner-int-probe-clarification-latest
+            draft-fenner-intarea-probe-clarification-latest
 
 Abstract
 
@@ -37,10 +37,10 @@ About This Document
    This note is to be removed before publishing as an RFC.
 
    The latest revision of this draft can be found at
-   https://fenner.github.io/probe-clarification/draft-fenner-int-probe-
-   clarification.html.  Status information for this document may be
-   found at https://datatracker.ietf.org/doc/draft-fenner-int-probe-
-   clarification/.
+   https://fenner.github.io/probe-clarification/draft-fenner-intarea-
+   probe-clarification.html.  Status information for this document may
+   be found at https://datatracker.ietf.org/doc/draft-fenner-intarea-
+   probe-clarification/.
 
    Discussion of this document takes place on the Internet Area Area
    mailing list (mailto:int-area@ietf.org), which is archived at
