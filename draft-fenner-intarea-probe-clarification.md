@@ -1,6 +1,6 @@
 ---
 v: 3
-docname: draft-fenner-int-probe-clarification-latest
+docname: draft-fenner-intarea-probe-clarification-latest
 cat: std
 updates: '4884'
 obsoletes: '8335'
@@ -27,7 +27,7 @@ venue:
   type: "Area"
   mail: "int-area@ietf.org"
   github: "fenner/probe-clarification"
-  latest: "https://fenner.github.io/probe-clarification/draft-fenner-int-probe-clarification.html"
+  latest: "https://fenner.github.io/probe-clarification/draft-fenner-intarea-probe-clarification.html"
 
 author:
 - name: Bill Fenner
