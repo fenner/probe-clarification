@@ -847,7 +847,7 @@ For example, an application may perform these steps:
 {: #BitCombinationTable title='Sample translations for bit settings' }
 
 
-# Acknowledgments {#Acknowledgements}
+# Acknowledgments {#Acknowledgments}
 {: numbered="no"}
 
 Thanks to Sowmini Varadhan, Jeff Haas, Carlos Pignataro, Jonathan
