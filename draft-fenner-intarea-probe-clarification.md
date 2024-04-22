@@ -313,7 +313,7 @@ contains the following fields:
 If the Interface Identification Object identifies the probed
 interface by name, the Object Payload MUST be the interface name as
 defined in [RFC8343]. If the Object Payload would not otherwise
-terminate on a 32-bit boundary, it MUST be padded with ASCII NULL
+terminate on a 32-bit boundary, it MUST be padded with ASCII NUL
 characters, adjusting the Length accordingly.
 
 If the Interface Identification Object identifies the probed
@@ -584,7 +584,9 @@ Section 4.6 of {{RFC4884}} provides a list of extensible ICMP messages
 document adds the ICMP Extended Echo Request message and the ICMP
 Extended Echo Reply message to that list.
 
-# Changes from RFC 8335
+# Change History
+
+## Changes from RFC 8335
 
 This document updates {{RFC8335}} to clarify the handling of
 extra data beyond the ICMP Extension Structure, that data is
@@ -613,6 +615,11 @@ Specifically,
 
 * Clarified in {{IntIdObj}} that the length of an ifName Object is adjusted
   when padding is added.
+
+## Changes from draft-fenner-intarea-probe-clarification-00
+
+* Changed "NULL" to "NUL" when referring to the ASCII control character,
+  per RFC20.
 
 # IANA Considerations {#IANA}
 
