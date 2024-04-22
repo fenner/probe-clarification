@@ -21,7 +21,6 @@ abbrev: PROBE
 area: "Internet Engineering Steering Group"
 wg: int-area
 kw: Ping
-date: 2024-02-01
 venue:
   group: "Internet Area"
   type: "Area"
