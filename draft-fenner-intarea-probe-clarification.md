@@ -375,7 +375,7 @@ Reply message.
    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
    |   ICMP Extension Structure
    +-+-+-+-+-
-   |   Data...
+   |   [Data...]
 ~~~~
 {: #ICMPEchoReplyFIG title='ICMP Extended Echo Reply Message'}
 
