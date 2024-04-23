@@ -445,7 +445,7 @@ incoming message:
 
 * The incoming ICMP Extend Echo Request carries a Source Address
   that is not explicitly authorized for the incoming ICMP Extended
-  Echo Request type (i.e., by ifName, by IfIndex, or by Address).
+  Echo Request type (i.e., by name, by if-index, or by address).
 
 * The Source Address of the incoming message is not a unicast
   address.
@@ -527,7 +527,7 @@ following conditions apply:
 * The ICMP Extension Structure checksum is 0 or incorrect.
 
 * The L-bit is clear and the Interface Identification Object
-  identifies the probed interface by ifName or ifIndex.
+  identifies the probed interface by name or if-index.
 
 * The query is otherwise malformed.
 
@@ -620,6 +620,9 @@ Specifically,
 
 * Changed "NULL" to "NUL" when referring to the ASCII control character,
   per RFC20.
+
+* Consistently refer to interface name and index using their yang names,
+  not SNMP names.
 
 # IANA Considerations {#IANA}
 
