@@ -7,14 +7,14 @@ Internet-Draft                                           Arista Networks
 Obsoletes: 8335 (if approved)                                  R. Bonica
 Updates: 4884 (if approved)                             Juniper Networks
 Intended status: Standards Track                               R. Thomas
-Expires: 24 October 2024                                 Arista Networks
+Expires: 25 October 2024                                 Arista Networks
                                                               J. Linkova
                                                                   Google
                                                                C. Lenart
                                                                  Verizon
                                                             M. Boucadair
                                                                   Orange
-                                                           22 April 2024
+                                                           23 April 2024
 
 
                 PROBE: A Utility for Probing Interfaces
@@ -65,7 +65,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 24 October 2024.
+   This Internet-Draft will expire on 25 October 2024.
 
 Copyright Notice
 
@@ -425,7 +425,7 @@ Table of Contents
 
    *  The incoming ICMP Extend Echo Request carries a Source Address
       that is not explicitly authorized for the incoming ICMP Extended
-      Echo Request type (i.e., by ifName, by IfIndex, or by Address).
+      Echo Request type (i.e., by name, by if-index, or by address).
 
    *  The Source Address of the incoming message is not a unicast
       address.
@@ -506,7 +506,7 @@ Table of Contents
    *  The ICMP Extension Structure checksum is 0 or incorrect.
 
    *  The L-bit is clear and the Interface Identification Object
-      identifies the probed interface by ifName or ifIndex.
+      identifies the probed interface by name or if-index.
 
    *  The query is otherwise malformed.
 
@@ -599,6 +599,9 @@ Table of Contents
 
    *  Changed "NULL" to "NUL" when referring to the ASCII control
       character, per RFC20.
+
+   *  Consistently refer to interface name and index using their yang
+      names, not SNMP names.
 
 8.  IANA Considerations
 

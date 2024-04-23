@@ -1042,7 +1042,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
 </tr></thead>
 <tfoot><tr>
 <td class="left">Fenner, et al.</td>
-<td class="center">Expires 24 October 2024</td>
+<td class="center">Expires 25 October 2024</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1061,12 +1061,12 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <a href="https://www.rfc-editor.org/rfc/rfc4884" class="eref">4884</a> (if approved)</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2024-04-22" class="published">22 April 2024</time>
+<time datetime="2024-04-23" class="published">23 April 2024</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Standards Track</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2024-10-24">24 October 2024</time></dd>
+<dd class="expires"><time datetime="2024-10-25">25 October 2024</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1145,7 +1145,7 @@ the probed interface is directly connected. This document updates RFC
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 24 October 2024.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 25 October 2024.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1668,7 +1668,7 @@ incoming ICMP Extended Echo Request.<a href="#section-4-2.3.1" class="pilcrow">�
         <li class="normal" id="section-4-2.4">
           <p id="section-4-2.4.1">The incoming ICMP Extend Echo Request carries a Source Address
 that is not explicitly authorized for the incoming ICMP Extended
-Echo Request type (i.e., by ifName, by IfIndex, or by Address).<a href="#section-4-2.4.1" class="pilcrow">¶</a></p>
+Echo Request type (i.e., by name, by if-index, or by address).<a href="#section-4-2.4.1" class="pilcrow">¶</a></p>
 </li>
         <li class="normal" id="section-4-2.5">
           <p id="section-4-2.5.1">The Source Address of the incoming message is not a unicast
@@ -1783,7 +1783,7 @@ Interface Identification Object.<a href="#section-4.1-2.2.1" class="pilcrow">¶<
 </li>
           <li class="normal" id="section-4.1-2.4">
             <p id="section-4.1-2.4.1">The L-bit is clear and the Interface Identification Object
-identifies the probed interface by ifName or ifIndex.<a href="#section-4.1-2.4.1" class="pilcrow">¶</a></p>
+identifies the probed interface by name or if-index.<a href="#section-4.1-2.4.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-4.1-2.5">
             <p id="section-4.1-2.5.1">The query is otherwise malformed.<a href="#section-4.1-2.5.1" class="pilcrow">¶</a></p>
@@ -1915,6 +1915,10 @@ when padding is added.<a href="#section-7.1-3.7.1" class="pilcrow">¶</a></p>
 <li class="normal" id="section-7.2-1.1">
             <p id="section-7.2-1.1.1">Changed "NULL" to "NUL" when referring to the ASCII control character,
 per RFC20.<a href="#section-7.2-1.1.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-7.2-1.2">
+            <p id="section-7.2-1.2.1">Consistently refer to interface name and index using their yang names,
+not SNMP names.<a href="#section-7.2-1.2.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
 </section>
