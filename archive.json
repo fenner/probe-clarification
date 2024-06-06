@@ -1,0 +1,103 @@
+{
+  "magic": "E!vIA5L86J2I",
+  "timestamp": "2024-06-06T00:33:58.975907+00:00",
+  "repo": "fenner/probe-clarification",
+  "labels": [
+    {
+      "name": "bug",
+      "description": "Something isn't working",
+      "color": "d73a4a"
+    },
+    {
+      "name": "documentation",
+      "description": "Improvements or additions to documentation",
+      "color": "0075ca"
+    },
+    {
+      "name": "duplicate",
+      "description": "This issue or pull request already exists",
+      "color": "cfd3d7"
+    },
+    {
+      "name": "enhancement",
+      "description": "New feature or request",
+      "color": "a2eeef"
+    },
+    {
+      "name": "good first issue",
+      "description": "Good for newcomers",
+      "color": "7057ff"
+    },
+    {
+      "name": "help wanted",
+      "description": "Extra attention is needed",
+      "color": "008672"
+    },
+    {
+      "name": "invalid",
+      "description": "This doesn't seem right",
+      "color": "e4e669"
+    },
+    {
+      "name": "question",
+      "description": "Further information is requested",
+      "color": "d876e3"
+    },
+    {
+      "name": "wontfix",
+      "description": "This will not be worked on",
+      "color": "ffffff"
+    }
+  ],
+  "issues": [
+    {
+      "number": 1,
+      "id": "I_kwDOLB4g0s6CyBhD",
+      "title": "NIT: Replace NULL with NUL",
+      "url": "https://github.com/fenner/probe-clarification/issues/1",
+      "state": "CLOSED",
+      "author": "xorrkaz",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "In Section 2.1, the text refers to padding Object Payload with NULL characters if it does not end on a 32-bit boundary.  I think this should read \"NUL bytes\" or \"NUL characters\" instead.",
+      "createdAt": "2024-03-19T06:35:14Z",
+      "updatedAt": "2024-04-22T23:58:17Z",
+      "closedAt": "2024-04-22T23:58:17Z",
+      "comments": []
+    },
+    {
+      "number": 2,
+      "id": "I_kwDOLB4g0s6CyDLG",
+      "title": "Adjust interface name and index references",
+      "url": "https://github.com/fenner/probe-clarification/issues/2",
+      "state": "CLOSED",
+      "author": "xorrkaz",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "This document refers to the ietf-interfaces.yang module when making reference to an interface's name and index.  Section 2.1 states:\r\n\r\n>If the Interface Identification Object identifies the probed interface by index, the length is equal to 8 and the payload contains the if-index [[RFC8343](https://www.rfc-editor.org/rfc/rfc8343)].\r\n\r\nHowever, in other parts of the document, the older MIB names of ifName and ifIndex are used.  It would be clearer if the referenced YANG module names were used throughout.\r\n\r\nThat is, in Section 4, replace ifName with name and ifIndex with if-index (these match the referred RFC).  And in Section 7 (if it stays in the final document), replace ifName with name.",
+      "createdAt": "2024-03-19T06:39:47Z",
+      "updatedAt": "2024-04-23T00:07:46Z",
+      "closedAt": "2024-04-23T00:07:46Z",
+      "comments": []
+    },
+    {
+      "number": 3,
+      "id": "I_kwDOLB4g0s6CyEu0",
+      "title": "Limit the address families used",
+      "url": "https://github.com/fenner/probe-clarification/issues/3",
+      "state": "OPEN",
+      "author": "xorrkaz",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "This document describes that when the L bit is not set, one can specify an interface address using:\r\n\r\n>All values found in the IANA registry of Address Family Numbers (available from [[IANA.address-family-numbers](http://www.iana.org/assignments/address-family-numbers)]) are valid in this field.\r\n\r\nHowever, in Section 1, it is mentioned that resolution for a non-local address will be done using either ARP or NDP table lookups.  While IPv4, IPv6, and MAC can be found in these tables, other AFIs may not be.  As such, I think the text should be limited to AFIs for IPv4, IPv6, and 48-bit MAC alone.  Any other AFI would result in a malformed message as the lookup cannot be performed.  \r\n\r\nAlternatively, if other lookups could be supported, that could be described here or simply left for other extension documents that might update this document.",
+      "createdAt": "2024-03-19T06:44:15Z",
+      "updatedAt": "2024-03-19T06:44:15Z",
+      "closedAt": null,
+      "comments": []
+    }
+  ],
+  "pulls": []
+}
