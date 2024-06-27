@@ -7,14 +7,14 @@ Internet-Draft                                           Arista Networks
 Obsoletes: 8335 (if approved)                                  R. Bonica
 Updates: 4884 (if approved)                             Juniper Networks
 Intended status: Standards Track                               R. Thomas
-Expires: 25 October 2024                                 Arista Networks
+Expires: 29 December 2024                                Arista Networks
                                                               J. Linkova
                                                                   Google
                                                                C. Lenart
                                                                  Verizon
                                                             M. Boucadair
                                                                   Orange
-                                                           23 April 2024
+                                                            27 June 2024
 
 
                 PROBE: A Utility for Probing Interfaces
@@ -65,7 +65,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 25 October 2024.
+   This Internet-Draft will expire on 29 December 2024.
 
 Copyright Notice
 
@@ -218,7 +218,7 @@ Table of Contents
       +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
       |   ICMP Extension Structure
       +-+-+-+-+-
-      |   Data...
+      |   [Data...]
 
                 Figure 1: ICMP Extended Echo Request Message
 
@@ -602,6 +602,9 @@ Table of Contents
 
    *  Consistently refer to interface name and index using their yang
       names, not SNMP names.
+
+   *  Added [] around the Data following the ICMP Extension Structure in
+      Figure 1 and Figure 3 to indicate that it is optional.
 
 8.  IANA Considerations
 
