@@ -222,7 +222,7 @@ message.
    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
    |   ICMP Extension Structure
    +-+-+-+-+-
-   |   Data...
+   |   [Data...]
 ~~~~
 {: #ICMPEchoFIG title='ICMP Extended Echo Request Message'}
 
@@ -623,6 +623,9 @@ Specifically,
 
 * Consistently refer to interface name and index using their yang names,
   not SNMP names.
+
+* Added [] around the Data following the ICMP Extension Structure in {{ICMPEchoFIG}}
+  and {{ICMPEchoReplyFIG}} to indicate that it is optional.
 
 # IANA Considerations {#IANA}
 
