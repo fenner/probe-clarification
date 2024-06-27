@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-06-25T00:34:22.452135+00:00",
+  "timestamp": "2024-06-27T00:34:46.972894+00:00",
   "repo": "fenner/probe-clarification",
   "labels": [
     {
@@ -87,15 +87,15 @@
       "id": "I_kwDOLB4g0s6CyEu0",
       "title": "Limit the address families used",
       "url": "https://github.com/fenner/probe-clarification/issues/3",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "xorrkaz",
       "authorAssociation": "NONE",
       "assignees": [],
       "labels": [],
       "body": "This document describes that when the L bit is not set, one can specify an interface address using:\r\n\r\n>All values found in the IANA registry of Address Family Numbers (available from [[IANA.address-family-numbers](http://www.iana.org/assignments/address-family-numbers)]) are valid in this field.\r\n\r\nHowever, in Section 1, it is mentioned that resolution for a non-local address will be done using either ARP or NDP table lookups.  While IPv4, IPv6, and MAC can be found in these tables, other AFIs may not be.  As such, I think the text should be limited to AFIs for IPv4, IPv6, and 48-bit MAC alone.  Any other AFI would result in a malformed message as the lookup cannot be performed.  \r\n\r\nAlternatively, if other lookups could be supported, that could be described here or simply left for other extension documents that might update this document.",
       "createdAt": "2024-03-19T06:44:15Z",
-      "updatedAt": "2024-06-10T15:02:40Z",
-      "closedAt": null,
+      "updatedAt": "2024-06-25T15:38:52Z",
+      "closedAt": "2024-06-25T15:38:51Z",
       "comments": [
         {
           "author": "fenner",
@@ -103,6 +103,13 @@
           "body": "Thanks for bringing this up, Joe.  [Section 4.1](https://fenner.github.io/probe-clarification/draft-fenner-intarea-probe-clarification.html#name-code-field-processing) says:\r\n\r\n> The Code field MUST be set to (3) No Such Table Entry if the L-bit\r\n> is clear and the address found in the Interface Identification Object\r\n> does not appear in the IPv4 Address Resolution Protocol (ARP) table or\r\n> the IPv6 Neighbor Cache.\r\n\r\nIn my mind, this is sufficient - if you set the AF to IPX, and that IPX address doesn't appear in the IPv4 ARP or IPv6 neighbor cache (hint: it can't), then you return No Such Table Entry - so we have a well defined behavior in the \"arbitrary AF\" case.\r\n\r\nIf we try to go down the path of limiting this in the address field specification, we end up having to differentiate based on the setting of the L bit - since it's actually valid to ask about the interface with IPX address foo if L=1.\r\n",
           "createdAt": "2024-06-10T15:02:39Z",
           "updatedAt": "2024-06-10T15:02:39Z"
+        },
+        {
+          "author": "xorrkaz",
+          "authorAssociation": "NONE",
+          "body": "I think the \"No Such Table Entry\" error is fine in this case.",
+          "createdAt": "2024-06-25T15:38:51Z",
+          "updatedAt": "2024-06-25T15:38:51Z"
         }
       ]
     }
