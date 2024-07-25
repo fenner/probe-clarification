@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-07-23T00:36:21.818885+00:00",
+  "timestamp": "2024-07-25T00:36:16.867330+00:00",
   "repo": "fenner/probe-clarification",
   "labels": [
     {
@@ -112,6 +112,22 @@
           "updatedAt": "2024-06-25T15:38:51Z"
         }
       ]
+    },
+    {
+      "number": 4,
+      "id": "I_kwDOLB4g0s6Qu7Z2",
+      "title": "Update IANA Considerations",
+      "url": "https://github.com/fenner/probe-clarification/issues/4",
+      "state": "OPEN",
+      "author": "fenner",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "IANA's pre-meeting review for IETF120 included:\r\n\r\nThe actions described in the IANA Considerations section were completed for RFC 8335. Should IANA replace references to RFC 8355 with references to this document? If so, please add a sentence to the beginning of the section that instructs us to do so. If not, please update the section to note that no IANA actions are required (and move the 8335 actions to another section, if possible).",
+      "createdAt": "2024-07-24T18:27:57Z",
+      "updatedAt": "2024-07-24T18:27:57Z",
+      "closedAt": null,
+      "comments": []
     }
   ],
   "pulls": []
