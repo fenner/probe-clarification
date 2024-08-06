@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-08-04T00:39:48.782102+00:00",
+  "timestamp": "2024-08-06T00:37:00.887247+00:00",
   "repo": "fenner/probe-clarification",
   "labels": [
     {
@@ -128,6 +128,30 @@
       "updatedAt": "2024-07-24T18:27:57Z",
       "closedAt": null,
       "comments": []
+    },
+    {
+      "number": 5,
+      "id": "I_kwDOLB4g0s6R9v3h",
+      "title": "Leave the door open to a different packet format if a different extension object is present",
+      "url": "https://github.com/fenner/probe-clarification/issues/5",
+      "state": "OPEN",
+      "author": "fenner",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "From Ron:\r\n> Currently, RFC 8335 says that the Extended Echo Request MUST contain exactly one instance of the Interface Identifier Object.  I would like to replace that text with the following:\r\n\r\n> \"The Extended Echo Request message MUST contain zero or one instances of the Interface Identification Object. If the Interface Identification Object is absent, the probed interface is identified by Destination Address in the IP header\".\r\n\r\n> This change will allow us to reuse the Extended Echo Request and Extended Echo Reply message in another application (Loopback 6)\r\n",
+      "createdAt": "2024-08-05T15:43:49Z",
+      "updatedAt": "2024-08-05T15:44:16Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "fenner",
+          "authorAssociation": "OWNER",
+          "body": "My proposal to be a little less proscriptive, something like\r\n\r\n> \u201cExtended Echo contains an ICMP Extension structure that defines the operation to perform. When it contains the Echo Request, it MUST \u2026 The behavior when it contains a different extension object is not defined by this memo but may be defined in the future\u201d\r\n",
+          "createdAt": "2024-08-05T15:44:15Z",
+          "updatedAt": "2024-08-05T15:44:15Z"
+        }
+      ]
     }
   ],
   "pulls": []
