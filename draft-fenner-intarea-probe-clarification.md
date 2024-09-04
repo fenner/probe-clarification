@@ -626,7 +626,7 @@ Specifically,
 * Consistently refer to interface name and index using their yang names,
   not SNMP names.
 
-* Added [] around the Data following the ICMP Extension Structure in {{ICMPEchoFIG}}
+* Added \[\] around the Data following the ICMP Extension Structure in {{ICMPEchoFIG}}
   and {{ICMPEchoReplyFIG}} to indicate that it is optional.
 
 ## Changes from draft-fenner-intarea-probe-clarification-01
