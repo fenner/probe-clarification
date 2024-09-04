@@ -637,6 +637,9 @@ Specifically,
 
 # IANA Considerations {#IANA}
 
+IANA is requested to update the references for the below
+actions from {{RFC8335}} to refer to this document.
+
 IANA has performed the following actions:
 
 *  Added the following to the "ICMP Type Numbers" registry:
