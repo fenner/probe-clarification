@@ -269,12 +269,14 @@ ICMP fields:
 Section 7 of {{RFC4884}} defines the ICMP Extension
 Structure. As per RFC 4884, the Extension Structure contains exactly one
 Extension Header followed by one or more objects. When applied to the
-ICMP Extended Echo Request message, the ICMP Extension Structure MUST
-contain exactly one instance of the [Interface Identification Object](#IntIdObj).
-The ICMP Extension Structure
+ICMP Extended Echo Request message, the Extension Object(s) define the
+operation to perform. For the operations in this memo, the ICMP Extension Structure MUST
+contain exactly one instance of the [Interface Identification Object](#IntIdObj),
+and the ICMP Extension Structure
 does not cover the rest of the packet; it ends at the end of the
 single Interface Identification Object, and what follows is simply optional
-data.
+data. The behavior when it contains a different Extension Object is not
+defined by this memo but may be defined in the future.
 
 If the L-bit is set, the Interface Identification Object can identify
 the probed interface by name, index, or address. If the L-bit is clear,
@@ -626,6 +628,12 @@ Specifically,
 
 * Added [] around the Data following the ICMP Extension Structure in {{ICMPEchoFIG}}
   and {{ICMPEchoReplyFIG}} to indicate that it is optional.
+
+## Changes from draft-fenner-intarea-probe-clarification-01
+
+* Updated the section on ICMP Extension header format to say that different
+  ICMP Extension Option headers may be present, and if they are, the
+  mechanism is not as specified in this memo.
 
 # IANA Considerations {#IANA}
 
