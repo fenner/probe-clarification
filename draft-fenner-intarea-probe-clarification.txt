@@ -7,14 +7,14 @@ Internet-Draft                                           Arista Networks
 Obsoletes: 8335 (if approved)                                  R. Bonica
 Updates: 4884 (if approved)                             Juniper Networks
 Intended status: Standards Track                               R. Thomas
-Expires: 29 December 2024                                Arista Networks
+Expires: 8 March 2025                                    Arista Networks
                                                               J. Linkova
                                                                   Google
                                                                C. Lenart
                                                                  Verizon
                                                             M. Boucadair
                                                                   Orange
-                                                            27 June 2024
+                                                        4 September 2024
 
 
                 PROBE: A Utility for Probing Interfaces
@@ -65,7 +65,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 29 December 2024.
+   This Internet-Draft will expire on 8 March 2025.
 
 Copyright Notice
 
@@ -260,11 +260,15 @@ Table of Contents
    Section 7 of [RFC4884] defines the ICMP Extension Structure.  As per
    RFC 4884, the Extension Structure contains exactly one Extension
    Header followed by one or more objects.  When applied to the ICMP
-   Extended Echo Request message, the ICMP Extension Structure MUST
-   contain exactly one instance of the Interface Identification Object
-   (Section 2.1).  The ICMP Extension Structure does not cover the rest
-   of the packet; it ends at the end of the single Interface
-   Identification Object, and what follows is simply optional data.
+   Extended Echo Request message, the Extension Object(s) define the
+   operation to perform.  For the operations in this memo, the ICMP
+   Extension Structure MUST contain exactly one instance of the
+   Interface Identification Object (Section 2.1), and the ICMP Extension
+   Structure does not cover the rest of the packet; it ends at the end
+   of the single Interface Identification Object, and what follows is
+   simply optional data.  The behavior when it contains a different
+   Extension Object is not defined by this memo but may be defined in
+   the future.
 
    If the L-bit is set, the Interface Identification Object can identify
    the probed interface by name, index, or address.  If the L-bit is
@@ -789,7 +793,7 @@ Table of Contents
 
    [IANA.address-family-numbers]
               IANA, "Address Family Numbers",
-              <http://www.iana.org/assignments/address-family-numbers>.
+              <https://www.iana.org/assignments/address-family-numbers>.
 
    [RFC2151]  Kessler, G. and S. Shepard, "A Primer On Internet and TCP/
               IP Tools and Utilities", FYI 30, RFC 2151,
