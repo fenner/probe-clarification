@@ -1041,7 +1041,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
 </tr></thead>
 <tfoot><tr>
 <td class="left">Fenner, et al.</td>
-<td class="center">Expires 8 March 2025</td>
+<td class="center">Expires 9 March 2025</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1060,12 +1060,12 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <a href="https://www.rfc-editor.org/rfc/rfc4884" class="eref">4884</a> (if approved)</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2024-09-04" class="published">4 September 2024</time>
+<time datetime="2024-09-05" class="published">5 September 2024</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Standards Track</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2025-03-08">8 March 2025</time></dd>
+<dd class="expires"><time datetime="2025-03-09">9 March 2025</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1144,7 +1144,7 @@ the probed interface is directly connected. This document updates RFC
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 8 March 2025.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 9 March 2025.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1217,6 +1217,9 @@ the probed interface is directly connected. This document updates RFC
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7.2.2">
                 <p id="section-toc.1-1.7.2.2.1"><a href="#section-7.2" class="auto internal xref">7.2</a>.  <a href="#name-changes-from-draft-fenner-i" class="internal xref">Changes from draft-fenner-intarea-probe-clarification-00</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7.2.3">
+                <p id="section-toc.1-1.7.2.3.1"><a href="#section-7.3" class="auto internal xref">7.3</a>.  <a href="#name-changes-from-draft-fenner-in" class="internal xref">Changes from draft-fenner-intarea-probe-clarification-01</a></p>
 </li>
             </ul>
 </li>
@@ -1928,6 +1931,20 @@ and <a href="#ICMPEchoReplyFIG" class="auto internal xref">Figure 3</a> to indic
         </ul>
 </section>
 </div>
+<div id="changes-from-draft-fenner-intarea-probe-clarification-01">
+<section id="section-7.3">
+        <h3 id="name-changes-from-draft-fenner-in">
+<a href="#section-7.3" class="section-number selfRef">7.3. </a><a href="#name-changes-from-draft-fenner-in" class="section-name selfRef">Changes from draft-fenner-intarea-probe-clarification-01</a>
+        </h3>
+<ul class="normal">
+<li class="normal" id="section-7.3-1.1">
+            <p id="section-7.3-1.1.1">Updated the section on ICMP Extension header format to say that different
+ICMP Extension Option headers may be present, and if they are, the
+mechanism is not as specified in this memo.<a href="#section-7.3-1.1.1" class="pilcrow">¶</a></p>
+</li>
+        </ul>
+</section>
+</div>
 </section>
 </div>
 <div id="IANA">
@@ -1935,114 +1952,116 @@ and <a href="#ICMPEchoReplyFIG" class="auto internal xref">Figure 3</a> to indic
       <h2 id="name-iana-considerations">
 <a href="#section-8" class="section-number selfRef">8. </a><a href="#name-iana-considerations" class="section-name selfRef">IANA Considerations</a>
       </h2>
-<p id="section-8-1">IANA has performed the following actions:<a href="#section-8-1" class="pilcrow">¶</a></p>
+<p id="section-8-1">IANA is requested to update the references for the below
+actions from <span>[<a href="#RFC8335" class="cite xref">RFC8335</a>]</span> to refer to this document.<a href="#section-8-1" class="pilcrow">¶</a></p>
+<p id="section-8-2">IANA has performed the following actions:<a href="#section-8-2" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="section-8-2.1">
-          <p id="section-8-2.1.1">Added the following to the "ICMP Type Numbers" registry:<a href="#section-8-2.1.1" class="pilcrow">¶</a></p>
-<div class="alignLeft art-text artwork" id="section-8-2.1.2">
+<li class="normal" id="section-8-3.1">
+          <p id="section-8-3.1.1">Added the following to the "ICMP Type Numbers" registry:<a href="#section-8-3.1.1" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="section-8-3.1.2">
 <pre>
    42 Extended Echo Request
-</pre><a href="#section-8-2.1.2" class="pilcrow">¶</a>
+</pre><a href="#section-8-3.1.2" class="pilcrow">¶</a>
 </div>
-<p id="section-8-2.1.3">
+<p id="section-8-3.1.3">
 Added the following to the "Type 42 - Extended Echo Request"
-subregistry:<a href="#section-8-2.1.3" class="pilcrow">¶</a></p>
-<div class="alignLeft art-text artwork" id="section-8-2.1.4">
+subregistry:<a href="#section-8-3.1.3" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="section-8-3.1.4">
 <pre>
    (0) No Error
-</pre><a href="#section-8-2.1.4" class="pilcrow">¶</a>
+</pre><a href="#section-8-3.1.4" class="pilcrow">¶</a>
 </div>
 </li>
-        <li class="normal" id="section-8-2.2">
-          <p id="section-8-2.2.1">Added the following to the "ICMPv6 'type' Numbers" registry:<a href="#section-8-2.2.1" class="pilcrow">¶</a></p>
-<div class="alignLeft art-text artwork" id="section-8-2.2.2">
+        <li class="normal" id="section-8-3.2">
+          <p id="section-8-3.2.1">Added the following to the "ICMPv6 'type' Numbers" registry:<a href="#section-8-3.2.1" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="section-8-3.2.2">
 <pre>
    160 Extended Echo Request
 
    As ICMPv6 distinguishes between informational and error
    messages, and this is an informational message, the value has
    been assigned from the range 128-255.
-</pre><a href="#section-8-2.2.2" class="pilcrow">¶</a>
+</pre><a href="#section-8-3.2.2" class="pilcrow">¶</a>
 </div>
-<p id="section-8-2.2.3">
+<p id="section-8-3.2.3">
 Added the following to the "Type 160 - Extended Echo Request"
-subregistry:<a href="#section-8-2.2.3" class="pilcrow">¶</a></p>
-<div class="alignLeft art-text artwork" id="section-8-2.2.4">
+subregistry:<a href="#section-8-3.2.3" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="section-8-3.2.4">
 <pre>
    (0) No Error
-</pre><a href="#section-8-2.2.4" class="pilcrow">¶</a>
+</pre><a href="#section-8-3.2.4" class="pilcrow">¶</a>
 </div>
 </li>
-        <li class="normal" id="section-8-2.3">
-          <p id="section-8-2.3.1">Added the following to the "ICMP Type Numbers" registry:<a href="#section-8-2.3.1" class="pilcrow">¶</a></p>
-<div class="alignLeft art-text artwork" id="section-8-2.3.2">
+        <li class="normal" id="section-8-3.3">
+          <p id="section-8-3.3.1">Added the following to the "ICMP Type Numbers" registry:<a href="#section-8-3.3.1" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="section-8-3.3.2">
 <pre>
    43 Extended Echo Reply
-</pre><a href="#section-8-2.3.2" class="pilcrow">¶</a>
+</pre><a href="#section-8-3.3.2" class="pilcrow">¶</a>
 </div>
-<p id="section-8-2.3.3">
+<p id="section-8-3.3.3">
 Added the following to the "Type 43 - Extended Echo Reply"
-subregistry:<a href="#section-8-2.3.3" class="pilcrow">¶</a></p>
-<div class="alignLeft art-text artwork" id="section-8-2.3.4">
+subregistry:<a href="#section-8-3.3.3" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="section-8-3.3.4">
 <pre>
    (0) No Error
    (1) Malformed Query
    (2) No Such Interface
    (3) No Such Table Entry
    (4) Multiple Interfaces Satisfy Query
-</pre><a href="#section-8-2.3.4" class="pilcrow">¶</a>
+</pre><a href="#section-8-3.3.4" class="pilcrow">¶</a>
 </div>
 </li>
-        <li class="normal" id="section-8-2.4">
-          <p id="section-8-2.4.1">Added the following to the "ICMPv6 'type' Numbers" registry:<a href="#section-8-2.4.1" class="pilcrow">¶</a></p>
-<div class="alignLeft art-text artwork" id="section-8-2.4.2">
+        <li class="normal" id="section-8-3.4">
+          <p id="section-8-3.4.1">Added the following to the "ICMPv6 'type' Numbers" registry:<a href="#section-8-3.4.1" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="section-8-3.4.2">
 <pre>
    161 Extended Echo Reply
 
    As ICMPv6 distinguishes between informational and error
    messages, and this is an informational message, the value has
    been assigned from the range 128-255.
-</pre><a href="#section-8-2.4.2" class="pilcrow">¶</a>
+</pre><a href="#section-8-3.4.2" class="pilcrow">¶</a>
 </div>
-<p id="section-8-2.4.3">
+<p id="section-8-3.4.3">
 Added the following to the "Type 161 - Extended Echo Reply"
-subregistry:<a href="#section-8-2.4.3" class="pilcrow">¶</a></p>
-<div class="alignLeft art-text artwork" id="section-8-2.4.4">
+subregistry:<a href="#section-8-3.4.3" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="section-8-3.4.4">
 <pre>
    (0) No Error
    (1) Malformed Query
    (2) No Such Interface
    (3) No Such Table Entry
    (4) Multiple Interfaces Satisfy Query
-</pre><a href="#section-8-2.4.4" class="pilcrow">¶</a>
+</pre><a href="#section-8-3.4.4" class="pilcrow">¶</a>
 </div>
 </li>
-        <li class="normal" id="section-8-2.5">
-          <p id="section-8-2.5.1">Added the following to the "ICMP Extension Object Classes and
-Class Sub-types" registry:<a href="#section-8-2.5.1" class="pilcrow">¶</a></p>
-<div class="alignLeft art-text artwork" id="section-8-2.5.2">
+        <li class="normal" id="section-8-3.5">
+          <p id="section-8-3.5.1">Added the following to the "ICMP Extension Object Classes and
+Class Sub-types" registry:<a href="#section-8-3.5.1" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="section-8-3.5.2">
 <pre>
    (3) Interface Identification Object
-</pre><a href="#section-8-2.5.2" class="pilcrow">¶</a>
+</pre><a href="#section-8-3.5.2" class="pilcrow">¶</a>
 </div>
-<p id="section-8-2.5.3">
+<p id="section-8-3.5.3">
 Added the following C-types to the "Sub-types - Class 3 -
-Interface Identification Object" subregistry:<a href="#section-8-2.5.3" class="pilcrow">¶</a></p>
-<div class="alignLeft art-text artwork" id="section-8-2.5.4">
+Interface Identification Object" subregistry:<a href="#section-8-3.5.3" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="section-8-3.5.4">
 <pre>
    (0) Reserved
    (1) Identifies Interface by Name
    (2) Identifies Interface by Index
    (3) Identifies Interface by Address
-</pre><a href="#section-8-2.5.4" class="pilcrow">¶</a>
+</pre><a href="#section-8-3.5.4" class="pilcrow">¶</a>
 </div>
-<p id="section-8-2.5.5">
+<p id="section-8-3.5.5">
 C-Type values are assigned on a First Come First Serve (FCFS)
-basis with a range of 0-255.<a href="#section-8-2.5.5" class="pilcrow">¶</a></p>
+basis with a range of 0-255.<a href="#section-8-3.5.5" class="pilcrow">¶</a></p>
 </li>
       </ul>
-<p id="section-8-3">All codes mentioned above are assigned on an FCFS basis with a range
-of 0-255.<a href="#section-8-3" class="pilcrow">¶</a></p>
+<p id="section-8-4">All codes mentioned above are assigned on an FCFS basis with a range
+of 0-255.<a href="#section-8-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="security">
