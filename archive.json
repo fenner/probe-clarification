@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-09-05T00:38:43.088962+00:00",
+  "timestamp": "2024-09-08T00:42:46.271661+00:00",
   "repo": "fenner/probe-clarification",
   "labels": [
     {
@@ -118,15 +118,15 @@
       "id": "I_kwDOLB4g0s6Qu7Z2",
       "title": "Update IANA Considerations",
       "url": "https://github.com/fenner/probe-clarification/issues/4",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "fenner",
       "authorAssociation": "OWNER",
       "assignees": [],
       "labels": [],
       "body": "IANA's pre-meeting review for IETF120 included:\r\n\r\nThe actions described in the IANA Considerations section were completed for RFC 8335. Should IANA replace references to RFC 8355 with references to this document? If so, please add a sentence to the beginning of the section that instructs us to do so. If not, please update the section to note that no IANA actions are required (and move the 8335 actions to another section, if possible).",
       "createdAt": "2024-07-24T18:27:57Z",
-      "updatedAt": "2024-07-24T18:27:57Z",
-      "closedAt": null,
+      "updatedAt": "2024-09-05T18:15:03Z",
+      "closedAt": "2024-09-05T18:15:03Z",
       "comments": []
     },
     {
@@ -134,15 +134,15 @@
       "id": "I_kwDOLB4g0s6R9v3h",
       "title": "Leave the door open to a different packet format if a different extension object is present",
       "url": "https://github.com/fenner/probe-clarification/issues/5",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "fenner",
       "authorAssociation": "OWNER",
       "assignees": [],
       "labels": [],
       "body": "From Ron:\r\n> Currently, RFC 8335 says that the Extended Echo Request MUST contain exactly one instance of the Interface Identifier Object.  I would like to replace that text with the following:\r\n\r\n> \"The Extended Echo Request message MUST contain zero or one instances of the Interface Identification Object. If the Interface Identification Object is absent, the probed interface is identified by Destination Address in the IP header\".\r\n\r\n> This change will allow us to reuse the Extended Echo Request and Extended Echo Reply message in another application (Loopback 6)\r\n",
       "createdAt": "2024-08-05T15:43:49Z",
-      "updatedAt": "2024-08-05T15:44:16Z",
-      "closedAt": null,
+      "updatedAt": "2024-09-05T18:15:02Z",
+      "closedAt": "2024-09-05T18:15:02Z",
       "comments": [
         {
           "author": "fenner",
