@@ -2,10 +2,10 @@
 
 This is the working area for the individual Internet-Draft, "PROBE: A Utility for Probing Interfaces".
 
-* [Editor's Copy](https://fenner.github.io/probe-clarification/#go.draft-fenner-int-probe-clarification.html)
-* [Datatracker Page](https://datatracker.ietf.org/doc/draft-fenner-int-probe-clarification)
-* [Individual Draft](https://datatracker.ietf.org/doc/html/draft-fenner-int-probe-clarification)
-* [Compare Editor's Copy to Individual Draft](https://fenner.github.io/probe-clarification/#go.draft-fenner-int-probe-clarification.diff)
+* [Editor's Copy](https://fenner.github.io/probe-clarification/#go.draft-fenner-intarea-probe-clarification.html)
+* [Datatracker Page](https://datatracker.ietf.org/doc/draft-fenner-intarea-probe-clarification)
+* [Individual Draft](https://datatracker.ietf.org/doc/html/draft-fenner-intarea-probe-clarification)
+* [Compare Editor's Copy to Individual Draft](https://fenner.github.io/probe-clarification/#go.draft-fenner-intarea-probe-clarification.diff)
 
 
 ## Contributing
