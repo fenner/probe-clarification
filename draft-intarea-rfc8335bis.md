@@ -1,6 +1,6 @@
 ---
 v: 3
-docname: draft-fenner-intarea-probe-clarification-latest
+docname: draft-intarea-rfc8335bis-latest
 cat: std
 updates: '4884'
 obsoletes: '8335'
@@ -26,7 +26,7 @@ venue:
   type: "Area"
   mail: "int-area@ietf.org"
   github: "fenner/probe-clarification"
-  latest: "https://fenner.github.io/probe-clarification/draft-fenner-intarea-probe-clarification.html"
+  latest: "https://fenner.github.io/probe-clarification/draft-intarea-rfc8335bis.html"
 
 author:
 - name: Bill Fenner
@@ -199,7 +199,21 @@ This document uses the following terms:
 
 {::boilerplate bcp14-tagged}
 
+## A note on this document's use of ICMP Extensions {#dontdothis}
 
+This document defines a unique use of ICMP Extensions {{RFC4884}}:
+while normally, ICMP Extensions are defined to start at a given
+point and continue to the end of the packet, if the
+extension object is an Interface Identification Object as defined
+in this memo, then the extension structure (including the
+checksum) consists only of that single ICMP Extension Object.
+This is done to maintain compatibility with the initial set
+of implementations of RFC8335, which behave this way.  New
+uses of ICMP Extensions, and in fact uses of Extended Echo
+using some object other than the Interface Identification Object,
+SHOULD NOT behave this way.  Uses other than defined in this
+memo SHOULD treat the ICMP Extension Structure as extending
+to the end of the packet as {{RFC4884}} defines.
 
 # ICMP Extended Echo Request {#ExtendedEcho}
 
@@ -634,6 +648,13 @@ Specifically,
 * Updated the section on ICMP Extension header format to say that different
   ICMP Extension Option headers may be present, and if they are, the
   mechanism is not as specified in this memo.
+
+## Changes from draft-fenner-intarea-probe-clarification-02
+
+* Made a stronger statement about not copying this behavior in
+  {{dontdothis}}
+
+* Renamed to rfc8335bis and made WG document
 
 # IANA Considerations {#IANA}
 
