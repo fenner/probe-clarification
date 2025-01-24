@@ -18,7 +18,7 @@ Expires: 28 July 2025                                    Arista Networks
 
 
                 PROBE: A Utility for Probing Interfaces
-                    draft-intarea-rfc8335bis-latest
+                  draft-ietf-intarea-rfc8335bis-latest
 
 Abstract
 
@@ -37,9 +37,9 @@ About This Document
    This note is to be removed before publishing as an RFC.
 
    The latest revision of this draft can be found at
-   https://fenner.github.io/probe-clarification/draft-intarea-
+   https://fenner.github.io/probe-clarification/draft-ietf-intarea-
    rfc8335bis.html.  Status information for this document may be found
-   at https://datatracker.ietf.org/doc/draft-intarea-rfc8335bis/.
+   at https://datatracker.ietf.org/doc/draft-ietf-intarea-rfc8335bis/.
 
    Discussion of this document takes place on the Internet Area Area
    mailing list (mailto:int-area@ietf.org), which is archived at
