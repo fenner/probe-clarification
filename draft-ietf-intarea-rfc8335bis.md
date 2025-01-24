@@ -1,6 +1,6 @@
 ---
 v: 3
-docname: draft-intarea-rfc8335bis-latest
+docname: draft-ietf-intarea-rfc8335bis-latest
 cat: std
 updates: '4884'
 obsoletes: '8335'
@@ -26,7 +26,7 @@ venue:
   type: "Area"
   mail: "int-area@ietf.org"
   github: "fenner/probe-clarification"
-  latest: "https://fenner.github.io/probe-clarification/draft-intarea-rfc8335bis.html"
+  latest: "https://fenner.github.io/probe-clarification/draft-ietf-intarea-rfc8335bis.html"
 
 author:
 - name: Bill Fenner
