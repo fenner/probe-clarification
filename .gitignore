@@ -7,6 +7,7 @@
 *~
 .tags
 /*-[0-9][0-9].xml
+/.*.mk
 /.gems/
 /.refcache
 /.targets.mk
@@ -20,6 +21,7 @@ archive.json
 draft-fenner-int-probe-clarification.xml
 draft-fenner-intarea-probe-clarification.xml
 draft-fenner-probe-clarification.xml
+draft-ietf-intarea-rfc8335bis.xml
 package-lock.json
 report.xml
 !requirements.txt
