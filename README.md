@@ -1,11 +1,13 @@
+<!-- regenerate: on (set to off if you edit this file) -->
+
 # PROBE: A Utility for Probing Interfaces
 
-This is the working area for the individual Internet-Draft, "PROBE: A Utility for Probing Interfaces".
+This is the working area for the IETF [INTAREA Working Group](https://datatracker.ietf.org/group/intarea/documents/) Internet-Draft, "PROBE: A Utility for Probing Interfaces".
 
-* [Editor's Copy](https://fenner.github.io/probe-clarification/#go.draft-fenner-intarea-probe-clarification.html)
-* [Datatracker Page](https://datatracker.ietf.org/doc/draft-fenner-intarea-probe-clarification)
-* [Individual Draft](https://datatracker.ietf.org/doc/html/draft-fenner-intarea-probe-clarification)
-* [Compare Editor's Copy to Individual Draft](https://fenner.github.io/probe-clarification/#go.draft-fenner-intarea-probe-clarification.diff)
+* [Editor's Copy](https://fenner.github.io/probe-clarification/#go.draft-ietf-intarea-rfc8335bis.html)
+* [Datatracker Page](https://datatracker.ietf.org/doc/draft-ietf-intarea-rfc8335bis)
+* [Working Group Draft](https://datatracker.ietf.org/doc/html/draft-ietf-intarea-rfc8335bis)
+* [Compare Editor's Copy to Working Group Draft](https://fenner.github.io/probe-clarification/#go.draft-ietf-intarea-rfc8335bis.diff)
 
 
 ## Contributing
