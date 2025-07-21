@@ -284,7 +284,7 @@ Section 7 of {{RFC4884}} defines the ICMP Extension
 Structure. As per RFC 4884, the Extension Structure contains exactly one
 Extension Header followed by one or more objects. When applied to the
 ICMP Extended Echo Request message, the Extension Object(s) define the
-operation to perform. For the operations in this memo, the ICMP Extension Structure MUST
+operation to perform. In the PROBE application, the ICMP Extension Structure MUST
 contain exactly one instance of the [Interface Identification Object](#IntIdObj),
 and the ICMP Extension Structure
 does not cover the rest of the packet; it ends at the end of the
@@ -655,6 +655,11 @@ Specifically,
   {{dontdothis}}
 
 * Renamed to rfc8335bis and made WG document
+
+## Changes from draft-int-intarea-rfc8335bis-00
+
+* Changed "For the operations in this memo" to "In the PROBE application" to
+  better align with draft-ietf-6man-icmpv6-reflection
 
 # IANA Considerations {#IANA}
 
