@@ -99,6 +99,8 @@ Table of Contents
      7.3.  Changes from draft-fenner-intarea-probe-clarification-01
      7.4.  Changes from draft-fenner-intarea-probe-clarification-02
      7.5.  Changes from draft-int-intarea-rfc8335bis-00
+     7.6.  Changes from draft-int-intarea-rfc8335bis-01
+     7.7.  Changes from draft-int-intarea-rfc8335bis-02
    8.  IANA Considerations
    9.  Security Considerations
    10. References
@@ -255,7 +257,7 @@ Table of Contents
 
    *  Code: MUST be set to 0 and MUST be ignored upon receipt.
 
-   *  Checksum: For ICMPv4, see RFC 792.  For ICMPv6, see RFC 4443.
+   *  Checksum: For ICMPv4, see [RFC0792].  For ICMPv6, see [RFC4443].
 
    *  Identifier: An Identifier to aid in matching Extended Echo Replies
       to Extended Echo Requests.  May be 0.
@@ -285,7 +287,9 @@ Table of Contents
    does not cover the rest of the packet; it ends at the end of the
    single Interface Identification Object, and what follows is simply
    optional data.  The behavior when it contains a different Extension
-   Object is not defined by this memo but may be defined in the future.
+   Object is not defined by this memo.
+   [I-D.ietf-6man-icmpv6-reflection] is an example of a document which
+   defines a different Extension Object and the corresponding behavior.
 
    If the L-bit is set, the Interface Identification Object can identify
    the probed interface by name, index, or address.  If the L-bit is
@@ -304,6 +308,9 @@ Table of Contents
    The Interface Identification Object MAY be followed by an optional
    data section, which is not interpreted but is simply present to be
    copied to the ICMP Extended Echo Reply.
+
+   The size of the resulting packet MUST NOT exceed the outgoing
+   interface MTU.
 
 2.1.  Interface Identification Object
 
@@ -401,7 +408,7 @@ Table of Contents
       Interface, (3) No Such Table Entry, and (4) Multiple Interfaces
       Satisfy Query.
 
-   *  Checksum: For ICMPv4, see RFC 792.  For ICMPv6, see RFC 4443.
+   *  Checksum: For ICMPv4, see [RFC0792].  For ICMPv6, see [RFC4443].
 
    *  Identifier: Copied from the Identifier field of the invoking
       Extended Echo Request packet.
@@ -511,7 +518,9 @@ Table of Contents
 
    *  Set the Checksum appropriately.
 
-   *  Forward the ICMP Extended Echo Reply to its destination.
+   *  Forward the ICMP Extended Echo Reply to its destination.  The size
+      of the resulting packet MUST NOT exceed the outgoing interface
+      MTU.
 
 4.1.  Code Field Processing
 
@@ -645,6 +654,18 @@ Table of Contents
    *  Changed "For the operations in this memo" to "In the PROBE
       application" to better align with draft-ietf-6man-
       icmpv6-reflection
+
+7.6.  Changes from draft-int-intarea-rfc8335bis-01
+
+   *  None
+
+7.7.  Changes from draft-int-intarea-rfc8335bis-02
+
+   *  Added reference to draft-ietf-6man-icmpv6-reflection
+
+   *  Updated some "RFC NNN" references to bibliography references
+
+   *  Add MUST NOT exceed MTU.
 
 8.  IANA Considerations
 
@@ -829,6 +850,14 @@ Table of Contents
               <https://www.rfc-editor.org/rfc/rfc8343>.
 
 10.2.  Informative References
+
+   [I-D.ietf-6man-icmpv6-reflection]
+              Mizrahi, T., hexiaoming, X., Zhou, T., Bonica, R., and X.
+              Min, "Internet Control Message Protocol (ICMPv6)
+              Reflection", Work in Progress, Internet-Draft, draft-ietf-
+              6man-icmpv6-reflection-19, 15 December 2025,
+              <https://datatracker.ietf.org/doc/html/draft-ietf-6man-
+              icmpv6-reflection-19>.
 
    [IANA.address-family-numbers]
               IANA, "Address Family Numbers",
