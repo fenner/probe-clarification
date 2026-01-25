@@ -260,7 +260,7 @@ ICMP fields:
 
 * Code: MUST be set to 0 and MUST be ignored upon receipt.
 
-* Checksum: For ICMPv4, see RFC 792. For ICMPv6, see RFC 4443.
+* Checksum: For ICMPv4, see {{RFC0792}}. For ICMPv6, see {{RFC4443}}.
 
 * Identifier: An Identifier to aid in matching Extended Echo
   Replies to Extended Echo Requests. May be 0.
@@ -311,6 +311,9 @@ identifies the probed interface by IPv4, IPv6, or IEEE 802 address.
 The Interface Identification Object MAY be followed by an optional
 data section, which is not interpreted but is simply present to be
 copied to the ICMP Extended Echo Reply.
+
+The size of the resulting
+packet MUST NOT exceed the outgoing interface MTU.
 
 ## Interface Identification Object {#IntIdObj}
 
@@ -416,7 +419,7 @@ ICMP fields:
 * Code: Values are (0) No Error, (1) Malformed Query, (2) No Such Interface,
   (3) No Such Table Entry, and (4) Multiple Interfaces Satisfy Query.
 
-* Checksum: For ICMPv4, see RFC 792. For ICMPv6, see RFC 4443.
+* Checksum: For ICMPv4, see {{RFC0792}}. For ICMPv6, see {{RFC4443}}.
 
 * Identifier: Copied from the Identifier field of the invoking
   Extended Echo Request packet.
@@ -529,7 +532,8 @@ In either case, the responding node MUST do the following:
 
 * Set the Checksum appropriately.
 
-* Forward the ICMP Extended Echo Reply to its destination.
+* Forward the ICMP Extended Echo Reply to its destination. The size of the
+  resulting packet MUST NOT exceed the outgoing interface MTU.
 
 
 ## Code Field Processing {#code}
@@ -663,6 +667,18 @@ Specifically,
 
 * Changed "For the operations in this memo" to "In the PROBE application" to
   better align with draft-ietf-6man-icmpv6-reflection
+
+## Changes from draft-int-intarea-rfc8335bis-01
+
+* None
+
+## Changes from draft-int-intarea-rfc8335bis-02
+
+* Added reference to draft-ietf-6man-icmpv6-reflection
+
+* Updated some "RFC NNN" references to bibliography references
+
+* Add MUST NOT exceed MTU.
 
 # IANA Considerations {#IANA}
 
