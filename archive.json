@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-01-22T00:55:39.945703+00:00",
+  "timestamp": "2026-01-25T01:01:25.303547+00:00",
   "repo": "fenner/probe-clarification",
   "labels": [
     {
@@ -152,6 +152,22 @@
           "updatedAt": "2024-08-05T15:44:15Z"
         }
       ]
+    },
+    {
+      "number": 6,
+      "id": "I_kwDOLB4g0s7lHa7m",
+      "title": "WG Last Call comment from Nick Buraglio",
+      "url": "https://github.com/fenner/probe-clarification/issues/6",
+      "state": "OPEN",
+      "author": "fenner",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "https://mailarchive.ietf.org/arch/msg/int-area/q-UIncPVXI93WB325xn5OBX-2tE/\n\nGood feedback on wording\n\n1.\n\n> I know what you're going for here, but I found this a bit hard to digest. I had to read it a few times.\n> `The probed interface can reside on or directly connect to the proxy node.`\n> Maybe\n> `The probed interface can reside on or be directly connected to the proxy node.`\n\n2.\n\n> Section 9.\n> Suggest extending the section\n> ```\n> PROBE must not leak information about one Virtual Private Network\n> (VPN) into another.  Therefore, when a node receives an ICMP Extended\n> Echo Request and the proxy interface is in a different VPN than the\n> probed interface, the node MUST return an ICMP Extended Echo Reply\n> with error code equal to (2) No Such Interface.\n>    \n> ```\n> to include virtual systems / vsys / logical systems and perhaps containerization where a given software based, logical separation may require different security postures.\n> Perhaps\n> ```\n> PROBE must not leak information about one Virtual Private Network (VPN), logical system, or other software partitioned interface or set of interfaces\n> into another.  Therefore, when a node receives an ICMP Extended\n> Echo Request and the proxy interface is in a different VPN than the\n> probed interface, the node MUST return an ICMP Extended Echo Reply\n> with error code equal to (2) No Such Interface.\n>    \n> ```\n> ",
+      "createdAt": "2026-01-22T17:20:59Z",
+      "updatedAt": "2026-01-22T17:20:59Z",
+      "closedAt": null,
+      "comments": []
     }
   ],
   "pulls": []
