@@ -84,6 +84,7 @@ normative:
   RFC4443:
   RFC8335:
 informative:
+  I-D.ietf-6man-icmpv6-reflection:
   RFC2151:
   RFC4594:
   IANA.address-family-numbers: address-family-numbers
@@ -290,7 +291,9 @@ and the ICMP Extension Structure
 does not cover the rest of the packet; it ends at the end of the
 single Interface Identification Object, and what follows is simply optional
 data. The behavior when it contains a different Extension Object is not
-defined by this memo but may be defined in the future.
+defined by this memo. {{I-D.ietf-6man-icmpv6-reflection}} is an example
+of a document which defines a different Extension Object and the corresponding
+behavior.
 
 If the L-bit is set, the Interface Identification Object can identify
 the probed interface by name, index, or address. If the L-bit is clear,
