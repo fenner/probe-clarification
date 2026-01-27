@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-01-25T01:01:25.303547+00:00",
+  "timestamp": "2026-01-27T00:58:40.005070+00:00",
   "repo": "fenner/probe-clarification",
   "labels": [
     {
@@ -167,6 +167,78 @@
       "createdAt": "2026-01-22T17:20:59Z",
       "updatedAt": "2026-01-22T17:20:59Z",
       "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 7,
+      "id": "I_kwDOLB4g0s7lsHqC",
+      "title": "Shepherd issue: address WG Last Call points",
+      "url": "https://github.com/fenner/probe-clarification/issues/7",
+      "state": "OPEN",
+      "author": "fenner",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "- Please make sure to address and reply to the comments sent in WG last call.\n",
+      "createdAt": "2026-01-25T17:00:36Z",
+      "updatedAt": "2026-01-25T17:00:36Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 8,
+      "id": "I_kwDOLB4g0s7lsHv_",
+      "title": "Shepherd issue: MTU",
+      "url": "https://github.com/fenner/probe-clarification/issues/8",
+      "state": "CLOSED",
+      "author": "fenner",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "- The document does not discuss the MTU, and whether the optional data\ncan be large enough to cause the packet to exceed the MTU. It would be\nbest to specify that the Extended Echo Request/Reply packets SHOULD\nNOT exceed the MTU.\n",
+      "createdAt": "2026-01-25T17:00:54Z",
+      "updatedAt": "2026-01-25T17:50:43Z",
+      "closedAt": "2026-01-25T17:50:43Z",
+      "comments": [
+        {
+          "author": "fenner",
+          "authorAssociation": "OWNER",
+          "body": "In fact, we can say that the reply packets MUST NOT exceed the MTU, since the v4 packet is formed with DF set already. I'd be fine with saying request packets MUST NOT exceed the MTU too.",
+          "createdAt": "2026-01-25T17:33:42Z",
+          "updatedAt": "2026-01-25T17:33:42Z"
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "id": "I_kwDOLB4g0s7lsH4v",
+      "title": "Shepherd issue: Security considerations",
+      "url": "https://github.com/fenner/probe-clarification/issues/9",
+      "state": "OPEN",
+      "author": "fenner",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "- The security considerations should be extended to include missing\naspects such as amplification, covert channels, malicious\nmodifications. Please see the Security Considerations section of\ndraft-ietf-6man-icmpv6-reflection, which was significantly affected by\nthe Security AD reviews.\n",
+      "createdAt": "2026-01-25T17:01:23Z",
+      "updatedAt": "2026-01-25T17:01:23Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 10,
+      "id": "I_kwDOLB4g0s7lsH_j",
+      "title": "Shepherd issue: add circular reference to icmp-reflection",
+      "url": "https://github.com/fenner/probe-clarification/issues/10",
+      "state": "CLOSED",
+      "author": "fenner",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "- Please note that this document and draft-ietf-6man-icmpv6-reflection\nwill most probably be published as a cluster. It would be very helpful\nfor the readers to have an explicit reference to the reflection draft,\nspecifically the sentence \"The behavior when it contains a different\nExtension Object is not defined by this memo but may be defined in the\nfuture.\" should be rephrased to mention\ndraft-ietf-6man-icmpv6-reflection as an example of such a case.\n",
+      "createdAt": "2026-01-25T17:01:46Z",
+      "updatedAt": "2026-01-25T17:50:42Z",
+      "closedAt": "2026-01-25T17:50:42Z",
       "comments": []
     }
   ],
