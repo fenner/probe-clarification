@@ -135,9 +135,8 @@ bidirectional connectivity between the probing and probed interfaces.
 Instead, PROBE requires bidirectional connectivity between the probing
 interface and a proxy interface. The proxy interface can reside on the
 same node as the probed interface, or it can reside on a node to which
-the probed interface is directly connected. {{usecase}} of
-this document describes scenarios in which this characteristic is
-useful.
+the probed interface is directly connected. A list of use cases for
+this characteristic can be found in {{usecase}} of this document.
 
 Like PING, PROBE executes on a probing node. It sends an ICMP
 Extended Echo Request message from a local interface, called the probing
