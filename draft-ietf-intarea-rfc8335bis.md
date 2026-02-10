@@ -475,24 +475,31 @@ incoming message:
   address.
 
 Otherwise, when a node receives an ICMPv4 Extended Echo Request, it
-MUST format an ICMP Extended Echo Reply as follows:
-
-* Don't Fragment (DF) flag is 1
-
-* More Fragments flag is 0
-
-* Fragment Offset is 0
+MUST format the IPv4 header of an ICMPv4 Extended Echo Reply as follows:
 
 * TTL is 255
 
 * Protocol is ICMP
 
+* Indicate that the packet is not source fragmented and must not be on-path fragmented with the following values:
+
+    * Don't Fragment (DF) flag is 1
+
+    * More Fragments flag is 0
+
+    * Fragment Offset is 0
+
+
 When a node receives an ICMPv6 Extended Echo Request, it MUST
-format an ICMPv6 Extended Echo Reply as follows:
+format the IPv6 header of an ICMPv6 Extended Echo Reply as follows:
 
 * Hop Limit is 255
 
 * Next Header is ICMPv6
+
+* Indicate that the packet is not source fragmented
+
+    * Do not include an IPv6 Fragmentation Header
 
 In either case, the responding node MUST do the following:
 
@@ -678,6 +685,8 @@ Specifically,
 * Updated some "RFC NNN" references to bibliography references
 
 * Add MUST NOT exceed MTU.
+
+* Added details of IPv4/IPv6 headers and avoidance of fragmentation to {{proc}}
 
 # IANA Considerations {#IANA}
 
