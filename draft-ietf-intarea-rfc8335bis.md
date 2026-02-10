@@ -688,6 +688,8 @@ Specifically,
 
 * Added details of IPv4/IPv6 headers and avoidance of fragmentation to {{proc}}
 
+* Added IP address and interface index considerations to {{security}}
+
 # IANA Considerations {#IANA}
 
 IANA is requested to update the references for the below
@@ -789,7 +791,14 @@ information may include:
 * the operating system version that the above-mentioned device
   executes
 
-Understanding this risk, network operators establish policies that
+Addresses and interface index values can also give away information
+that might not want to be shared. For example, a malicious party can
+use PROBE to determine that a given IP address is assigned to any
+interface on the probed node, or if interface index values are
+assigned densely, it can determine how many interfaces exist on the
+probed node.
+
+Understanding these risks, network operators establish policies that
 restrict access to ICMP Extended Echo functionality. In order to enforce
 these policies, nodes that support ICMP Extended Echo functionality MUST
 support the following configuration options:
@@ -928,5 +937,5 @@ For example, an application may perform these steps:
 
 Thanks to Sowmini Varadhan, Jeff Haas, Carlos Pignataro, Jonathan
 Looney, Dave Thaler, Mikio Hara, Joel Halpern, Yaron Sheffer, Stefan
-Winter, Jean-Michel Combes, Amanda Barber, and Joe Touch for their
+Winter, Jean-Michel Combes, Amanda Barber, Joe Touch and Sue Hares for their
 thoughtful review of this document.
