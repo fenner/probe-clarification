@@ -7,14 +7,14 @@ Internet-Draft                                           Arista Networks
 Obsoletes: 8335 (if approved)                                  R. Bonica
 Updates: 4884 (if approved)                             Juniper Networks
 Intended status: Standards Track                               R. Thomas
-Expires: 29 July 2026                                    Arista Networks
+Expires: 14 August 2026                                  Arista Networks
                                                               J. Linkova
                                                                   Google
                                                                C. Lenart
                                                                  Verizon
                                                             M. Boucadair
                                                                   Orange
-                                                         25 January 2026
+                                                        10 February 2026
 
 
                 PROBE: A Utility for Probing Interfaces
@@ -64,7 +64,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 29 July 2026.
+   This Internet-Draft will expire on 14 August 2026.
 
 Copyright Notice
 
@@ -143,8 +143,8 @@ Table of Contents
    between the probing interface and a proxy interface.  The proxy
    interface can reside on the same node as the probed interface, or it
    can reside on a node to which the probed interface is directly
-   connected.  Section 5 of this document describes scenarios in which
-   this characteristic is useful.
+   connected.  A list of use cases for this characteristic can be found
+   in Section 5 of this document.
 
    Like PING, PROBE executes on a probing node.  It sends an ICMP
    Extended Echo Request message from a local interface, called the
@@ -462,24 +462,32 @@ Table of Contents
       address.
 
    Otherwise, when a node receives an ICMPv4 Extended Echo Request, it
-   MUST format an ICMP Extended Echo Reply as follows:
-
-   *  Don't Fragment (DF) flag is 1
-
-   *  More Fragments flag is 0
-
-   *  Fragment Offset is 0
+   MUST format the IPv4 header of an ICMPv4 Extended Echo Reply as
+   follows:
 
    *  TTL is 255
 
    *  Protocol is ICMP
 
+   *  Indicate that the packet is not source fragmented and must not be
+      on-path fragmented with the following values:
+
+      -  Don't Fragment (DF) flag is 1
+
+      -  More Fragments flag is 0
+
+      -  Fragment Offset is 0
+
    When a node receives an ICMPv6 Extended Echo Request, it MUST format
-   an ICMPv6 Extended Echo Reply as follows:
+   the IPv6 header of an ICMPv6 Extended Echo Reply as follows:
 
    *  Hop Limit is 255
 
    *  Next Header is ICMPv6
+
+   *  Indicate that the packet is not source fragmented
+
+      -  Do not include an IPv6 Fragmentation Header
 
    In either case, the responding node MUST do the following:
 
@@ -666,6 +674,9 @@ Table of Contents
    *  Updated some "RFC NNN" references to bibliography references
 
    *  Add MUST NOT exceed MTU.
+
+   *  Added details of IPv4/IPv6 headers and avoidance of fragmentation
+      to Section 4
 
 8.  IANA Considerations
 
