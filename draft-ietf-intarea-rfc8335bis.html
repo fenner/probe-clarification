@@ -2076,6 +2076,9 @@ better align with draft-ietf-6man-icmpv6-reflection<a href="#section-7.5-1.1.1" 
           <li class="normal" id="section-7.7-1.4">
             <p id="section-7.7-1.4.1">Added details of IPv4/IPv6 headers and avoidance of fragmentation to <a href="#proc" class="auto internal xref">Section 4</a><a href="#section-7.7-1.4.1" class="pilcrow">¶</a></p>
 </li>
+          <li class="normal" id="section-7.7-1.5">
+            <p id="section-7.7-1.5.1">Added IP address and interface index considerations to <a href="#security" class="auto internal xref">Section 9</a><a href="#section-7.7-1.5.1" class="pilcrow">¶</a></p>
+</li>
         </ul>
 </section>
 </div>
@@ -2231,41 +2234,47 @@ identity)<a href="#section-9-4.2.1" class="pilcrow">¶</a></p>
 executes<a href="#section-9-4.3.1" class="pilcrow">¶</a></p>
 </li>
       </ul>
-<p id="section-9-5">Understanding this risk, network operators establish policies that
+<p id="section-9-5">Addresses and interface index values can also give away information
+that might not want to be shared. For example, a malicious party can
+use PROBE to determine that a given IP address is assigned to any
+interface on the probed node, or if interface index values are
+assigned densely, it can determine how many interfaces exist on the
+probed node.<a href="#section-9-5" class="pilcrow">¶</a></p>
+<p id="section-9-6">Understanding these risks, network operators establish policies that
 restrict access to ICMP Extended Echo functionality. In order to enforce
 these policies, nodes that support ICMP Extended Echo functionality <span class="bcp14">MUST</span>
-support the following configuration options:<a href="#section-9-5" class="pilcrow">¶</a></p>
+support the following configuration options:<a href="#section-9-6" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="section-9-6.1">
-          <p id="section-9-6.1.1">Enable/disable ICMP Extended Echo functionality. By default, ICMP
-Extend Echo functionality is disabled.<a href="#section-9-6.1.1" class="pilcrow">¶</a></p>
+<li class="normal" id="section-9-7.1">
+          <p id="section-9-7.1.1">Enable/disable ICMP Extended Echo functionality. By default, ICMP
+Extend Echo functionality is disabled.<a href="#section-9-7.1.1" class="pilcrow">¶</a></p>
 </li>
-        <li class="normal" id="section-9-6.2">
-          <p id="section-9-6.2.1">Define enabled L-bit settings. By default, the option to set the L-bit
-is enabled and the option to clear the L-bit is disabled.<a href="#section-9-6.2.1" class="pilcrow">¶</a></p>
+        <li class="normal" id="section-9-7.2">
+          <p id="section-9-7.2.1">Define enabled L-bit settings. By default, the option to set the L-bit
+is enabled and the option to clear the L-bit is disabled.<a href="#section-9-7.2.1" class="pilcrow">¶</a></p>
 </li>
-        <li class="normal" id="section-9-6.3">
-          <p id="section-9-6.3.1">Define enabled query types (i.e., by name, by index, or by address);
-by default, all query types are disabled.<a href="#section-9-6.3.1" class="pilcrow">¶</a></p>
+        <li class="normal" id="section-9-7.3">
+          <p id="section-9-7.3.1">Define enabled query types (i.e., by name, by index, or by address);
+by default, all query types are disabled.<a href="#section-9-7.3.1" class="pilcrow">¶</a></p>
 </li>
-        <li class="normal" id="section-9-6.4">
-          <p id="section-9-6.4.1">For each enabled query type, define the prefixes from which ICMP
-Extended Echo Request messages are permitted.<a href="#section-9-6.4.1" class="pilcrow">¶</a></p>
+        <li class="normal" id="section-9-7.4">
+          <p id="section-9-7.4.1">For each enabled query type, define the prefixes from which ICMP
+Extended Echo Request messages are permitted.<a href="#section-9-7.4.1" class="pilcrow">¶</a></p>
 </li>
-        <li class="normal" id="section-9-6.5">
-          <p id="section-9-6.5.1">For each interface, determine whether ICMP Echo Request messages
-are accepted.<a href="#section-9-6.5.1" class="pilcrow">¶</a></p>
+        <li class="normal" id="section-9-7.5">
+          <p id="section-9-7.5.1">For each interface, determine whether ICMP Echo Request messages
+are accepted.<a href="#section-9-7.5.1" class="pilcrow">¶</a></p>
 </li>
       </ul>
-<p id="section-9-7">When a node receives an ICMP Extended Echo Request message that it is
-not configured to support, it <span class="bcp14">MUST</span> silently discard the message. See <a href="#proc" class="auto internal xref">Section 4</a> for details.<a href="#section-9-7" class="pilcrow">¶</a></p>
-<p id="section-9-8">PROBE must not leak information about one Virtual Private Network
+<p id="section-9-8">When a node receives an ICMP Extended Echo Request message that it is
+not configured to support, it <span class="bcp14">MUST</span> silently discard the message. See <a href="#proc" class="auto internal xref">Section 4</a> for details.<a href="#section-9-8" class="pilcrow">¶</a></p>
+<p id="section-9-9">PROBE must not leak information about one Virtual Private Network
 (VPN) into another. Therefore, when a node receives an ICMP Extended
 Echo Request and the proxy interface is in a different VPN than the
 probed interface, the node <span class="bcp14">MUST</span> return an ICMP Extended Echo Reply with
-error code equal to (2) No Such Interface.<a href="#section-9-8" class="pilcrow">¶</a></p>
-<p id="section-9-9">In order to protect local resources, implementations <span class="bcp14">SHOULD</span>
-rate-limit incoming ICMP Extended Echo Request messages.<a href="#section-9-9" class="pilcrow">¶</a></p>
+error code equal to (2) No Such Interface.<a href="#section-9-9" class="pilcrow">¶</a></p>
+<p id="section-9-10">In order to protect local resources, implementations <span class="bcp14">SHOULD</span>
+rate-limit incoming ICMP Extended Echo Request messages.<a href="#section-9-10" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="sec-combined-references">
@@ -2507,7 +2516,7 @@ in <a href="#BitCombinationTable" class="auto internal xref">Table 1</a>.<a href
       </h2>
 <p id="appendix-B-1">Thanks to Sowmini Varadhan, Jeff Haas, Carlos Pignataro, Jonathan
 Looney, Dave Thaler, Mikio Hara, Joel Halpern, Yaron Sheffer, Stefan
-Winter, Jean-Michel Combes, Amanda Barber, and Joe Touch for their
+Winter, Jean-Michel Combes, Amanda Barber, Joe Touch and Sue Hares for their
 thoughtful review of this document.<a href="#appendix-B-1" class="pilcrow">¶</a></p>
 </section>
 </div>
