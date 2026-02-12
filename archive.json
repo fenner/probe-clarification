@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-02-10T01:18:05.190909+00:00",
+  "timestamp": "2026-02-12T01:08:24.924768+00:00",
   "repo": "fenner/probe-clarification",
   "labels": [
     {
@@ -278,15 +278,15 @@
       "id": "I_kwDOLB4g0s7nc3-h",
       "title": "Tony Przygienda: clarification required for \"resides on\" / \"directly connected\"",
       "url": "https://github.com/fenner/probe-clarification/issues/13",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "fenner",
       "authorAssociation": "OWNER",
       "assignees": [],
       "labels": [],
       "body": "Section 5 claims to clarify the language for \u201cresides on\u201d and \u201cdirectly connected\u201d but that does never really happen in the draft AFAIS.",
       "createdAt": "2026-02-01T22:22:07Z",
-      "updatedAt": "2026-02-01T22:22:07Z",
-      "closedAt": null,
+      "updatedAt": "2026-02-10T17:34:53Z",
+      "closedAt": "2026-02-10T17:34:53Z",
       "comments": []
     },
     {
@@ -310,15 +310,15 @@
       "id": "I_kwDOLB4g0s7nnuw2",
       "title": "Early intdir review",
       "url": "https://github.com/fenner/probe-clarification/issues/15",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "fenner",
       "authorAssociation": "OWNER",
       "assignees": [],
       "labels": [],
       "body": "The document is generally fine, with the following offered as a suggestion for clarity:\n\nPage 10 should be updated with the text in braces []:\n\nOtherwise, when a node receives an ICMPv4 Extended Echo Request, it\n   MUST format [the IPv4 header of] an ICMP Extended Echo Reply as follows:\n   *  Don't Fragment (DF) flag is 1\n   *  More Fragments flag is 0\n   *  Fragment Offset is 0\n  [(the above indicate that the packet is not source fragmented and must not be on-path fragmented)]\n   *  TTL is 255\n   *  Protocol is ICMP\n   When a node receives an ICMPv6 Extended Echo Request, it MUST format\n   [the IPv6 header of] an ICMPv6 Extended Echo Reply as follows:\n   *  Hop Limit is 255\n   *  Next Header is ICMPv6\n  [* No use of the IPv6 Fragmentation Header (i.e., not source fragmented)]",
       "createdAt": "2026-02-02T13:31:27Z",
-      "updatedAt": "2026-02-02T13:31:27Z",
-      "closedAt": null,
+      "updatedAt": "2026-02-10T17:34:54Z",
+      "closedAt": "2026-02-10T17:34:54Z",
       "comments": []
     },
     {
@@ -342,16 +342,24 @@
       "id": "I_kwDOLB4g0s7nzhPp",
       "title": "Opsdir review: the document lacks a security considerations section",
       "url": "https://github.com/fenner/probe-clarification/issues/17",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "fenner",
       "authorAssociation": "OWNER",
       "assignees": [],
       "labels": [],
       "body": "it lacks ... a security considerations section\n\nThe Security section\nshould talk about the critical information found in interface names,\nidentifiers or addresses. This advice is not in RFC4884 (which this updates).\n",
       "createdAt": "2026-02-03T04:22:36Z",
-      "updatedAt": "2026-02-03T04:22:36Z",
-      "closedAt": null,
-      "comments": []
+      "updatedAt": "2026-02-10T17:45:23Z",
+      "closedAt": "2026-02-10T17:43:20Z",
+      "comments": [
+        {
+          "author": "fenner",
+          "authorAssociation": "OWNER",
+          "body": "The document already talked about names:\n\n>    However, malicious parties can use PROBE to obtain additional\n>    information.  For example, a malicious party can use PROBE to\n>    discover interface names.  Having discovered an interface name, the\n>    malicious party may be able to infer additional information.\n>    Additional information may include:\n> \n>    *  interface bandwidth\n> \n>    *  the type of device that supports the interface (e.g., vendor\n>       identity)\n> \n>    *  the operating system version that the above-mentioned device\n>       executes\n> \n\nI added this paragraph to additionally talk about addresses and interface indexes:\n\n>    Addresses and interface index values can also give away information\n>    that might not want to be shared.  For example, a malicious party can\n>    use PROBE to determine that a given IP address is assigned to any\n>    interface on the probed node, or if interface index values are\n>    assigned densely, it can determine how many interfaces exist on the\n>    probed node.\n> ",
+          "createdAt": "2026-02-10T17:45:23Z",
+          "updatedAt": "2026-02-10T17:45:23Z"
+        }
+      ]
     },
     {
       "number": 18,
