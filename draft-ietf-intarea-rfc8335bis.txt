@@ -7,14 +7,14 @@ Internet-Draft                                           Arista Networks
 Obsoletes: 8335 (if approved)                                  R. Bonica
 Updates: 4884 (if approved)                             Juniper Networks
 Intended status: Standards Track                               R. Thomas
-Expires: 14 August 2026                                  Arista Networks
+Expires: 30 August 2026                                  Arista Networks
                                                               J. Linkova
                                                                   Google
                                                                C. Lenart
                                                                  Verizon
                                                             M. Boucadair
                                                                   Orange
-                                                        10 February 2026
+                                                        26 February 2026
 
 
                 PROBE: A Utility for Probing Interfaces
@@ -64,7 +64,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 14 August 2026.
+   This Internet-Draft will expire on 30 August 2026.
 
 Copyright Notice
 
@@ -92,6 +92,7 @@ Table of Contents
    4.  ICMP Message Processing
      4.1.  Code Field Processing
    5.  Use Cases
+     5.1.  Caveats
    6.  Updates to RFC 4884
    7.  Change History
      7.1.  Changes from RFC 8335
@@ -592,6 +593,27 @@ Table of Contents
 
    *  For lack of a route, the probing node cannot reach the probed
       interface.
+
+5.1.  Caveats
+
+   A limitation of PROBE is that if probing a link-local destination
+   with the L-bit clear, and the same link-local address is used by
+   multiple neighbors, you may get one of three code values in response:
+
+   *  No Such Table Entry, if none of the neighbors are currently in the
+      table.
+
+   *  No Error, if one neighbor is currently in the table, but there is
+      no indication as to which neighbor.
+
+   *  Multiple Interfaces Satisfy Query, if more than one such neighbor
+      is in the table.
+
+   Similarly, when identifying a local interface by link-local address
+   (the L-bit is set), and the same link-local address is assigned to
+   multiple interfaces, you will get a response with the code Multiple
+   Interfaces Satisfy Query, with no indication which interface is
+   active or able to pass traffic.
 
 6.  Updates to RFC 4884
 
