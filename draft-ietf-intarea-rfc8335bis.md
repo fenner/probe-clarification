@@ -605,6 +605,26 @@ connectivity between the probing and probed interfaces is lacking.
 * For lack of a route, the probing node cannot reach the probed
   interface.
 
+## Caveats
+
+A limitation of PROBE is that if probing a link-local destination
+with the L-bit clear, and the same link-local address is used by
+multiple neighbors, you may get one of three code values in response:
+
+* No Such Table Entry, if none of the neighbors are currently in
+  the table.
+
+* No Error, if one neighbor is currently in the table, but there is
+  no indication as to which neighbor.
+
+* Multiple Interfaces Satisfy Query, if more than one such neighbor
+  is in the table.
+
+Similarly, when identifying a local interface by link-local address
+(the L-bit is set), and the same link-local address is assigned to
+multiple interfaces, you will get a response with the code Multiple
+Interfaces Satisfy Query, with no indication which interface is
+active or able to pass traffic.
 
 # Updates to RFC 4884
 
