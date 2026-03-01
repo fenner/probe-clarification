@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-02-26T01:05:09.387964+00:00",
+  "timestamp": "2026-03-01T01:13:54.460974+00:00",
   "repo": "fenner/probe-clarification",
   "labels": [
     {
@@ -262,15 +262,15 @@
       "id": "I_kwDOLB4g0s7nc3RT",
       "title": "Tony Przygienda: can not distinguish same link-local address on different interfaces",
       "url": "https://github.com/fenner/probe-clarification/issues/12",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "fenner",
       "authorAssociation": "OWNER",
       "assignees": [],
       "labels": [],
       "body": "Draft may have a roblem if the node has multiple interfaces with LLv6 only that are the same (which is allowed). Then if the L-bit is clear you cannot differentiate given the \u201cMUST identify by address\u201d since you need interface name as well in this case. AFAIS a clarification is needed that you can use both address and name with L bit clear than then have procedures to resolve ambiguity (e.g. interface name always takes precedence if address mismatches) . AFAIS the interface identification object however is allowed only once.",
       "createdAt": "2026-02-01T22:20:51Z",
-      "updatedAt": "2026-02-01T22:20:51Z",
-      "closedAt": null,
+      "updatedAt": "2026-02-26T02:45:32Z",
+      "closedAt": "2026-02-26T02:45:32Z",
       "comments": []
     },
     {
