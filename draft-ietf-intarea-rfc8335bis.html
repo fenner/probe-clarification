@@ -22,22 +22,22 @@ same node as the probed interface, or it can reside on a node to which
 the probed interface is directly connected. This document updates RFC
 4884 and obsoletes RFC 8335. 
     " name="description">
-<meta content="xml2rfc 3.31.0" name="generator">
+<meta content="xml2rfc 3.32.0" name="generator">
 <meta content="Ping" name="keyword">
 <meta content="draft-ietf-intarea-rfc8335bis-latest" name="ietf.draft">
 <!-- Generator version information:
-  xml2rfc 3.31.0
+  xml2rfc 3.32.0
     Python 3.12.12
     ConfigArgParse 1.7
     google-i18n-address 3.1.1
     intervaltree 3.2.1
     Jinja2 3.1.6
     lxml 6.0.2
-    platformdirs 4.5.1
+    platformdirs 4.9.4
     pycountry 24.6.1
     PyYAML 6.0.3
     requests 2.32.5
-    wcwidth 0.3.0
+    wcwidth 0.6.0
 -->
 <link href="draft-ietf-intarea-rfc8335bis.xml" rel="alternate" type="application/rfc+xml">
 <link href="#copyright" rel="license">
@@ -1058,11 +1058,11 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <thead><tr>
 <td class="left">Internet-Draft</td>
 <td class="center">PROBE</td>
-<td class="right">February 2026</td>
+<td class="right">April 2026</td>
 </tr></thead>
 <tfoot><tr>
 <td class="left">Fenner, et al.</td>
-<td class="center">Expires 30 August 2026</td>
+<td class="center">Expires 16 October 2026</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1081,12 +1081,12 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <a href="https://www.rfc-editor.org/rfc/rfc4884" class="eref">4884</a> (if approved)</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2026-02-26" class="published">26 February 2026</time>
+<time datetime="2026-04-14" class="published">14 April 2026</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Standards Track</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2026-08-30">30 August 2026</time></dd>
+<dd class="expires"><time datetime="2026-10-16">16 October 2026</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1165,7 +1165,7 @@ the probed interface is directly connected. This document updates RFC
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 30 August 2026.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 16 October 2026.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1268,32 +1268,49 @@ the probed interface is directly connected. This document updates RFC
             <p id="section-toc.1-1.8.1"><a href="#section-8" class="auto internal xref">8</a>.  <a href="#name-iana-considerations" class="internal xref">IANA Considerations</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.9">
-            <p id="section-toc.1-1.9.1"><a href="#section-9" class="auto internal xref">9</a>.  <a href="#name-security-considerations" class="internal xref">Security Considerations</a></p>
-</li>
-          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.10">
-            <p id="section-toc.1-1.10.1"><a href="#section-10" class="auto internal xref">10</a>. <a href="#name-references" class="internal xref">References</a></p>
+            <p id="section-toc.1-1.9.1"><a href="#section-9" class="auto internal xref">9</a>.  <a href="#name-manageability-consideration" class="internal xref">Manageability Considerations</a></p>
 <ul class="compact toc ulBare ulEmpty">
-<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.10.2.1">
-                <p id="section-toc.1-1.10.2.1.1"><a href="#section-10.1" class="auto internal xref">10.1</a>.  <a href="#name-normative-references" class="internal xref">Normative References</a></p>
+<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.9.2.1">
+                <p id="section-toc.1-1.9.2.1.1"><a href="#section-9.1" class="auto internal xref">9.1</a>.  <a href="#name-control-of-function-and-pol" class="internal xref">Control of Function and Policy</a></p>
 </li>
-              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.10.2.2">
-                <p id="section-toc.1-1.10.2.2.1"><a href="#section-10.2" class="auto internal xref">10.2</a>.  <a href="#name-informative-references" class="internal xref">Informative References</a></p>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.9.2.2">
+                <p id="section-toc.1-1.9.2.2.1"><a href="#section-9.2" class="auto internal xref">9.2</a>.  <a href="#name-monitoring-and-verifying-op" class="internal xref">Monitoring and Verifying Operation</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.9.2.3">
+                <p id="section-toc.1-1.9.2.3.1"><a href="#section-9.3" class="auto internal xref">9.3</a>.  <a href="#name-deployment-and-backward-com" class="internal xref">Deployment and Backward Compatibility</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.9.2.4">
+                <p id="section-toc.1-1.9.2.4.1"><a href="#section-9.4" class="auto internal xref">9.4</a>.  <a href="#name-impact-on-network-operation" class="internal xref">Impact on Network Operation</a></p>
 </li>
             </ul>
 </li>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.10">
+            <p id="section-toc.1-1.10.1"><a href="#section-10" class="auto internal xref">10</a>. <a href="#name-security-considerations" class="internal xref">Security Considerations</a></p>
+</li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.11">
-            <p id="section-toc.1-1.11.1"><a href="#appendix-A" class="auto internal xref">Appendix A</a>.  <a href="#name-the-probe-application" class="internal xref">The PROBE Application</a></p>
+            <p id="section-toc.1-1.11.1"><a href="#section-11" class="auto internal xref">11</a>. <a href="#name-references" class="internal xref">References</a></p>
 <ul class="compact toc ulBare ulEmpty">
 <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.11.2.1">
-                <p id="section-toc.1-1.11.2.1.1"><a href="#appendix-A.1" class="auto internal xref">A.1</a>.  <a href="#name-information-display" class="internal xref">Information Display</a></p>
+                <p id="section-toc.1-1.11.2.1.1"><a href="#section-11.1" class="auto internal xref">11.1</a>.  <a href="#name-normative-references" class="internal xref">Normative References</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.11.2.2">
+                <p id="section-toc.1-1.11.2.2.1"><a href="#section-11.2" class="auto internal xref">11.2</a>.  <a href="#name-informative-references" class="internal xref">Informative References</a></p>
 </li>
             </ul>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.12">
-            <p id="section-toc.1-1.12.1"><a href="#appendix-B" class="auto internal xref"></a><a href="#name-acknowledgments" class="internal xref">Acknowledgments</a></p>
+            <p id="section-toc.1-1.12.1"><a href="#appendix-A" class="auto internal xref">Appendix A</a>.  <a href="#name-the-probe-application" class="internal xref">The PROBE Application</a></p>
+<ul class="compact toc ulBare ulEmpty">
+<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.12.2.1">
+                <p id="section-toc.1-1.12.2.1.1"><a href="#appendix-A.1" class="auto internal xref">A.1</a>.  <a href="#name-information-display" class="internal xref">Information Display</a></p>
+</li>
+            </ul>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.13">
-            <p id="section-toc.1-1.13.1"><a href="#appendix-C" class="auto internal xref"></a><a href="#name-authors-addresses" class="internal xref">Authors' Addresses</a></p>
+            <p id="section-toc.1-1.13.1"><a href="#appendix-B" class="auto internal xref"></a><a href="#name-acknowledgments" class="internal xref">Acknowledgments</a></p>
+</li>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.14">
+            <p id="section-toc.1-1.14.1"><a href="#appendix-C" class="auto internal xref"></a><a href="#name-authors-addresses" class="internal xref">Authors' Addresses</a></p>
 </li>
         </ul>
 </nav>
@@ -2112,7 +2129,7 @@ better align with draft-ietf-6man-icmpv6-reflection<a href="#section-7.5-1.1.1" 
             <p id="section-7.7-1.4.1">Added details of IPv4/IPv6 headers and avoidance of fragmentation to <a href="#proc" class="auto internal xref">Section 4</a><a href="#section-7.7-1.4.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-7.7-1.5">
-            <p id="section-7.7-1.5.1">Added IP address and interface index considerations to <a href="#security" class="auto internal xref">Section 9</a><a href="#section-7.7-1.5.1" class="pilcrow">¶</a></p>
+            <p id="section-7.7-1.5.1">Added IP address and interface index considerations to <a href="#security" class="auto internal xref">Section 10</a><a href="#section-7.7-1.5.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
 </section>
@@ -2236,91 +2253,215 @@ basis with a range of 0-255.<a href="#section-8-3.5.5" class="pilcrow">¶</a></p
 of 0-255.<a href="#section-8-4" class="pilcrow">¶</a></p>
 </section>
 </div>
-<div id="security">
+<div id="manageability">
 <section id="section-9">
-      <h2 id="name-security-considerations">
-<a href="#section-9" class="section-number selfRef">9. </a><a href="#name-security-considerations" class="section-name selfRef">Security Considerations</a>
+      <h2 id="name-manageability-consideration">
+<a href="#section-9" class="section-number selfRef">9. </a><a href="#name-manageability-consideration" class="section-name selfRef">Manageability Considerations</a>
       </h2>
-<p id="section-9-1">The following are legitimate uses of PROBE:<a href="#section-9-1" class="pilcrow">¶</a></p>
+<p id="section-9-1">This section discusses manageability aspects of PROBE.
+PROBE is an on-demand diagnostic tool analogous to PING.
+It does not run autonomously, does not maintain
+persistent protocol state, and does not require a formal
+information model or data-model definition.  The subsections below
+address the aspects of <span>[<a href="#RFC5706" class="cite xref">RFC5706</a>]</span> that are applicable to PROBE.<a href="#section-9-1" class="pilcrow">¶</a></p>
+<div id="control-of-function-and-policy">
+<section id="section-9.1">
+        <h3 id="name-control-of-function-and-pol">
+<a href="#section-9.1" class="section-number selfRef">9.1. </a><a href="#name-control-of-function-and-pol" class="section-name selfRef">Control of Function and Policy</a>
+        </h3>
+<p id="section-9.1-1">Nodes that support ICMP Extended Echo functionality <span class="bcp14">MUST</span> support
+the configuration parameters specified in <a href="#security" class="auto internal xref">Section 10</a>.  In
+particular, an operator <span class="bcp14">MUST</span> be able to:<a href="#section-9.1-1" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="section-9-2.1">
-          <p id="section-9-2.1.1">to determine the operational status of an interface.<a href="#section-9-2.1.1" class="pilcrow">¶</a></p>
+<li class="normal" id="section-9.1-2.1">
+            <p id="section-9.1-2.1.1">Enable or disable Extended Echo functionality on the node.  By
+default, ICMP Extended Echo functionality is disabled.<a href="#section-9.1-2.1.1" class="pilcrow">¶</a></p>
 </li>
-        <li class="normal" id="section-9-2.2">
-          <p id="section-9-2.2.1">to determine which protocols (e.g., IPv4 or IPv6) are active on an
-interface.<a href="#section-9-2.2.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-9.1-2.2">
+            <p id="section-9.1-2.2.1">Define the permitted L-bit settings.  By default, the option to
+set the L-bit is enabled and the option to clear the L-bit is
+disabled.<a href="#section-9.1-2.2.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-9.1-2.3">
+            <p id="section-9.1-2.3.1">Define the enabled query types (by name, by index, or by
+address).  By default, all query types are disabled.<a href="#section-9.1-2.3.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-9.1-2.4">
+            <p id="section-9.1-2.4.1">For each enabled query type, control the source prefixes from
+which ICMP Extended Echo Requests are permitted.<a href="#section-9.1-2.4.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-9.1-2.5">
+            <p id="section-9.1-2.5.1">Control acceptance of ICMP messages on a per-interface basis.<a href="#section-9.1-2.5.1" class="pilcrow">¶</a></p>
+</li>
+        </ul>
+<p id="section-9.1-3">These parameters are local to each node and take effect
+immediately; no protocol restart or network-wide coordination is
+required.  An operator must explicitly enable the feature and
+configure authorized source prefixes before a node will respond
+to any Extended Echo Request.<a href="#section-9.1-3" class="pilcrow">¶</a></p>
+<p id="section-9.1-4">No MIB module or YANG data model is defined for these parameters.
+A YANG model may be defined in a separate document in the future.<a href="#section-9.1-4" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="monitoring-and-verifying-operation">
+<section id="section-9.2">
+        <h3 id="name-monitoring-and-verifying-op">
+<a href="#section-9.2" class="section-number selfRef">9.2. </a><a href="#name-monitoring-and-verifying-op" class="section-name selfRef">Monitoring and Verifying Operation</a>
+        </h3>
+<p id="section-9.2-1">Correct operation of PROBE can be verified by sending an ICMP
+Extended Echo Request to a proxy node and examining the Code field
+of the ICMP Extended Echo Reply (<a href="#code" class="auto internal xref">Section 4.1</a>).  A Code of 0 (No
+Error) with the expected interface status confirms correct
+operation.  Non-zero Code values indicate specific error conditions
+enumerated in <a href="#code" class="auto internal xref">Section 4.1</a>.<a href="#section-9.2-1" class="pilcrow">¶</a></p>
+<p id="section-9.2-2">The PROBE application described in <a href="#application" class="auto internal xref">Appendix A</a> sends iterative
+queries and reports per-query results including round-trip time.
+This round-trip time reflects the path latency between the probing
+node and the proxy node, not a property of the probed interface
+itself.<a href="#section-9.2-2" class="pilcrow">¶</a></p>
+<p id="section-9.2-3">Implementations <span class="bcp14">MAY</span> log received Extended Echo Requests at a debug
+level and <span class="bcp14">MAY</span> maintain counters of received, accepted, and
+discarded Extended Echo Requests as part of their general ICMP
+statistics, to assist operators in troubleshooting access-control
+configuration and detecting unexpected traffic.<a href="#section-9.2-3" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="deployment-and-backward-compatibility">
+<section id="section-9.3">
+        <h3 id="name-deployment-and-backward-com">
+<a href="#section-9.3" class="section-number selfRef">9.3. </a><a href="#name-deployment-and-backward-com" class="section-name selfRef">Deployment and Backward Compatibility</a>
+        </h3>
+<p id="section-9.3-1">PROBE is deployed on individual nodes and invoked on demand by
+operators or network management applications.  It does not require
+network-wide signaling, discovery, or coordination.  Operators
+deploying PROBE <span class="bcp14">SHOULD</span>:<a href="#section-9.3-1" class="pilcrow">¶</a></p>
+<ul class="normal">
+<li class="normal" id="section-9.3-2.1">
+            <p id="section-9.3-2.1.1">Enable Extended Echo functionality only on nodes that require
+diagnostic access.<a href="#section-9.3-2.1.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-9.3-2.2">
+            <p id="section-9.3-2.2.1">Restrict permitted source prefixes to authorized management
+networks.<a href="#section-9.3-2.2.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-9.3-2.3">
+            <p id="section-9.3-2.3.1">Apply rate-limiting to Extended Echo Requests consistent with
+existing ICMP rate-limiting policies.<a href="#section-9.3-2.3.1" class="pilcrow">¶</a></p>
+</li>
+        </ul>
+<p id="section-9.3-3">This document obsoletes <span>[<a href="#RFC8335" class="cite xref">RFC8335</a>]</span>.  All known implementations of
+<span>[<a href="#RFC8335" class="cite xref">RFC8335</a>]</span> are compatible with this document.  The differences
+between this document and <span>[<a href="#RFC8335" class="cite xref">RFC8335</a>]</span> are clarifications of the
+packet format and processing rules and not changes to on-the-wire
+behavior.  Nodes implementing this document interoperate with
+nodes implementing <span>[<a href="#RFC8335" class="cite xref">RFC8335</a>]</span> without any transition mechanism or
+behavioral migration.<a href="#section-9.3-3" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="impact-on-network-operation">
+<section id="section-9.4">
+        <h3 id="name-impact-on-network-operation">
+<a href="#section-9.4" class="section-number selfRef">9.4. </a><a href="#name-impact-on-network-operation" class="section-name selfRef">Impact on Network Operation</a>
+        </h3>
+<p id="section-9.4-1">Each PROBE invocation generates one ICMP Extended Echo Request and
+one ICMP Extended Echo Reply.  Each query is independent; there is
+no persistent session or periodic message exchange.  The
+processing cost on the proxy node is comparable to that of a
+standard ICMP Echo Request.<a href="#section-9.4-1" class="pilcrow">¶</a></p>
+<p id="section-9.4-2">Frequent automated use of PROBE (e.g., by a management
+application polling many interfaces) could increase ICMP traffic
+on the network.  Operators <span class="bcp14">SHOULD</span> apply rate-limiting at the
+responder (<a href="#security" class="auto internal xref">Section 10</a>) consistent with their existing ICMP
+rate-limiting policies to bound this load.<a href="#section-9.4-2" class="pilcrow">¶</a></p>
+</section>
+</div>
+</section>
+</div>
+<div id="security">
+<section id="section-10">
+      <h2 id="name-security-considerations">
+<a href="#section-10" class="section-number selfRef">10. </a><a href="#name-security-considerations" class="section-name selfRef">Security Considerations</a>
+      </h2>
+<p id="section-10-1">The following are legitimate uses of PROBE:<a href="#section-10-1" class="pilcrow">¶</a></p>
+<ul class="normal">
+<li class="normal" id="section-10-2.1">
+          <p id="section-10-2.1.1">to determine the operational status of an interface.<a href="#section-10-2.1.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="section-10-2.2">
+          <p id="section-10-2.2.1">to determine which protocols (e.g., IPv4 or IPv6) are active on an
+interface.<a href="#section-10-2.2.1" class="pilcrow">¶</a></p>
 </li>
       </ul>
-<p id="section-9-3">However, malicious parties can use PROBE to obtain additional
+<p id="section-10-3">However, malicious parties can use PROBE to obtain additional
 information. For example, a malicious party can use PROBE to discover
 interface names. Having discovered an interface name, the malicious
 party may be able to infer additional information. Additional
-information may include:<a href="#section-9-3" class="pilcrow">¶</a></p>
+information may include:<a href="#section-10-3" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="section-9-4.1">
-          <p id="section-9-4.1.1">interface bandwidth<a href="#section-9-4.1.1" class="pilcrow">¶</a></p>
+<li class="normal" id="section-10-4.1">
+          <p id="section-10-4.1.1">interface bandwidth<a href="#section-10-4.1.1" class="pilcrow">¶</a></p>
 </li>
-        <li class="normal" id="section-9-4.2">
-          <p id="section-9-4.2.1">the type of device that supports the interface (e.g., vendor
-identity)<a href="#section-9-4.2.1" class="pilcrow">¶</a></p>
+        <li class="normal" id="section-10-4.2">
+          <p id="section-10-4.2.1">the type of device that supports the interface (e.g., vendor
+identity)<a href="#section-10-4.2.1" class="pilcrow">¶</a></p>
 </li>
-        <li class="normal" id="section-9-4.3">
-          <p id="section-9-4.3.1">the operating system version that the above-mentioned device
-executes<a href="#section-9-4.3.1" class="pilcrow">¶</a></p>
+        <li class="normal" id="section-10-4.3">
+          <p id="section-10-4.3.1">the operating system version that the above-mentioned device
+executes<a href="#section-10-4.3.1" class="pilcrow">¶</a></p>
 </li>
       </ul>
-<p id="section-9-5">Addresses and interface index values can also give away information
+<p id="section-10-5">Addresses and interface index values can also give away information
 that might not want to be shared. For example, a malicious party can
 use PROBE to determine that a given IP address is assigned to any
 interface on the probed node, or if interface index values are
 assigned densely, it can determine how many interfaces exist on the
-probed node.<a href="#section-9-5" class="pilcrow">¶</a></p>
-<p id="section-9-6">Understanding these risks, network operators establish policies that
+probed node.<a href="#section-10-5" class="pilcrow">¶</a></p>
+<p id="section-10-6">Understanding these risks, network operators establish policies that
 restrict access to ICMP Extended Echo functionality. In order to enforce
 these policies, nodes that support ICMP Extended Echo functionality <span class="bcp14">MUST</span>
-support the following configuration options:<a href="#section-9-6" class="pilcrow">¶</a></p>
+support the following configuration options:<a href="#section-10-6" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="section-9-7.1">
-          <p id="section-9-7.1.1">Enable/disable ICMP Extended Echo functionality. By default, ICMP
-Extend Echo functionality is disabled.<a href="#section-9-7.1.1" class="pilcrow">¶</a></p>
+<li class="normal" id="section-10-7.1">
+          <p id="section-10-7.1.1">Enable/disable ICMP Extended Echo functionality. By default, ICMP
+Extend Echo functionality is disabled.<a href="#section-10-7.1.1" class="pilcrow">¶</a></p>
 </li>
-        <li class="normal" id="section-9-7.2">
-          <p id="section-9-7.2.1">Define enabled L-bit settings. By default, the option to set the L-bit
-is enabled and the option to clear the L-bit is disabled.<a href="#section-9-7.2.1" class="pilcrow">¶</a></p>
+        <li class="normal" id="section-10-7.2">
+          <p id="section-10-7.2.1">Define enabled L-bit settings. By default, the option to set the L-bit
+is enabled and the option to clear the L-bit is disabled.<a href="#section-10-7.2.1" class="pilcrow">¶</a></p>
 </li>
-        <li class="normal" id="section-9-7.3">
-          <p id="section-9-7.3.1">Define enabled query types (i.e., by name, by index, or by address);
-by default, all query types are disabled.<a href="#section-9-7.3.1" class="pilcrow">¶</a></p>
+        <li class="normal" id="section-10-7.3">
+          <p id="section-10-7.3.1">Define enabled query types (i.e., by name, by index, or by address);
+by default, all query types are disabled.<a href="#section-10-7.3.1" class="pilcrow">¶</a></p>
 </li>
-        <li class="normal" id="section-9-7.4">
-          <p id="section-9-7.4.1">For each enabled query type, define the prefixes from which ICMP
-Extended Echo Request messages are permitted.<a href="#section-9-7.4.1" class="pilcrow">¶</a></p>
+        <li class="normal" id="section-10-7.4">
+          <p id="section-10-7.4.1">For each enabled query type, define the prefixes from which ICMP
+Extended Echo Request messages are permitted.<a href="#section-10-7.4.1" class="pilcrow">¶</a></p>
 </li>
-        <li class="normal" id="section-9-7.5">
-          <p id="section-9-7.5.1">For each interface, determine whether ICMP Echo Request messages
-are accepted.<a href="#section-9-7.5.1" class="pilcrow">¶</a></p>
+        <li class="normal" id="section-10-7.5">
+          <p id="section-10-7.5.1">For each interface, determine whether ICMP Echo Request messages
+are accepted.<a href="#section-10-7.5.1" class="pilcrow">¶</a></p>
 </li>
       </ul>
-<p id="section-9-8">When a node receives an ICMP Extended Echo Request message that it is
-not configured to support, it <span class="bcp14">MUST</span> silently discard the message. See <a href="#proc" class="auto internal xref">Section 4</a> for details.<a href="#section-9-8" class="pilcrow">¶</a></p>
-<p id="section-9-9">PROBE must not leak information about one Virtual Private Network
+<p id="section-10-8">When a node receives an ICMP Extended Echo Request message that it is
+not configured to support, it <span class="bcp14">MUST</span> silently discard the message. See <a href="#proc" class="auto internal xref">Section 4</a> for details.<a href="#section-10-8" class="pilcrow">¶</a></p>
+<p id="section-10-9">PROBE must not leak information about one Virtual Private Network
 (VPN) into another. Therefore, when a node receives an ICMP Extended
 Echo Request and the proxy interface is in a different VPN than the
 probed interface, the node <span class="bcp14">MUST</span> return an ICMP Extended Echo Reply with
-error code equal to (2) No Such Interface.<a href="#section-9-9" class="pilcrow">¶</a></p>
-<p id="section-9-10">In order to protect local resources, implementations <span class="bcp14">SHOULD</span>
-rate-limit incoming ICMP Extended Echo Request messages.<a href="#section-9-10" class="pilcrow">¶</a></p>
+error code equal to (2) No Such Interface.<a href="#section-10-9" class="pilcrow">¶</a></p>
+<p id="section-10-10">In order to protect local resources, implementations <span class="bcp14">SHOULD</span>
+rate-limit incoming ICMP Extended Echo Request messages.<a href="#section-10-10" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="sec-combined-references">
-<section id="section-10">
+<section id="section-11">
       <h2 id="name-references">
-<a href="#section-10" class="section-number selfRef">10. </a><a href="#name-references" class="section-name selfRef">References</a>
+<a href="#section-11" class="section-number selfRef">11. </a><a href="#name-references" class="section-name selfRef">References</a>
       </h2>
 <div id="sec-normative-references">
-<section id="section-10.1">
+<section id="section-11.1">
         <h3 id="name-normative-references">
-<a href="#section-10.1" class="section-number selfRef">10.1. </a><a href="#name-normative-references" class="section-name selfRef">Normative References</a>
+<a href="#section-11.1" class="section-number selfRef">11.1. </a><a href="#name-normative-references" class="section-name selfRef">Normative References</a>
         </h3>
 <dl class="references">
 <dt id="RFC0792">[RFC0792]</dt>
@@ -2363,14 +2504,14 @@ rate-limit incoming ICMP Extended Echo Request messages.<a href="#section-9-10" 
 </section>
 </div>
 <div id="sec-informative-references">
-<section id="section-10.2">
+<section id="section-11.2">
         <h3 id="name-informative-references">
-<a href="#section-10.2" class="section-number selfRef">10.2. </a><a href="#name-informative-references" class="section-name selfRef">Informative References</a>
+<a href="#section-11.2" class="section-number selfRef">11.2. </a><a href="#name-informative-references" class="section-name selfRef">Informative References</a>
         </h3>
 <dl class="references">
 <dt id="I-D.ietf-6man-icmpv6-reflection">[I-D.ietf-6man-icmpv6-reflection]</dt>
         <dd>
-<span class="refAuthor">Mizrahi, T.</span>, <span class="refAuthor">hexiaoming, X.</span>, <span class="refAuthor">Zhou, T.</span>, <span class="refAuthor">Bonica, R.</span>, and <span class="refAuthor">X. Min</span>, <span class="refTitle">"Internet Control Message Protocol (ICMPv6) Reflection"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-6man-icmpv6-reflection-19</span>, <time datetime="2025-12-15" class="refDate">15 December 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-6man-icmpv6-reflection-19">https://datatracker.ietf.org/doc/html/draft-ietf-6man-icmpv6-reflection-19</a>&gt;</span>. </dd>
+<span class="refAuthor">Mizrahi, T.</span>, <span class="refAuthor">hexiaoming, X.</span>, <span class="refAuthor">Zhou, T.</span>, <span class="refAuthor">Bonica, R. P.</span>, and <span class="refAuthor">X. Min</span>, <span class="refTitle">"Internet Control Message Protocol (ICMPv6) Reflection"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-6man-icmpv6-reflection-19</span>, <time datetime="2025-12-15" class="refDate">15 December 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-6man-icmpv6-reflection-19">https://datatracker.ietf.org/doc/html/draft-ietf-6man-icmpv6-reflection-19</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="IANA.address-family-numbers">[IANA.address-family-numbers]</dt>
         <dd>
@@ -2381,8 +2522,12 @@ rate-limit incoming ICMP Extended Echo Request messages.<a href="#section-9-10" 
 <span class="refAuthor">Kessler, G.</span> and <span class="refAuthor">S. Shepard</span>, <span class="refTitle">"A Primer On Internet and TCP/IP Tools and Utilities"</span>, <span class="seriesInfo">FYI 30</span>, <span class="seriesInfo">RFC 2151</span>, <span class="seriesInfo">DOI 10.17487/RFC2151</span>, <time datetime="1997-06" class="refDate">June 1997</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc2151">https://www.rfc-editor.org/rfc/rfc2151</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="RFC4594">[RFC4594]</dt>
-      <dd>
+        <dd>
 <span class="refAuthor">Babiarz, J.</span>, <span class="refAuthor">Chan, K.</span>, and <span class="refAuthor">F. Baker</span>, <span class="refTitle">"Configuration Guidelines for DiffServ Service Classes"</span>, <span class="seriesInfo">RFC 4594</span>, <span class="seriesInfo">DOI 10.17487/RFC4594</span>, <time datetime="2006-08" class="refDate">August 2006</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc4594">https://www.rfc-editor.org/rfc/rfc4594</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC5706">[RFC5706]</dt>
+      <dd>
+<span class="refAuthor">Harrington, D.</span>, <span class="refTitle">"Guidelines for Considering Operations and Management of New Protocols and Protocol Extensions"</span>, <span class="seriesInfo">RFC 5706</span>, <span class="seriesInfo">DOI 10.17487/RFC5706</span>, <time datetime="2009-11" class="refDate">November 2009</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc5706">https://www.rfc-editor.org/rfc/rfc5706</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 </dl>
 </section>

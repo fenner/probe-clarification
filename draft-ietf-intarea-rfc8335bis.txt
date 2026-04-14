@@ -7,14 +7,14 @@ Internet-Draft                                           Arista Networks
 Obsoletes: 8335 (if approved)                                  R. Bonica
 Updates: 4884 (if approved)                             Juniper Networks
 Intended status: Standards Track                               R. Thomas
-Expires: 30 August 2026                                  Arista Networks
+Expires: 16 October 2026                                 Arista Networks
                                                               J. Linkova
                                                                   Google
                                                                C. Lenart
                                                                  Verizon
                                                             M. Boucadair
                                                                   Orange
-                                                        26 February 2026
+                                                           14 April 2026
 
 
                 PROBE: A Utility for Probing Interfaces
@@ -64,7 +64,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 30 August 2026.
+   This Internet-Draft will expire on 16 October 2026.
 
 Copyright Notice
 
@@ -103,10 +103,15 @@ Table of Contents
      7.6.  Changes from draft-int-intarea-rfc8335bis-01
      7.7.  Changes from draft-int-intarea-rfc8335bis-02
    8.  IANA Considerations
-   9.  Security Considerations
-   10. References
-     10.1.  Normative References
-     10.2.  Informative References
+   9.  Manageability Considerations
+     9.1.  Control of Function and Policy
+     9.2.  Monitoring and Verifying Operation
+     9.3.  Deployment and Backward Compatibility
+     9.4.  Impact on Network Operation
+   10. Security Considerations
+   11. References
+     11.1.  Normative References
+     11.2.  Informative References
    Appendix A.  The PROBE Application
      A.1.  Information Display
    Acknowledgments
@@ -700,7 +705,7 @@ Table of Contents
    *  Added details of IPv4/IPv6 headers and avoidance of fragmentation
       to Section 4
 
-   *  Added IP address and interface index considerations to Section 9
+   *  Added IP address and interface index considerations to Section 10
 
 8.  IANA Considerations
 
@@ -780,7 +785,103 @@ Table of Contents
    All codes mentioned above are assigned on an FCFS basis with a range
    of 0-255.
 
-9.  Security Considerations
+9.  Manageability Considerations
+
+   This section discusses manageability aspects of PROBE.  PROBE is an
+   on-demand diagnostic tool analogous to PING.  It does not run
+   autonomously, does not maintain persistent protocol state, and does
+   not require a formal information model or data-model definition.  The
+   subsections below address the aspects of [RFC5706] that are
+   applicable to PROBE.
+
+9.1.  Control of Function and Policy
+
+   Nodes that support ICMP Extended Echo functionality MUST support the
+   configuration parameters specified in Section 10.  In particular, an
+   operator MUST be able to:
+
+   *  Enable or disable Extended Echo functionality on the node.  By
+      default, ICMP Extended Echo functionality is disabled.
+
+   *  Define the permitted L-bit settings.  By default, the option to
+      set the L-bit is enabled and the option to clear the L-bit is
+      disabled.
+
+   *  Define the enabled query types (by name, by index, or by address).
+      By default, all query types are disabled.
+
+   *  For each enabled query type, control the source prefixes from
+      which ICMP Extended Echo Requests are permitted.
+
+   *  Control acceptance of ICMP messages on a per-interface basis.
+
+   These parameters are local to each node and take effect immediately;
+   no protocol restart or network-wide coordination is required.  An
+   operator must explicitly enable the feature and configure authorized
+   source prefixes before a node will respond to any Extended Echo
+   Request.
+
+   No MIB module or YANG data model is defined for these parameters.  A
+   YANG model may be defined in a separate document in the future.
+
+9.2.  Monitoring and Verifying Operation
+
+   Correct operation of PROBE can be verified by sending an ICMP
+   Extended Echo Request to a proxy node and examining the Code field of
+   the ICMP Extended Echo Reply (Section 4.1).  A Code of 0 (No Error)
+   with the expected interface status confirms correct operation.  Non-
+   zero Code values indicate specific error conditions enumerated in
+   Section 4.1.
+
+   The PROBE application described in Appendix A sends iterative queries
+   and reports per-query results including round-trip time.  This round-
+   trip time reflects the path latency between the probing node and the
+   proxy node, not a property of the probed interface itself.
+
+   Implementations MAY log received Extended Echo Requests at a debug
+   level and MAY maintain counters of received, accepted, and discarded
+   Extended Echo Requests as part of their general ICMP statistics, to
+   assist operators in troubleshooting access-control configuration and
+   detecting unexpected traffic.
+
+9.3.  Deployment and Backward Compatibility
+
+   PROBE is deployed on individual nodes and invoked on demand by
+   operators or network management applications.  It does not require
+   network-wide signaling, discovery, or coordination.  Operators
+   deploying PROBE SHOULD:
+
+   *  Enable Extended Echo functionality only on nodes that require
+      diagnostic access.
+
+   *  Restrict permitted source prefixes to authorized management
+      networks.
+
+   *  Apply rate-limiting to Extended Echo Requests consistent with
+      existing ICMP rate-limiting policies.
+
+   This document obsoletes [RFC8335].  All known implementations of
+   [RFC8335] are compatible with this document.  The differences between
+   this document and [RFC8335] are clarifications of the packet format
+   and processing rules and not changes to on-the-wire behavior.  Nodes
+   implementing this document interoperate with nodes implementing
+   [RFC8335] without any transition mechanism or behavioral migration.
+
+9.4.  Impact on Network Operation
+
+   Each PROBE invocation generates one ICMP Extended Echo Request and
+   one ICMP Extended Echo Reply.  Each query is independent; there is no
+   persistent session or periodic message exchange.  The processing cost
+   on the proxy node is comparable to that of a standard ICMP Echo
+   Request.
+
+   Frequent automated use of PROBE (e.g., by a management application
+   polling many interfaces) could increase ICMP traffic on the network.
+   Operators SHOULD apply rate-limiting at the responder (Section 10)
+   consistent with their existing ICMP rate-limiting policies to bound
+   this load.
+
+10.  Security Considerations
 
    The following are legitimate uses of PROBE:
 
@@ -843,9 +944,9 @@ Table of Contents
    In order to protect local resources, implementations SHOULD rate-
    limit incoming ICMP Extended Echo Request messages.
 
-10.  References
+11.  References
 
-10.1.  Normative References
+11.1.  Normative References
 
    [RFC0792]  Postel, J., "Internet Control Message Protocol", STD 5,
               RFC 792, DOI 10.17487/RFC0792, September 1981,
@@ -891,11 +992,11 @@ Table of Contents
               Management", RFC 8343, DOI 10.17487/RFC8343, March 2018,
               <https://www.rfc-editor.org/rfc/rfc8343>.
 
-10.2.  Informative References
+11.2.  Informative References
 
    [I-D.ietf-6man-icmpv6-reflection]
-              Mizrahi, T., hexiaoming, X., Zhou, T., Bonica, R., and X.
-              Min, "Internet Control Message Protocol (ICMPv6)
+              Mizrahi, T., hexiaoming, X., Zhou, T., Bonica, R. P., and
+              X. Min, "Internet Control Message Protocol (ICMPv6)
               Reflection", Work in Progress, Internet-Draft, draft-ietf-
               6man-icmpv6-reflection-19, 15 December 2025,
               <https://datatracker.ietf.org/doc/html/draft-ietf-6man-
@@ -914,6 +1015,11 @@ Table of Contents
               Guidelines for DiffServ Service Classes", RFC 4594,
               DOI 10.17487/RFC4594, August 2006,
               <https://www.rfc-editor.org/rfc/rfc4594>.
+
+   [RFC5706]  Harrington, D., "Guidelines for Considering Operations and
+              Management of New Protocols and Protocol Extensions",
+              RFC 5706, DOI 10.17487/RFC5706, November 2009,
+              <https://www.rfc-editor.org/rfc/rfc5706>.
 
 Appendix A.  The PROBE Application
 
