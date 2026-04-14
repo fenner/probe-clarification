@@ -724,13 +724,6 @@ Table of Contents
    *  Clarify the wording of Section 1.3, including further wording
       about the checksum coverage.
 
-   Subsections cover:
-
-   Control of Function and Policy (configuration parameters) Monitoring
-   and Verifying Operation (verification, counters, RTT) Deployment and
-   Backward Compatibility (guidance, RFC 8335 compat) Impact on Network
-   Operation (resource cost, rate-limiting)
-
 8.  IANA Considerations
 
    IANA is requested to update the references for the below actions from
