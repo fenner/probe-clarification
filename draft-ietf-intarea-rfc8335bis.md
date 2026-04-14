@@ -215,7 +215,13 @@ object is an Interface Identification Object as defined in this
 memo, the extension structure (including the checksum) consists only
 of that single ICMP Extension Object.  This is done to maintain
 compatibility with the initial set of implementations of RFC8335,
-which behave this way.  New uses of ICMP Extensions, and in fact
+which behave this way.
+The ICMP Extension Structure checksum covers only the Interface
+Identification Object.  Any data following it is not covered by
+this checksum but is covered by the ICMP header checksum, which
+protects the entire ICMP message (see {{security}} for further
+discussion).
+New uses of ICMP Extensions, and in fact
 uses of Extended Echo using some object other than the Interface
 Identification Object, SHOULD NOT behave this way.  Uses other than
 defined in this memo SHOULD treat the ICMP Extension Structure as
