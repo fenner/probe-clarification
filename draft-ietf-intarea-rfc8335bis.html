@@ -2451,6 +2451,24 @@ probed interface, the node <span class="bcp14">MUST</span> return an ICMP Extend
 error code equal to (2) No Such Interface.<a href="#section-10-9" class="pilcrow">¶</a></p>
 <p id="section-10-10">In order to protect local resources, implementations <span class="bcp14">SHOULD</span>
 rate-limit incoming ICMP Extended Echo Request messages.<a href="#section-10-10" class="pilcrow">¶</a></p>
+<p id="section-10-11">PROBE does not present a significant amplification risk.  The ICMP
+Extended Echo Reply is not meaningfully larger than the corresponding
+ICMP Extended Echo Request; therefore, PROBE is not a useful
+amplification vector.<a href="#section-10-11" class="pilcrow">¶</a></p>
+<p id="section-10-12">As with any ICMP message that carries an opaque data payload, the
+optional data field could theoretically be used as a covert channel.
+The rate-limiting recommended above bounds the throughput of any such
+channel.<a href="#section-10-12" class="pilcrow">¶</a></p>
+<p id="section-10-13">An on-path attacker can modify ICMP Extended Echo Request or Reply
+messages to return incorrect interface status information.  This
+risk is shared with all ICMP messages and is not unique to PROBE.
+When integrity protection of PROBE messages is required, IPsec
+<span>[<a href="#RFC4301" class="cite xref">RFC4301</a>]</span> <span class="bcp14">SHOULD</span> be used.<a href="#section-10-13" class="pilcrow">¶</a></p>
+<p id="section-10-14">The ICMP header checksum provides integrity protection for the
+entire ICMP message, including any data following the ICMP Extension
+Structure.  However, this is a non-cryptographic checksum intended
+for error detection, not protection against intentional
+modification.<a href="#section-10-14" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="sec-combined-references">
@@ -2520,6 +2538,10 @@ rate-limit incoming ICMP Extended Echo Request messages.<a href="#section-10-10"
 <dt id="RFC2151">[RFC2151]</dt>
         <dd>
 <span class="refAuthor">Kessler, G.</span> and <span class="refAuthor">S. Shepard</span>, <span class="refTitle">"A Primer On Internet and TCP/IP Tools and Utilities"</span>, <span class="seriesInfo">FYI 30</span>, <span class="seriesInfo">RFC 2151</span>, <span class="seriesInfo">DOI 10.17487/RFC2151</span>, <time datetime="1997-06" class="refDate">June 1997</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc2151">https://www.rfc-editor.org/rfc/rfc2151</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC4301">[RFC4301]</dt>
+        <dd>
+<span class="refAuthor">Kent, S.</span> and <span class="refAuthor">K. Seo</span>, <span class="refTitle">"Security Architecture for the Internet Protocol"</span>, <span class="seriesInfo">RFC 4301</span>, <span class="seriesInfo">DOI 10.17487/RFC4301</span>, <time datetime="2005-12" class="refDate">December 2005</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc4301">https://www.rfc-editor.org/rfc/rfc4301</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="RFC4594">[RFC4594]</dt>
         <dd>
