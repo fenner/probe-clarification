@@ -1099,5 +1099,6 @@ For example, an application may perform these steps:
 
 Thanks to Sowmini Varadhan, Jeff Haas, Carlos Pignataro, Jonathan
 Looney, Dave Thaler, Mikio Hara, Joel Halpern, Yaron Sheffer, Stefan
-Winter, Jean-Michel Combes, Amanda Barber, Joe Touch and Sue Hares for their
+Winter, Jean-Michel Combes, Amanda Barber, Joe Touch, Sue Hares,
+Xaio Min, Tony Przygienda, Nick Buraglio and Tal Mizrahi for their
 thoughtful review of this document.
