@@ -719,6 +719,18 @@ Specifically,
 
 * Added IP address and interface index considerations to {{security}}
 
+* Add new {{manageability}} (Manageability Considerations) immediately
+  before {{security}}, per RFC 5706 Section 4.3 guidance.
+
+* Add to {{security}} details of Amplification risk, Covert channel potential,
+  On-path attacker modification, ICMP header checksum scope.
+
+* Broaden VPN isolation language to cover network instances
+  and logical network elements.
+
+* Clarify the wording of {{dontdothis}}, including further wording about
+  the checksum coverage.
+
 # IANA Considerations {#IANA}
 
 IANA is requested to update the references for the below
