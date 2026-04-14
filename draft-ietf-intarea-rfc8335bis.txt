@@ -160,8 +160,8 @@ Table of Contents
    The ICMP Extended Echo Request contains an ICMP Extension Structure
    and the ICMP Extension Structure contains an Interface Identification
    Object.  The Interface Identification Object identifies the probed
-   interface.  The probed interface can reside on or directly connect to
-   the proxy node.
+   interface.  The probed interface can reside on or be directly
+   connected to the proxy node.
 
    When the proxy interface receives the ICMP Extended Echo Request, the
    proxy node executes access control procedures.  If access is granted,
@@ -212,18 +212,22 @@ Table of Contents
 
 1.3.  A note on this document's use of ICMP Extensions
 
-   This document defines a unique use of ICMP Extensions [RFC4884]:
-   while normally, ICMP Extensions are defined to start at a given point
-   and continue to the end of the packet, if the extension object is an
-   Interface Identification Object as defined in this memo, then the
-   extension structure (including the checksum) consists only of that
-   single ICMP Extension Object.  This is done to maintain compatibility
-   with the initial set of implementations of RFC8335, which behave this
-   way.  New uses of ICMP Extensions, and in fact uses of Extended Echo
-   using some object other than the Interface Identification Object,
-   SHOULD NOT behave this way.  Uses other than defined in this memo
-   SHOULD treat the ICMP Extension Structure as extending to the end of
-   the packet as [RFC4884] defines.
+   This document defines a unique use of ICMP Extensions [RFC4884].
+   Normally, ICMP Extensions are defined to start at a given point and
+   continue to the end of the packet.  However, when the extension
+   object is an Interface Identification Object as defined in this memo,
+   the extension structure (including the checksum) consists only of
+   that single ICMP Extension Object.  This is done to maintain
+   compatibility with the initial set of implementations of RFC8335,
+   which behave this way.  The ICMP Extension Structure checksum covers
+   only the Interface Identification Object.  Any data following it is
+   not covered by this checksum but is covered by the ICMP header
+   checksum, which protects the entire ICMP message (see Section 10 for
+   further discussion).  New uses of ICMP Extensions, and in fact uses
+   of Extended Echo using some object other than the Interface
+   Identification Object, SHOULD NOT behave this way.  Uses other than
+   defined in this memo SHOULD treat the ICMP Extension Structure as
+   extending to the end of the packet as [RFC4884] defines.
 
 2.  ICMP Extended Echo Request
 
@@ -707,6 +711,26 @@ Table of Contents
 
    *  Added IP address and interface index considerations to Section 10
 
+   *  Add new Section 9 (Manageability Considerations) immediately
+      before Section 10, per RFC 5706 Section 4.3 guidance.
+
+   *  Add to Section 10 details of Amplification risk, Covert channel
+      potential, On-path attacker modification, ICMP header checksum
+      scope.
+
+   *  Broaden VPN isolation language to cover network instances and
+      logical network elements.
+
+   *  Clarify the wording of Section 1.3, including further wording
+      about the checksum coverage.
+
+   Subsections cover:
+
+   Control of Function and Policy (configuration parameters) Monitoring
+   and Verifying Operation (verification, counters, RTT) Deployment and
+   Backward Compatibility (guidance, RFC 8335 compat) Impact on Network
+   Operation (resource cost, rate-limiting)
+
 8.  IANA Considerations
 
    IANA is requested to update the references for the below actions from
@@ -935,11 +959,12 @@ Table of Contents
    not configured to support, it MUST silently discard the message.  See
    Section 4 for details.
 
-   PROBE must not leak information about one Virtual Private Network
-   (VPN) into another.  Therefore, when a node receives an ICMP Extended
-   Echo Request and the proxy interface is in a different VPN than the
-   probed interface, the node MUST return an ICMP Extended Echo Reply
-   with error code equal to (2) No Such Interface.
+   PROBE must not leak information across network instance boundaries.
+   Therefore, when a node receives an ICMP Extended Echo Request and the
+   proxy interface and the probed interface are in different Virtual
+   Private Networks (VPNs), network instances [RFC8529], or logical
+   network elements [RFC8530], the node MUST return an ICMP Extended
+   Echo Reply with error code equal to (2) No Such Interface.
 
    In order to protect local resources, implementations SHOULD rate-
    limit incoming ICMP Extended Echo Request messages.
@@ -1045,6 +1070,16 @@ Table of Contents
               Management of New Protocols and Protocol Extensions",
               RFC 5706, DOI 10.17487/RFC5706, November 2009,
               <https://www.rfc-editor.org/rfc/rfc5706>.
+
+   [RFC8529]  Berger, L., Hopps, C., Lindem, A., Bogdanovic, D., and X.
+              Liu, "YANG Data Model for Network Instances", RFC 8529,
+              DOI 10.17487/RFC8529, March 2019,
+              <https://www.rfc-editor.org/rfc/rfc8529>.
+
+   [RFC8530]  Berger, L., Hopps, C., Lindem, A., Bogdanovic, D., and X.
+              Liu, "YANG Model for Logical Network Elements", RFC 8530,
+              DOI 10.17487/RFC8530, March 2019,
+              <https://www.rfc-editor.org/rfc/rfc8530>.
 
 Appendix A.  The PROBE Application
 

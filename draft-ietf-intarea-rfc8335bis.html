@@ -1362,8 +1362,8 @@ node.<a href="#section-1-5" class="pilcrow">¶</a></p>
 <p id="section-1-6">The ICMP Extended Echo Request contains an ICMP Extension Structure
 and the ICMP Extension Structure contains an Interface Identification
 Object. The Interface Identification Object identifies the probed
-interface. The probed interface can reside on or
-directly connect to the proxy node.<a href="#section-1-6" class="pilcrow">¶</a></p>
+interface. The probed interface can reside on or be directly connected to the
+proxy node.<a href="#section-1-6" class="pilcrow">¶</a></p>
 <p id="section-1-7">When the proxy interface receives the ICMP Extended Echo Request, the
 proxy node executes access control procedures. If access is granted, the
 proxy node determines the status of the probed interface and returns an
@@ -1433,19 +1433,24 @@ appear in all capitals, as shown here.<a href="#section-1.2-1" class="pilcrow">�
         <h3 id="name-a-note-on-this-documents-us">
 <a href="#section-1.3" class="section-number selfRef">1.3. </a><a href="#name-a-note-on-this-documents-us" class="section-name selfRef">A note on this document's use of ICMP Extensions</a>
         </h3>
-<p id="section-1.3-1">This document defines a unique use of ICMP Extensions <span>[<a href="#RFC4884" class="cite xref">RFC4884</a>]</span>:
-while normally, ICMP Extensions are defined to start at a given
-point and continue to the end of the packet, if the
-extension object is an Interface Identification Object as defined
-in this memo, then the extension structure (including the
-checksum) consists only of that single ICMP Extension Object.
-This is done to maintain compatibility with the initial set
-of implementations of RFC8335, which behave this way.  New
-uses of ICMP Extensions, and in fact uses of Extended Echo
-using some object other than the Interface Identification Object,
-<span class="bcp14">SHOULD NOT</span> behave this way.  Uses other than defined in this
-memo <span class="bcp14">SHOULD</span> treat the ICMP Extension Structure as extending
-to the end of the packet as <span>[<a href="#RFC4884" class="cite xref">RFC4884</a>]</span> defines.<a href="#section-1.3-1" class="pilcrow">¶</a></p>
+<p id="section-1.3-1">This document defines a unique use of ICMP Extensions <span>[<a href="#RFC4884" class="cite xref">RFC4884</a>]</span>.
+Normally, ICMP Extensions are defined to start at a given point and
+continue to the end of the packet.  However, when the extension
+object is an Interface Identification Object as defined in this
+memo, the extension structure (including the checksum) consists only
+of that single ICMP Extension Object.  This is done to maintain
+compatibility with the initial set of implementations of RFC8335,
+which behave this way.
+The ICMP Extension Structure checksum covers only the Interface
+Identification Object.  Any data following it is not covered by
+this checksum but is covered by the ICMP header checksum, which
+protects the entire ICMP message (see <a href="#security" class="auto internal xref">Section 10</a> for further
+discussion).
+New uses of ICMP Extensions, and in fact
+uses of Extended Echo using some object other than the Interface
+Identification Object, <span class="bcp14">SHOULD NOT</span> behave this way.  Uses other than
+defined in this memo <span class="bcp14">SHOULD</span> treat the ICMP Extension Structure as
+extending to the end of the packet as <span>[<a href="#RFC4884" class="cite xref">RFC4884</a>]</span> defines.<a href="#section-1.3-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 </section>
@@ -2131,7 +2136,28 @@ better align with draft-ietf-6man-icmpv6-reflection<a href="#section-7.5-1.1.1" 
           <li class="normal" id="section-7.7-1.5">
             <p id="section-7.7-1.5.1">Added IP address and interface index considerations to <a href="#security" class="auto internal xref">Section 10</a><a href="#section-7.7-1.5.1" class="pilcrow">¶</a></p>
 </li>
+          <li class="normal" id="section-7.7-1.6">
+            <p id="section-7.7-1.6.1">Add new <a href="#manageability" class="auto internal xref">Section 9</a> (Manageability Considerations) immediately
+before <a href="#security" class="auto internal xref">Section 10</a>, per RFC 5706 Section 4.3 guidance.<a href="#section-7.7-1.6.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-7.7-1.7">
+            <p id="section-7.7-1.7.1">Add to <a href="#security" class="auto internal xref">Section 10</a> details of Amplification risk, Covert channel potential,
+On-path attacker modification, ICMP header checksum scope.<a href="#section-7.7-1.7.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-7.7-1.8">
+            <p id="section-7.7-1.8.1">Broaden VPN isolation language to cover network instances
+and logical network elements.<a href="#section-7.7-1.8.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-7.7-1.9">
+            <p id="section-7.7-1.9.1">Clarify the wording of <a href="#dontdothis" class="auto internal xref">Section 1.3</a>, including further wording about
+the checksum coverage.<a href="#section-7.7-1.9.1" class="pilcrow">¶</a></p>
+</li>
         </ul>
+<p id="section-7.7-2">Subsections cover:<a href="#section-7.7-2" class="pilcrow">¶</a></p>
+<p id="section-7.7-3">Control of Function and Policy (configuration parameters)
+Monitoring and Verifying Operation (verification, counters, RTT)
+Deployment and Backward Compatibility (guidance, RFC 8335 compat)
+Impact on Network Operation (resource cost, rate-limiting)<a href="#section-7.7-3" class="pilcrow">¶</a></p>
 </section>
 </div>
 </section>
@@ -2444,11 +2470,12 @@ are accepted.<a href="#section-10-7.5.1" class="pilcrow">¶</a></p>
       </ul>
 <p id="section-10-8">When a node receives an ICMP Extended Echo Request message that it is
 not configured to support, it <span class="bcp14">MUST</span> silently discard the message. See <a href="#proc" class="auto internal xref">Section 4</a> for details.<a href="#section-10-8" class="pilcrow">¶</a></p>
-<p id="section-10-9">PROBE must not leak information about one Virtual Private Network
-(VPN) into another. Therefore, when a node receives an ICMP Extended
-Echo Request and the proxy interface is in a different VPN than the
-probed interface, the node <span class="bcp14">MUST</span> return an ICMP Extended Echo Reply with
-error code equal to (2) No Such Interface.<a href="#section-10-9" class="pilcrow">¶</a></p>
+<p id="section-10-9">PROBE must not leak information across network instance boundaries.
+Therefore, when a node receives an ICMP Extended Echo Request and
+the proxy interface and the probed interface are in different
+Virtual Private Networks (VPNs), network instances <span>[<a href="#RFC8529" class="cite xref">RFC8529</a>]</span>, or
+logical network elements <span>[<a href="#RFC8530" class="cite xref">RFC8530</a>]</span>, the node <span class="bcp14">MUST</span> return an ICMP
+Extended Echo Reply with error code equal to (2) No Such Interface.<a href="#section-10-9" class="pilcrow">¶</a></p>
 <p id="section-10-10">In order to protect local resources, implementations <span class="bcp14">SHOULD</span>
 rate-limit incoming ICMP Extended Echo Request messages.<a href="#section-10-10" class="pilcrow">¶</a></p>
 <p id="section-10-11">PROBE does not present a significant amplification risk.  The ICMP
@@ -2548,8 +2575,16 @@ modification.<a href="#section-10-14" class="pilcrow">¶</a></p>
 <span class="refAuthor">Babiarz, J.</span>, <span class="refAuthor">Chan, K.</span>, and <span class="refAuthor">F. Baker</span>, <span class="refTitle">"Configuration Guidelines for DiffServ Service Classes"</span>, <span class="seriesInfo">RFC 4594</span>, <span class="seriesInfo">DOI 10.17487/RFC4594</span>, <time datetime="2006-08" class="refDate">August 2006</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc4594">https://www.rfc-editor.org/rfc/rfc4594</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="RFC5706">[RFC5706]</dt>
-      <dd>
+        <dd>
 <span class="refAuthor">Harrington, D.</span>, <span class="refTitle">"Guidelines for Considering Operations and Management of New Protocols and Protocol Extensions"</span>, <span class="seriesInfo">RFC 5706</span>, <span class="seriesInfo">DOI 10.17487/RFC5706</span>, <time datetime="2009-11" class="refDate">November 2009</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc5706">https://www.rfc-editor.org/rfc/rfc5706</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC8529">[RFC8529]</dt>
+        <dd>
+<span class="refAuthor">Berger, L.</span>, <span class="refAuthor">Hopps, C.</span>, <span class="refAuthor">Lindem, A.</span>, <span class="refAuthor">Bogdanovic, D.</span>, and <span class="refAuthor">X. Liu</span>, <span class="refTitle">"YANG Data Model for Network Instances"</span>, <span class="seriesInfo">RFC 8529</span>, <span class="seriesInfo">DOI 10.17487/RFC8529</span>, <time datetime="2019-03" class="refDate">March 2019</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8529">https://www.rfc-editor.org/rfc/rfc8529</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC8530">[RFC8530]</dt>
+      <dd>
+<span class="refAuthor">Berger, L.</span>, <span class="refAuthor">Hopps, C.</span>, <span class="refAuthor">Lindem, A.</span>, <span class="refAuthor">Bogdanovic, D.</span>, and <span class="refAuthor">X. Liu</span>, <span class="refTitle">"YANG Model for Logical Network Elements"</span>, <span class="seriesInfo">RFC 8530</span>, <span class="seriesInfo">DOI 10.17487/RFC8530</span>, <time datetime="2019-03" class="refDate">March 2019</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8530">https://www.rfc-editor.org/rfc/rfc8530</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 </dl>
 </section>
