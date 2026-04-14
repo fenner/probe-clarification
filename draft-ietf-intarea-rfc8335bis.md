@@ -86,7 +86,11 @@ normative:
 informative:
   I-D.ietf-6man-icmpv6-reflection:
   RFC2151:
+  RFC4301:
   RFC4594:
+  RFC8529:
+  RFC8530:
+  RFC5706:
   IANA.address-family-numbers: address-family-numbers
 
 --- abstract
@@ -146,8 +150,8 @@ node.
 The ICMP Extended Echo Request contains an ICMP Extension Structure
 and the ICMP Extension Structure contains an Interface Identification
 Object. The Interface Identification Object identifies the probed
-interface. The probed interface can reside on or
-directly connect to the proxy node.
+interface. The probed interface can reside on or be directly connected to the
+proxy node.
 
 When the proxy interface receives the ICMP Extended Echo Request, the
 proxy node executes access control procedures. If access is granted, the
@@ -793,6 +797,104 @@ IANA has performed the following actions:
 All codes mentioned above are assigned on an FCFS basis with a range
 of 0-255.
 
+# Manageability Considerations {#manageability}
+
+This section discusses manageability aspects of PROBE.
+PROBE is an on-demand diagnostic tool analogous to PING.
+It does not run autonomously, does not maintain
+persistent protocol state, and does not require a formal
+information model or data-model definition.  The subsections below
+address the aspects of {{RFC5706}} that are applicable to PROBE.
+
+## Control of Function and Policy
+
+Nodes that support ICMP Extended Echo functionality MUST support
+the configuration parameters specified in {{security}}.  In
+particular, an operator MUST be able to:
+
+* Enable or disable Extended Echo functionality on the node.  By
+  default, ICMP Extended Echo functionality is disabled.
+
+* Define the permitted L-bit settings.  By default, the option to
+  set the L-bit is enabled and the option to clear the L-bit is
+  disabled.
+
+* Define the enabled query types (by name, by index, or by
+  address).  By default, all query types are disabled.
+
+* For each enabled query type, control the source prefixes from
+  which ICMP Extended Echo Requests are permitted.
+
+* Control acceptance of ICMP messages on a per-interface basis.
+
+These parameters are local to each node and take effect
+immediately; no protocol restart or network-wide coordination is
+required.  An operator must explicitly enable the feature and
+configure authorized source prefixes before a node will respond
+to any Extended Echo Request.
+
+No MIB module or YANG data model is defined for these parameters.
+A YANG model may be defined in a separate document in the future.
+
+## Monitoring and Verifying Operation
+
+Correct operation of PROBE can be verified by sending an ICMP
+Extended Echo Request to a proxy node and examining the Code field
+of the ICMP Extended Echo Reply ({{code}}).  A Code of 0 (No
+Error) with the expected interface status confirms correct
+operation.  Non-zero Code values indicate specific error conditions
+enumerated in {{code}}.
+
+The PROBE application described in {{application}} sends iterative
+queries and reports per-query results including round-trip time.
+This round-trip time reflects the path latency between the probing
+node and the proxy node, not a property of the probed interface
+itself.
+
+Implementations MAY log received Extended Echo Requests at a debug
+level and MAY maintain counters of received, accepted, and
+discarded Extended Echo Requests as part of their general ICMP
+statistics, to assist operators in troubleshooting access-control
+configuration and detecting unexpected traffic.
+
+## Deployment and Backward Compatibility
+
+PROBE is deployed on individual nodes and invoked on demand by
+operators or network management applications.  It does not require
+network-wide signaling, discovery, or coordination.  Operators
+deploying PROBE SHOULD:
+
+* Enable Extended Echo functionality only on nodes that require
+  diagnostic access.
+
+* Restrict permitted source prefixes to authorized management
+  networks.
+
+* Apply rate-limiting to Extended Echo Requests consistent with
+  existing ICMP rate-limiting policies.
+
+This document obsoletes {{RFC8335}}.  All known implementations of
+{{RFC8335}} are compatible with this document.  The differences
+between this document and {{RFC8335}} are clarifications of the
+packet format and processing rules and not changes to on-the-wire
+behavior.  Nodes implementing this document interoperate with
+nodes implementing {{RFC8335}} without any transition mechanism or
+behavioral migration.
+
+## Impact on Network Operation
+
+Each PROBE invocation generates one ICMP Extended Echo Request and
+one ICMP Extended Echo Reply.  Each query is independent; there is
+no persistent session or periodic message exchange.  The
+processing cost on the proxy node is comparable to that of a
+standard ICMP Echo Request.
+
+Frequent automated use of PROBE (e.g., by a management
+application polling many interfaces) could increase ICMP traffic
+on the network.  Operators SHOULD apply rate-limiting at the
+responder ({{security}}) consistent with their existing ICMP
+rate-limiting policies to bound this load.
+
 # Security Considerations {#security}
 
 The following are legitimate uses of PROBE:
@@ -846,14 +948,37 @@ support the following configuration options:
 When a node receives an ICMP Extended Echo Request message that it is
 not configured to support, it MUST silently discard the message. See {{proc}} for details.
 
-PROBE must not leak information about one Virtual Private Network
-(VPN) into another. Therefore, when a node receives an ICMP Extended
-Echo Request and the proxy interface is in a different VPN than the
-probed interface, the node MUST return an ICMP Extended Echo Reply with
-error code equal to (2) No Such Interface.
+PROBE must not leak information across network instance boundaries.
+Therefore, when a node receives an ICMP Extended Echo Request and
+the proxy interface and the probed interface are in different
+Virtual Private Networks (VPNs), network instances {{RFC8529}}, or
+logical network elements {{RFC8530}}, the node MUST return an ICMP
+Extended Echo Reply with error code equal to (2) No Such Interface.
 
 In order to protect local resources, implementations SHOULD
 rate-limit incoming ICMP Extended Echo Request messages.
+
+PROBE does not present a significant amplification risk.  The ICMP
+Extended Echo Reply is not meaningfully larger than the corresponding
+ICMP Extended Echo Request; therefore, PROBE is not a useful
+amplification vector.
+
+As with any ICMP message that carries an opaque data payload, the
+optional data field could theoretically be used as a covert channel.
+The rate-limiting recommended above bounds the throughput of any such
+channel.
+
+An on-path attacker can modify ICMP Extended Echo Request or Reply
+messages to return incorrect interface status information.  This
+risk is shared with all ICMP messages and is not unique to PROBE.
+When integrity protection of PROBE messages is required, IPsec
+{{RFC4301}} SHOULD be used.
+
+The ICMP header checksum provides integrity protection for the
+entire ICMP message, including any data following the ICMP Extension
+Structure.  However, this is a non-cryptographic checksum intended
+for error detection, not protection against intentional
+modification.
 
 
 --- back
