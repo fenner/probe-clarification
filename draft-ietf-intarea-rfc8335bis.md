@@ -208,19 +208,18 @@ This document uses the following terms:
 
 ## A note on this document's use of ICMP Extensions {#dontdothis}
 
-This document defines a unique use of ICMP Extensions {{RFC4884}}:
-while normally, ICMP Extensions are defined to start at a given
-point and continue to the end of the packet, if the
-extension object is an Interface Identification Object as defined
-in this memo, then the extension structure (including the
-checksum) consists only of that single ICMP Extension Object.
-This is done to maintain compatibility with the initial set
-of implementations of RFC8335, which behave this way.  New
-uses of ICMP Extensions, and in fact uses of Extended Echo
-using some object other than the Interface Identification Object,
-SHOULD NOT behave this way.  Uses other than defined in this
-memo SHOULD treat the ICMP Extension Structure as extending
-to the end of the packet as {{RFC4884}} defines.
+This document defines a unique use of ICMP Extensions {{RFC4884}}.
+Normally, ICMP Extensions are defined to start at a given point and
+continue to the end of the packet.  However, when the extension
+object is an Interface Identification Object as defined in this
+memo, the extension structure (including the checksum) consists only
+of that single ICMP Extension Object.  This is done to maintain
+compatibility with the initial set of implementations of RFC8335,
+which behave this way.  New uses of ICMP Extensions, and in fact
+uses of Extended Echo using some object other than the Interface
+Identification Object, SHOULD NOT behave this way.  Uses other than
+defined in this memo SHOULD treat the ICMP Extension Structure as
+extending to the end of the packet as {{RFC4884}} defines.
 
 # ICMP Extended Echo Request {#ExtendedEcho}
 
