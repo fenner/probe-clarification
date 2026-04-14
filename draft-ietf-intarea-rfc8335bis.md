@@ -88,12 +88,9 @@ informative:
   RFC2151:
   RFC4301:
   RFC4594:
-<<<<<<< wg-last-call-fixes
   RFC8529:
   RFC8530:
-=======
   RFC5706:
->>>>>>> main
   IANA.address-family-numbers: address-family-numbers
 
 --- abstract
