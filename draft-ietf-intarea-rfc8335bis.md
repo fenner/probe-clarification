@@ -88,7 +88,12 @@ informative:
   RFC2151:
   RFC4301:
   RFC4594:
+<<<<<<< wg-last-call-fixes
+  RFC8529:
+  RFC8530:
+=======
   RFC5706:
+>>>>>>> main
   IANA.address-family-numbers: address-family-numbers
 
 --- abstract
@@ -148,8 +153,8 @@ node.
 The ICMP Extended Echo Request contains an ICMP Extension Structure
 and the ICMP Extension Structure contains an Interface Identification
 Object. The Interface Identification Object identifies the probed
-interface. The probed interface can reside on or
-directly connect to the proxy node.
+interface. The probed interface can reside on or be directly connected to the
+proxy node.
 
 When the proxy interface receives the ICMP Extended Echo Request, the
 proxy node executes access control procedures. If access is granted, the
@@ -941,11 +946,12 @@ support the following configuration options:
 When a node receives an ICMP Extended Echo Request message that it is
 not configured to support, it MUST silently discard the message. See {{proc}} for details.
 
-PROBE must not leak information about one Virtual Private Network
-(VPN) into another. Therefore, when a node receives an ICMP Extended
-Echo Request and the proxy interface is in a different VPN than the
-probed interface, the node MUST return an ICMP Extended Echo Reply with
-error code equal to (2) No Such Interface.
+PROBE must not leak information across network instance boundaries.
+Therefore, when a node receives an ICMP Extended Echo Request and
+the proxy interface and the probed interface are in different
+Virtual Private Networks (VPNs), network instances {{RFC8529}}, or
+logical network elements {{RFC8530}}, the node MUST return an ICMP
+Extended Echo Reply with error code equal to (2) No Such Interface.
 
 In order to protect local resources, implementations SHOULD
 rate-limit incoming ICMP Extended Echo Request messages.
