@@ -86,6 +86,7 @@ normative:
 informative:
   I-D.ietf-6man-icmpv6-reflection:
   RFC2151:
+  RFC4301:
   RFC4594:
   RFC5706:
   IANA.address-family-numbers: address-family-numbers
@@ -948,6 +949,28 @@ error code equal to (2) No Such Interface.
 
 In order to protect local resources, implementations SHOULD
 rate-limit incoming ICMP Extended Echo Request messages.
+
+PROBE does not present a significant amplification risk.  The ICMP
+Extended Echo Reply is not meaningfully larger than the corresponding
+ICMP Extended Echo Request; therefore, PROBE is not a useful
+amplification vector.
+
+As with any ICMP message that carries an opaque data payload, the
+optional data field could theoretically be used as a covert channel.
+The rate-limiting recommended above bounds the throughput of any such
+channel.
+
+An on-path attacker can modify ICMP Extended Echo Request or Reply
+messages to return incorrect interface status information.  This
+risk is shared with all ICMP messages and is not unique to PROBE.
+When integrity protection of PROBE messages is required, IPsec
+{{RFC4301}} SHOULD be used.
+
+The ICMP header checksum provides integrity protection for the
+entire ICMP message, including any data following the ICMP Extension
+Structure.  However, this is a non-cryptographic checksum intended
+for error detection, not protection against intentional
+modification.
 
 
 --- back
