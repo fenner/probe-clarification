@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-04-14T01:22:59.020874+00:00",
+  "timestamp": "2026-04-16T01:25:28.253719+00:00",
   "repo": "fenner/probe-clarification",
   "labels": [
     {
@@ -158,15 +158,15 @@
       "id": "I_kwDOLB4g0s7lHa7m",
       "title": "WG Last Call comment from Nick Buraglio",
       "url": "https://github.com/fenner/probe-clarification/issues/6",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "fenner",
       "authorAssociation": "OWNER",
       "assignees": [],
       "labels": [],
       "body": "https://mailarchive.ietf.org/arch/msg/int-area/q-UIncPVXI93WB325xn5OBX-2tE/\n\nGood feedback on wording\n\n1.\n\n> I know what you're going for here, but I found this a bit hard to digest. I had to read it a few times.\n> `The probed interface can reside on or directly connect to the proxy node.`\n> Maybe\n> `The probed interface can reside on or be directly connected to the proxy node.`\n\n2.\n\n> Section 9.\n> Suggest extending the section\n> ```\n> PROBE must not leak information about one Virtual Private Network\n> (VPN) into another.  Therefore, when a node receives an ICMP Extended\n> Echo Request and the proxy interface is in a different VPN than the\n> probed interface, the node MUST return an ICMP Extended Echo Reply\n> with error code equal to (2) No Such Interface.\n>    \n> ```\n> to include virtual systems / vsys / logical systems and perhaps containerization where a given software based, logical separation may require different security postures.\n> Perhaps\n> ```\n> PROBE must not leak information about one Virtual Private Network (VPN), logical system, or other software partitioned interface or set of interfaces\n> into another.  Therefore, when a node receives an ICMP Extended\n> Echo Request and the proxy interface is in a different VPN than the\n> probed interface, the node MUST return an ICMP Extended Echo Reply\n> with error code equal to (2) No Such Interface.\n>    \n> ```\n> ",
       "createdAt": "2026-01-22T17:20:59Z",
-      "updatedAt": "2026-01-22T17:20:59Z",
-      "closedAt": null,
+      "updatedAt": "2026-04-14T14:06:54Z",
+      "closedAt": "2026-04-14T14:06:54Z",
       "comments": []
     },
     {
@@ -174,16 +174,24 @@
       "id": "I_kwDOLB4g0s7lsHqC",
       "title": "Shepherd issue: address WG Last Call points",
       "url": "https://github.com/fenner/probe-clarification/issues/7",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "fenner",
       "authorAssociation": "OWNER",
       "assignees": [],
       "labels": [],
       "body": "- Please make sure to address and reply to the comments sent in WG last call.\n",
       "createdAt": "2026-01-25T17:00:36Z",
-      "updatedAt": "2026-01-25T17:00:36Z",
-      "closedAt": null,
-      "comments": []
+      "updatedAt": "2026-04-14T14:52:43Z",
+      "closedAt": "2026-04-14T14:52:43Z",
+      "comments": [
+        {
+          "author": "fenner",
+          "authorAssociation": "OWNER",
+          "body": "All issues brought up in last call have been handled, by document updates or discussion on the mailing list.",
+          "createdAt": "2026-04-14T14:52:43Z",
+          "updatedAt": "2026-04-14T14:52:43Z"
+        }
+      ]
     },
     {
       "number": 8,
@@ -214,15 +222,15 @@
       "id": "I_kwDOLB4g0s7lsH4v",
       "title": "Shepherd issue: Security considerations",
       "url": "https://github.com/fenner/probe-clarification/issues/9",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "fenner",
       "authorAssociation": "OWNER",
       "assignees": [],
       "labels": [],
       "body": "- The security considerations should be extended to include missing\naspects such as amplification, covert channels, malicious\nmodifications. Please see the Security Considerations section of\ndraft-ietf-6man-icmpv6-reflection, which was significantly affected by\nthe Security AD reviews.\n",
       "createdAt": "2026-01-25T17:01:23Z",
-      "updatedAt": "2026-01-25T17:01:23Z",
-      "closedAt": null,
+      "updatedAt": "2026-04-14T14:05:46Z",
+      "closedAt": "2026-04-14T14:05:46Z",
       "comments": []
     },
     {
@@ -246,16 +254,31 @@
       "id": "I_kwDOLB4g0s7nc2sx",
       "title": "Tony Przygienda: L-bit, proxy node wording",
       "url": "https://github.com/fenner/probe-clarification/issues/11",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "fenner",
       "authorAssociation": "OWNER",
       "assignees": [],
       "labels": [],
       "body": "The \u201cL-bit\u201d and the whole \u201cdirectly connected\u201d vs. \u201cresides on proxy\u201d is baffling for a long time in the doc and looks to me like a distinction w/o difference. I suggest maybe a better terminology and definitely a clear glossary with an earlier explanation of the terms. It\u2019s confusing to call it  a \u201cproxy node\u201d while the interface is still on the \u201cproxy node\u201d. Maybe the \u201clocal\u201d bit should be called \u201cproxy bit\u201d or something to read it clearer.",
       "createdAt": "2026-02-01T22:19:26Z",
-      "updatedAt": "2026-02-01T22:19:26Z",
-      "closedAt": null,
-      "comments": []
+      "updatedAt": "2026-04-14T14:53:08Z",
+      "closedAt": "2026-04-14T14:53:08Z",
+      "comments": [
+        {
+          "author": "rejithomas-arista",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "I see the L-bit naming was discussed on the mailing list, and since Tony did not press further once the rationale for keeping the existing \"Local\" terminology was explained, this can considered resolved and closed?.",
+          "createdAt": "2026-04-14T09:44:07Z",
+          "updatedAt": "2026-04-14T09:44:07Z"
+        },
+        {
+          "author": "fenner",
+          "authorAssociation": "OWNER",
+          "body": "Close as Reji suggests.",
+          "createdAt": "2026-04-14T14:53:08Z",
+          "updatedAt": "2026-04-14T14:53:08Z"
+        }
+      ]
     },
     {
       "number": 12,
@@ -294,16 +317,31 @@
       "id": "I_kwDOLB4g0s7nc4hG",
       "title": "Tony Przygienda: \"yang proxy\"",
       "url": "https://github.com/fenner/probe-clarification/issues/14",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "fenner",
       "authorAssociation": "OWNER",
       "assignees": [],
       "labels": [],
       "body": "Generally I'm bit terrified of the whole thing acting as a \u201cyang proxy\u201d. The probing node could simply read the according Yang and if it cannot then the whole \u201cproxy\u201d is basically bypassing Yang security restrictions AFAIS? and yes, I understand, it's all \"exigency\" and \"e'one already does it\" but then the draft should be maybe bit more honest about it and deal with according security implications ?",
       "createdAt": "2026-02-01T22:22:55Z",
-      "updatedAt": "2026-02-01T22:22:55Z",
-      "closedAt": null,
-      "comments": []
+      "updatedAt": "2026-04-14T14:53:26Z",
+      "closedAt": "2026-04-14T14:53:26Z",
+      "comments": [
+        {
+          "author": "rejithomas-arista",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": " The \"YANG proxy\" characterization was discussed on the mailing list \u2014 YANG is a modeling language, not a protocol, and PROBE is disabled by default requiring explicit admin enablement. Since Tony did not press further, this I believe can be considered resolved.",
+          "createdAt": "2026-04-14T09:45:55Z",
+          "updatedAt": "2026-04-14T09:45:55Z"
+        },
+        {
+          "author": "fenner",
+          "authorAssociation": "OWNER",
+          "body": "Close as Reji suggests.",
+          "createdAt": "2026-04-14T14:53:26Z",
+          "updatedAt": "2026-04-14T14:53:26Z"
+        }
+      ]
     },
     {
       "number": 15,
@@ -326,15 +364,15 @@
       "id": "I_kwDOLB4g0s7nzgah",
       "title": "Opsdir review: the document lacks a management considerations sectino",
       "url": "https://github.com/fenner/probe-clarification/issues/16",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "fenner",
       "authorAssociation": "OWNER",
       "assignees": [],
       "labels": [],
       "body": "it lacks a management/operations considerations section\n\nA complete set of _\"Guidelines for Considering Operations and Management in\nIETF Specifications\"_ can be found at\nhttps://datatracker.ietf.org/doc/draft-ietf-opsawg-rfc5706bis/.\n\nThe management/operations section should provide tips for managing pings/probes\nwithin a network to prevent overloading routers or hosts. \n",
       "createdAt": "2026-02-03T04:21:18Z",
-      "updatedAt": "2026-02-03T04:21:18Z",
-      "closedAt": null,
+      "updatedAt": "2026-04-14T14:05:26Z",
+      "closedAt": "2026-04-14T14:05:26Z",
       "comments": []
     },
     {
@@ -366,15 +404,15 @@
       "id": "I_kwDOLB4g0s7nzh9r",
       "title": "Opsdir nit: section 1.3",
       "url": "https://github.com/fenner/probe-clarification/issues/18",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "fenner",
       "authorAssociation": "OWNER",
       "assignees": [],
       "labels": [],
       "body": "Section 1.3 needs to untangle the English in this sentence to multiple\nsentences.\n\nOld text:/\n>   This document defines a unique use of ICMP Extensions [RFC4884]:\n>   while normally, ICMP Extensions are defined to start at a given point\n>   and continue to the end of the packet, if the extension object is an\n>   Interface Identification Object as defined in this memo, then the\n>   extension structure (including the checksum) consists only of that\n>   single ICMP Extension Object. /\n\nIt can be written as 2 sentence to clarify.\n",
       "createdAt": "2026-02-03T04:23:35Z",
-      "updatedAt": "2026-02-03T04:23:35Z",
-      "closedAt": null,
+      "updatedAt": "2026-04-14T14:07:09Z",
+      "closedAt": "2026-04-14T14:07:09Z",
       "comments": []
     },
     {
@@ -382,15 +420,15 @@
       "id": "I_kwDOLB4g0s7nzii0",
       "title": "Opsdir nit: don't do this at all",
       "url": "https://github.com/fenner/probe-clarification/issues/19",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "fenner",
       "authorAssociation": "OWNER",
       "assignees": [],
       "labels": [],
       "body": "RFC8335 behavior being extended.\n\nSometimes, it is just necessary to code around the bad behavior of initial\nimplementations. However, the authors should realize that the IESG really,\nreally hates a document that codes around the bad behavior of an RFC that is\nbeing deprecated.\n\nJust thought you should think about this carefully.  The bad behavior also\nallows some data to be passed after the Interface Identification Object\nwithout having any checksum or integrity. Seems like a questionable\nconcept.  I was looking for the security section to explain to me why\nyou thought this was reasonable",
       "createdAt": "2026-02-03T04:24:31Z",
-      "updatedAt": "2026-02-03T04:24:31Z",
-      "closedAt": null,
+      "updatedAt": "2026-04-14T14:19:27Z",
+      "closedAt": "2026-04-14T14:19:27Z",
       "comments": []
     },
     {
@@ -398,31 +436,46 @@
       "id": "I_kwDOLB4g0s7nzjG_",
       "title": "Opsdir nit: don't talk about future extension",
       "url": "https://github.com/fenner/probe-clarification/issues/20",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "fenner",
       "authorAssociation": "OWNER",
       "assignees": [],
       "labels": [],
       "body": "Editorial NIT section 2.0, paragraph starting with Section 7. last sentence\n\nold text/ \n>  The behavior when it contains a different Extension\n>    Object is not defined by this memo but may be defined in the future./\n\nNew text:/\n>   The behavior when it contains a different Extension\n>    Object is not defined by this memo./\n\nWe are the IETF, new standards can always update old standards.\nThe last clause for this sentence is not needed.\n",
       "createdAt": "2026-02-03T04:25:39Z",
-      "updatedAt": "2026-02-03T04:25:39Z",
-      "closedAt": null,
-      "comments": []
+      "updatedAt": "2026-04-14T14:53:40Z",
+      "closedAt": "2026-04-14T14:53:40Z",
+      "comments": [
+        {
+          "author": "rejithomas-arista",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "The \"may be defined in the future\" language was discussed on the mailing list and there is value in keeping explicit forward-looking statements. Can be considered as resolved.",
+          "createdAt": "2026-04-14T09:47:14Z",
+          "updatedAt": "2026-04-14T09:47:14Z"
+        },
+        {
+          "author": "fenner",
+          "authorAssociation": "OWNER",
+          "body": "Close as Reji suggests.",
+          "createdAt": "2026-04-14T14:53:40Z",
+          "updatedAt": "2026-04-14T14:53:40Z"
+        }
+      ]
     },
     {
       "number": 21,
       "id": "I_kwDOLB4g0s7nzkHh",
       "title": "Opsdir review: Fault Management",
       "url": "https://github.com/fenner/probe-clarification/issues/21",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "fenner",
       "authorAssociation": "OWNER",
       "assignees": [],
       "labels": [],
       "body": "Fault Management: Are failure detection/recovery mechanisms specified?\nError handling for packet fields is covered in ICMP Message Processing\nCode Field processing. It would be good to know what happens, if experience\n(which is evident by the bis), has denoted any other failure conditions.\n",
       "createdAt": "2026-02-03T04:27:14Z",
-      "updatedAt": "2026-02-03T04:27:14Z",
-      "closedAt": null,
+      "updatedAt": "2026-04-14T14:05:26Z",
+      "closedAt": "2026-04-14T14:05:26Z",
       "comments": []
     },
     {
@@ -430,15 +483,15 @@
       "id": "I_kwDOLB4g0s7nzkXr",
       "title": "Opsdir review: Configuration Management",
       "url": "https://github.com/fenner/probe-clarification/issues/22",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "fenner",
       "authorAssociation": "OWNER",
       "assignees": [],
       "labels": [],
       "body": "Configuration Management: Are configuration changes to enable/disable the\nfeature clearly defined? The configuration is hinted at in main document and\nAppendix A (with application). =It would be useful to know if a YANG model is\nplanned/exists.\n",
       "createdAt": "2026-02-03T04:27:39Z",
-      "updatedAt": "2026-02-03T04:27:39Z",
-      "closedAt": null,
+      "updatedAt": "2026-04-14T14:05:27Z",
+      "closedAt": "2026-04-14T14:05:27Z",
       "comments": []
     },
     {
@@ -446,15 +499,15 @@
       "id": "I_kwDOLB4g0s7nzksy",
       "title": "Opsdir review: Performance Monitoring",
       "url": "https://github.com/fenner/probe-clarification/issues/23",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "fenner",
       "authorAssociation": "OWNER",
       "assignees": [],
       "labels": [],
       "body": "Performance Monitoring: Are metrics (e.g., latency, resource usage) clearly\nidentified? I did not find hte performance metics for correct operations of the\ncode.\n",
       "createdAt": "2026-02-03T04:28:10Z",
-      "updatedAt": "2026-02-03T04:28:10Z",
-      "closedAt": null,
+      "updatedAt": "2026-04-14T14:05:27Z",
+      "closedAt": "2026-04-14T14:05:27Z",
       "comments": []
     },
     {
@@ -462,15 +515,15 @@
       "id": "I_kwDOLB4g0s7nzk3t",
       "title": "Opsdir review: deployment",
       "url": "https://github.com/fenner/probe-clarification/issues/24",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "fenner",
       "authorAssociation": "OWNER",
       "assignees": [],
       "labels": [],
       "body": "As a BIS, this document must have hints for deployment and\nmanaged in a network.  That wisdom | |                  | is missing (probably\nshould go to manageability/operations section)                           |\n",
       "createdAt": "2026-02-03T04:28:31Z",
-      "updatedAt": "2026-02-03T04:28:31Z",
-      "closedAt": null,
+      "updatedAt": "2026-04-14T14:05:27Z",
+      "closedAt": "2026-04-14T14:05:27Z",
       "comments": []
     },
     {
@@ -478,15 +531,15 @@
       "id": "I_kwDOLB4g0s7nzlH2",
       "title": "Opsdir review: Migration path",
       "url": "https://github.com/fenner/probe-clarification/issues/25",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "fenner",
       "authorAssociation": "OWNER",
       "assignees": [],
       "labels": [],
       "body": "The RFC8335 path plan is to allow \"stuff\" after ICMP\nExtension Structure. When \"stuff\" is     | |                  | allowed after\nvalid fields without an integrity checksum, bad things can be passed",
       "createdAt": "2026-02-03T04:28:57Z",
-      "updatedAt": "2026-02-03T04:28:57Z",
-      "closedAt": null,
+      "updatedAt": "2026-04-14T14:19:27Z",
+      "closedAt": "2026-04-14T14:19:27Z",
       "comments": []
     },
     {
@@ -494,15 +547,15 @@
       "id": "I_kwDOLB4g0s7nzlb9",
       "title": "Opsdir review: transition from",
       "url": "https://github.com/fenner/probe-clarification/issues/26",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "fenner",
       "authorAssociation": "OWNER",
       "assignees": [],
       "labels": [],
       "body": "It would be good to know if early deployments have found\nany problems when transition from    | | RFC8335 to bis   | RFC8335 to this\nsolution.  Does this solution help ward off DOS attacks? Is there a place     |\n|                  | during the transition that might cause operational issues.\n                                   |\n",
       "createdAt": "2026-02-03T04:29:26Z",
-      "updatedAt": "2026-02-03T04:29:26Z",
-      "closedAt": null,
+      "updatedAt": "2026-04-14T14:05:28Z",
+      "closedAt": "2026-04-14T14:05:28Z",
       "comments": []
     },
     {
@@ -510,15 +563,15 @@
       "id": "I_kwDOLB4g0s7nzlzj",
       "title": "Opsdir review: Impact on network",
       "url": "https://github.com/fenner/probe-clarification/issues/27",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "fenner",
       "authorAssociation": "OWNER",
       "assignees": [],
       "labels": [],
       "body": "What happens when this protocol gets used to attack a\nnode?  Is there more traffic on node    | | Operation control|  when this\nhappens: |  plane           |                                                 \n                                            |\n",
       "createdAt": "2026-02-03T04:30:02Z",
-      "updatedAt": "2026-02-03T04:30:02Z",
-      "closedAt": null,
+      "updatedAt": "2026-04-14T14:05:46Z",
+      "closedAt": "2026-04-14T14:05:46Z",
       "comments": []
     },
     {
@@ -526,15 +579,15 @@
       "id": "I_kwDOLB4g0s7nzmKO",
       "title": "Opsdir review: Verifying Correct",
       "url": "https://github.com/fenner/probe-clarification/issues/28",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "fenner",
       "authorAssociation": "OWNER",
       "assignees": [],
       "labels": [],
       "body": "Has a test plan been written for performance for this new\nfeature?  if so, can it be shared? | | Operation        | Do utilies show up\nETE probe timings like Ping timing? What load on routers or hosts?        |\n",
       "createdAt": "2026-02-03T04:30:36Z",
-      "updatedAt": "2026-02-03T04:30:36Z",
-      "closedAt": null,
+      "updatedAt": "2026-04-14T14:05:28Z",
+      "closedAt": "2026-04-14T14:05:28Z",
       "comments": []
     },
     {
@@ -542,17 +595,171 @@
       "id": "I_kwDOLB4g0s7nzmzL",
       "title": "Last Call comment from Xiao Min",
       "url": "https://github.com/fenner/probe-clarification/issues/29",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "fenner",
       "authorAssociation": "OWNER",
       "assignees": [],
       "labels": [],
       "body": "I have a few comments on draft-ietf-intarea-rfc8335bis for the authors to consider.\nSection 2, it says \"\n>   The Interface Identification Object MAY be followed by an optional\n>   data section, which is not interpreted but is simply present to be\n>   copied to the ICMP Extended Echo Reply.\n\nHowever it lacks an explanation on why *an optional data section* is added on the basis of RFC 8335.\nSection 3, similarly it lacks an explanation on why the *ICMP Extension Structure* and \"Data\" fields are added on the basis of RFC 8335. Furthermore, it seems helpful to the reader if the definition/processing of the two newly added fields can be put in the place closer to the definition/processing of other fields in the ICMP Extended Echo Reply message. Currently the only text on the two newly added fields is placed in the next section (Section 4).\n",
       "createdAt": "2026-02-03T04:31:39Z",
-      "updatedAt": "2026-02-03T04:31:54Z",
-      "closedAt": null,
-      "comments": []
+      "updatedAt": "2026-04-14T14:53:53Z",
+      "closedAt": "2026-04-14T14:53:53Z",
+      "comments": [
+        {
+          "author": "rejithomas-arista",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "Xiao Min withdrew the concern on-list Feb 3: \"please feel free to ignore them.\"",
+          "createdAt": "2026-04-14T09:47:41Z",
+          "updatedAt": "2026-04-14T09:47:41Z"
+        },
+        {
+          "author": "fenner",
+          "authorAssociation": "OWNER",
+          "body": "Close as Reji suggests.",
+          "createdAt": "2026-04-14T14:53:53Z",
+          "updatedAt": "2026-04-14T14:53:53Z"
+        }
+      ]
     }
   ],
-  "pulls": []
+  "pulls": [
+    {
+      "number": 30,
+      "id": "PR_kwDOLB4g0s7SQnl8",
+      "title": "Add Manageability Considerations section",
+      "url": "https://github.com/fenner/probe-clarification/pull/30",
+      "state": "MERGED",
+      "author": "rejithomas-arista",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Add new Section 10 (Manageability Considerations) immediately before Security Considerations, per RFC 5706 Section 4.3 guidance.\r\n\r\nSubsections cover:\r\n- Control of Function and Policy (configuration parameters)\r\n- Monitoring and Verifying Operation (verification, counters, RTT)\r\n- Deployment and Backward Compatibility (guidance, RFC 8335 compat)\r\n- Impact on Network Operation (resource cost, rate-limiting)\r\n\r\nFixes #16, fixes #21, fixes #22, fixes #23, fixes #24, fixes #26, fixes #28",
+      "createdAt": "2026-04-14T09:35:56Z",
+      "updatedAt": "2026-04-14T14:05:25Z",
+      "baseRepository": "fenner/probe-clarification",
+      "baseRefName": "main",
+      "baseRefOid": "9691c033556f426cf2a3099d06bd00fd82f67e6a",
+      "headRepository": "rejithomas-arista/probe-clarification",
+      "headRefName": "manageability-considerations",
+      "headRefOid": "e3a763159bf198063bd95fed184e871168d396df",
+      "closedAt": "2026-04-14T14:05:25Z",
+      "mergedAt": "2026-04-14T14:05:25Z",
+      "mergedBy": "fenner",
+      "mergeCommit": {
+        "oid": "1f941a29ef32cfebcdb43b8b67bb9b236e1407df"
+      },
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 31,
+      "id": "PR_kwDOLB4g0s7SQosX",
+      "title": "Expand Security Considerations",
+      "url": "https://github.com/fenner/probe-clarification/pull/31",
+      "state": "MERGED",
+      "author": "rejithomas-arista",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Add paragraphs addressing:\r\n- Amplification risk \r\n- Covert channel potential\r\n- On-path attacker modification \r\n- ICMP header checksum scope \r\n\r\nFixes #9, fixes #27",
+      "createdAt": "2026-04-14T09:37:01Z",
+      "updatedAt": "2026-04-14T14:05:44Z",
+      "baseRepository": "fenner/probe-clarification",
+      "baseRefName": "main",
+      "baseRefOid": "9691c033556f426cf2a3099d06bd00fd82f67e6a",
+      "headRepository": "rejithomas-arista/probe-clarification",
+      "headRefName": "security-considerations-expansion",
+      "headRefOid": "8b8509781344759c60706c8c74ca96454d50216c",
+      "closedAt": "2026-04-14T14:05:44Z",
+      "mergedAt": "2026-04-14T14:05:44Z",
+      "mergedBy": "fenner",
+      "mergeCommit": {
+        "oid": "2211f3820c6270437f374a82083765a7f45e13dd"
+      },
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 32,
+      "id": "PR_kwDOLB4g0s7SQpml",
+      "title": "Address WG Last Call comments from Nick Buraglio",
+      "url": "https://github.com/fenner/probe-clarification/pull/32",
+      "state": "MERGED",
+      "author": "rejithomas-arista",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "- Fix grammar: \"directly connect to\" -> \"be directly connected to\"\r\n- Broaden VPN isolation language to cover network instances (RFC 8529) and logical network elements (RFC 8530), not just VPNs\r\n\r\nFixes #6",
+      "createdAt": "2026-04-14T09:37:55Z",
+      "updatedAt": "2026-04-14T14:06:53Z",
+      "baseRepository": "fenner/probe-clarification",
+      "baseRefName": "main",
+      "baseRefOid": "2211f3820c6270437f374a82083765a7f45e13dd",
+      "headRepository": "rejithomas-arista/probe-clarification",
+      "headRefName": "wg-last-call-fixes",
+      "headRefOid": "782ce95558087e4c7fa71dc4f17261967bb561d7",
+      "closedAt": "2026-04-14T14:06:52Z",
+      "mergedAt": "2026-04-14T14:06:52Z",
+      "mergedBy": "fenner",
+      "mergeCommit": {
+        "oid": "7819d39ca39a9c292a441cd06349c0314151fb8e"
+      },
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 33,
+      "id": "PR_kwDOLB4g0s7SQqhm",
+      "title": "Improve readability of Section 1.3 (ICMP Extensions note)",
+      "url": "https://github.com/fenner/probe-clarification/pull/33",
+      "state": "MERGED",
+      "author": "rejithomas-arista",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Split the opening sentence into shorter, clearer sentences per OPSDIR review feedback. No semantic change.\r\n\r\nFixes #18",
+      "createdAt": "2026-04-14T09:38:44Z",
+      "updatedAt": "2026-04-14T14:07:08Z",
+      "baseRepository": "fenner/probe-clarification",
+      "baseRefName": "main",
+      "baseRefOid": "9691c033556f426cf2a3099d06bd00fd82f67e6a",
+      "headRepository": "rejithomas-arista/probe-clarification",
+      "headRefName": "section-1.3-sentence-split",
+      "headRefOid": "484a28a7db8a91fa54529fe0b442fc4a98b50a25",
+      "closedAt": "2026-04-14T14:07:08Z",
+      "mergedAt": "2026-04-14T14:07:08Z",
+      "mergedBy": "fenner",
+      "mergeCommit": {
+        "oid": "54147e52a39236f5b818654a80e719e17fff5214"
+      },
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 34,
+      "id": "PR_kwDOLB4g0s7SQrDA",
+      "title": "Clarify ICMP Extension Structure checksum scope in Section 1.3",
+      "url": "https://github.com/fenner/probe-clarification/pull/34",
+      "state": "CLOSED",
+      "author": "rejithomas-arista",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Add text explaining that the Extension Structure checksum covers only the Interface Identification Object, while any data following it is protected by the ICMP header checksum which covers the entire message. Cross-references Security Considerations for further discussion.\r\n\r\nFixes #19, fixes #25",
+      "createdAt": "2026-04-14T09:39:12Z",
+      "updatedAt": "2026-04-14T14:19:28Z",
+      "baseRepository": "fenner/probe-clarification",
+      "baseRefName": "main",
+      "baseRefOid": "54147e52a39236f5b818654a80e719e17fff5214",
+      "headRepository": "rejithomas-arista/probe-clarification",
+      "headRefName": "checksum-clarification",
+      "headRefOid": "4de005ade8b597265919746f880e0d8aca76020e",
+      "closedAt": "2026-04-14T14:19:28Z",
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
+    }
+  ]
 }
