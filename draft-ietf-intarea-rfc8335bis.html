@@ -1062,7 +1062,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
 </tr></thead>
 <tfoot><tr>
 <td class="left">Fenner, et al.</td>
-<td class="center">Expires 16 October 2026</td>
+<td class="center">Expires 19 October 2026</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1081,12 +1081,12 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <a href="https://www.rfc-editor.org/rfc/rfc4884" class="eref">4884</a> (if approved)</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2026-04-14" class="published">14 April 2026</time>
+<time datetime="2026-04-17" class="published">17 April 2026</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Standards Track</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2026-10-16">16 October 2026</time></dd>
+<dd class="expires"><time datetime="2026-10-19">19 October 2026</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1165,7 +1165,7 @@ the probed interface is directly connected. This document updates RFC
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 16 October 2026.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 19 October 2026.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1261,6 +1261,9 @@ the probed interface is directly connected. This document updates RFC
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7.2.7">
                 <p id="section-toc.1-1.7.2.7.1"><a href="#section-7.7" class="auto internal xref">7.7</a>.  <a href="#name-changes-from-draft-int-intare" class="internal xref">Changes from draft-int-intarea-rfc8335bis-02</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7.2.8">
+                <p id="section-toc.1-1.7.2.8.1"><a href="#section-7.8" class="auto internal xref">7.8</a>.  <a href="#name-changes-from-draft-int-intarea" class="internal xref">Changes from draft-int-intarea-rfc8335bis-02</a></p>
 </li>
             </ul>
 </li>
@@ -2155,6 +2158,28 @@ the checksum coverage.<a href="#section-7.7-1.9.1" class="pilcrow">¶</a></p>
         </ul>
 </section>
 </div>
+<div id="changes-from-draft-int-intarea-rfc8335bis-02-1">
+<section id="section-7.8">
+        <h3 id="name-changes-from-draft-int-intarea">
+<a href="#section-7.8" class="section-number selfRef">7.8. </a><a href="#name-changes-from-draft-int-intarea" class="section-name selfRef">Changes from draft-int-intarea-rfc8335bis-02</a>
+        </h3>
+<ul class="normal">
+<li class="normal" id="section-7.8-1.1">
+            <p id="section-7.8-1.1.1">Manageability Considerations:<a href="#section-7.8-1.1.1" class="pilcrow">¶</a></p>
+<ul class="normal">
+<li class="normal" id="section-7.8-1.1.2.1">
+                <p id="section-7.8-1.1.2.1.1">Don't duplicate the configuration items from the security
+considerations section<a href="#section-7.8-1.1.2.1.1" class="pilcrow">¶</a></p>
+</li>
+              <li class="normal" id="section-7.8-1.1.2.2">
+                <p id="section-7.8-1.1.2.2.1">Clarify that response is the same size as the request, so there
+is no amplification vector.<a href="#section-7.8-1.1.2.2.1" class="pilcrow">¶</a></p>
+</li>
+            </ul>
+</li>
+        </ul>
+</section>
+</div>
 </section>
 </div>
 <div id="IANA">
@@ -2290,38 +2315,16 @@ address the aspects of <span>[<a href="#RFC5706" class="cite xref">RFC5706</a>]<
         <h3 id="name-control-of-function-and-pol">
 <a href="#section-9.1" class="section-number selfRef">9.1. </a><a href="#name-control-of-function-and-pol" class="section-name selfRef">Control of Function and Policy</a>
         </h3>
-<p id="section-9.1-1">Nodes that support ICMP Extended Echo functionality <span class="bcp14">MUST</span> support
-the configuration parameters specified in <a href="#security" class="auto internal xref">Section 10</a>.  In
-particular, an operator <span class="bcp14">MUST</span> be able to:<a href="#section-9.1-1" class="pilcrow">¶</a></p>
-<ul class="normal">
-<li class="normal" id="section-9.1-2.1">
-            <p id="section-9.1-2.1.1">Enable or disable Extended Echo functionality on the node.  By
-default, ICMP Extended Echo functionality is disabled.<a href="#section-9.1-2.1.1" class="pilcrow">¶</a></p>
-</li>
-          <li class="normal" id="section-9.1-2.2">
-            <p id="section-9.1-2.2.1">Define the permitted L-bit settings.  By default, the option to
-set the L-bit is enabled and the option to clear the L-bit is
-disabled.<a href="#section-9.1-2.2.1" class="pilcrow">¶</a></p>
-</li>
-          <li class="normal" id="section-9.1-2.3">
-            <p id="section-9.1-2.3.1">Define the enabled query types (by name, by index, or by
-address).  By default, all query types are disabled.<a href="#section-9.1-2.3.1" class="pilcrow">¶</a></p>
-</li>
-          <li class="normal" id="section-9.1-2.4">
-            <p id="section-9.1-2.4.1">For each enabled query type, control the source prefixes from
-which ICMP Extended Echo Requests are permitted.<a href="#section-9.1-2.4.1" class="pilcrow">¶</a></p>
-</li>
-          <li class="normal" id="section-9.1-2.5">
-            <p id="section-9.1-2.5.1">Control acceptance of ICMP messages on a per-interface basis.<a href="#section-9.1-2.5.1" class="pilcrow">¶</a></p>
-</li>
-        </ul>
-<p id="section-9.1-3">These parameters are local to each node and take effect
+<p id="section-9.1-1">Security configuration for implementations of the
+ICMP Extended Echo functionality support
+are specified in <a href="#security" class="auto internal xref">Section 10</a>.<a href="#section-9.1-1" class="pilcrow">¶</a></p>
+<p id="section-9.1-2">These parameters are local to each node and take effect
 immediately; no protocol restart or network-wide coordination is
 required.  An operator must explicitly enable the feature and
 configure authorized source prefixes before a node will respond
-to any Extended Echo Request.<a href="#section-9.1-3" class="pilcrow">¶</a></p>
-<p id="section-9.1-4">No MIB module or YANG data model is defined for these parameters.
-A YANG model may be defined in a separate document in the future.<a href="#section-9.1-4" class="pilcrow">¶</a></p>
+to any Extended Echo Request.<a href="#section-9.1-2" class="pilcrow">¶</a></p>
+<p id="section-9.1-3">No MIB module or YANG data model is defined for these parameters.
+A YANG model may be defined in a separate document in the future.<a href="#section-9.1-3" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="monitoring-and-verifying-operation">
@@ -2473,8 +2476,8 @@ logical network elements <span>[<a href="#RFC8530" class="cite xref">RFC8530</a>
 Extended Echo Reply with error code equal to (2) No Such Interface.<a href="#section-10-9" class="pilcrow">¶</a></p>
 <p id="section-10-10">In order to protect local resources, implementations <span class="bcp14">SHOULD</span>
 rate-limit incoming ICMP Extended Echo Request messages.<a href="#section-10-10" class="pilcrow">¶</a></p>
-<p id="section-10-11">PROBE does not present a significant amplification risk.  The ICMP
-Extended Echo Reply is not meaningfully larger than the corresponding
+<p id="section-10-11">PROBE does not present an amplification risk.  The ICMP
+Extended Echo Reply is the same size as the corresponding
 ICMP Extended Echo Request; therefore, PROBE is not a useful
 amplification vector.<a href="#section-10-11" class="pilcrow">¶</a></p>
 <p id="section-10-12">As with any ICMP message that carries an opaque data payload, the
