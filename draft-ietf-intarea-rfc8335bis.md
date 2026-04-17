@@ -731,6 +731,16 @@ Specifically,
 * Clarify the wording of {{dontdothis}}, including further wording about
   the checksum coverage.
 
+## Changes from draft-int-intarea-rfc8335bis-03
+
+* Manageability Considerations:
+
+  * Don't duplicate the configuration items from the security
+    considerations section
+
+  * Clarify that response is the same size as the request, so there
+    is no amplification vector.
+
 # IANA Considerations {#IANA}
 
 IANA is requested to update the references for the below
