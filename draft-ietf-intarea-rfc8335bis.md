@@ -820,24 +820,9 @@ address the aspects of {{RFC5706}} that are applicable to PROBE.
 
 ## Control of Function and Policy
 
-Nodes that support ICMP Extended Echo functionality MUST support
-the configuration parameters specified in {{security}}.  In
-particular, an operator MUST be able to:
-
-* Enable or disable Extended Echo functionality on the node.  By
-  default, ICMP Extended Echo functionality is disabled.
-
-* Define the permitted L-bit settings.  By default, the option to
-  set the L-bit is enabled and the option to clear the L-bit is
-  disabled.
-
-* Define the enabled query types (by name, by index, or by
-  address).  By default, all query types are disabled.
-
-* For each enabled query type, control the source prefixes from
-  which ICMP Extended Echo Requests are permitted.
-
-* Control acceptance of ICMP messages on a per-interface basis.
+Security configuration for implementations of the
+ICMP Extended Echo functionality support
+are specified in {{security}}.
 
 These parameters are local to each node and take effect
 immediately; no protocol restart or network-wide coordination is
