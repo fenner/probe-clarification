@@ -955,8 +955,8 @@ Extended Echo Reply with error code equal to (2) No Such Interface.
 In order to protect local resources, implementations SHOULD
 rate-limit incoming ICMP Extended Echo Request messages.
 
-PROBE does not present a significant amplification risk.  The ICMP
-Extended Echo Reply is not meaningfully larger than the corresponding
+PROBE does not present an amplification risk.  The ICMP
+Extended Echo Reply is the same size as the corresponding
 ICMP Extended Echo Request; therefore, PROBE is not a useful
 amplification vector.
 
