@@ -7,14 +7,14 @@ Internet-Draft                                           Arista Networks
 Obsoletes: 8335 (if approved)                                  R. Bonica
 Updates: 4884 (if approved)                             Juniper Networks
 Intended status: Standards Track                               R. Thomas
-Expires: 19 October 2026                                 Arista Networks
+Expires: 7 November 2026                                 Arista Networks
                                                               J. Linkova
                                                                   Google
                                                                C. Lenart
                                                                  Verizon
                                                             M. Boucadair
                                                                   Orange
-                                                           17 April 2026
+                                                              6 May 2026
 
 
                 PROBE: A Utility for Probing Interfaces
@@ -64,7 +64,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 19 October 2026.
+   This Internet-Draft will expire on 7 November 2026.
 
 Copyright Notice
 
