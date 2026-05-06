@@ -235,7 +235,7 @@ version is encapsulated in an IPv6 header.
 {{ICMPEchoFIG}} depicts the ICMP Extended Echo Request
 message.
 
-~~~~
+~~~~ aasvg
     0                   1                   2                   3
     0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
@@ -353,7 +353,7 @@ the if-index [RFC8343].
 If the Interface Identification Object identifies the probed
 interface by address, the payload is as depicted in {{addrFig}}.
 
-~~~~
+~~~~ aasvg
  0                   1                   2                   3
  0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
@@ -395,7 +395,7 @@ version is encapsulated in an IPv6 header.
 {{ICMPEchoReplyFIG}} depicts the ICMP Extended Echo
 Reply message.
 
-~~~~
+~~~~ aasvg
     0                   1                   2                   3
     0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
