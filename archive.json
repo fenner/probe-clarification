@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-04-16T01:25:28.253719+00:00",
+  "timestamp": "2026-05-07T01:50:50.853438+00:00",
   "repo": "fenner/probe-clarification",
   "labels": [
     {
@@ -47,6 +47,26 @@
       "name": "wontfix",
       "description": "This will not be worked on",
       "color": "ffffff"
+    },
+    {
+      "name": "ad-review",
+      "description": null,
+      "color": "b6d7a8"
+    },
+    {
+      "name": "review",
+      "description": null,
+      "color": "b6d7a8"
+    },
+    {
+      "name": "discuss",
+      "description": null,
+      "color": "b6d7a8"
+    },
+    {
+      "name": "comment",
+      "description": null,
+      "color": "b6d7a8"
     }
   ],
   "issues": [
@@ -620,6 +640,307 @@
           "updatedAt": "2026-04-14T14:53:53Z"
         }
       ]
+    },
+    {
+      "number": 35,
+      "id": "I_kwDOLB4g0s8AAAABBdmYAg",
+      "title": "Confirmation of the SIX authors",
+      "url": "https://github.com/fenner/probe-clarification/issues/35",
+      "state": "OPEN",
+      "author": "fenner",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [
+        "ad-review",
+        "review",
+        "discuss"
+      ],
+      "body": "_Comment by @evyncke_\n\nAs there are 6 authors, i.e., larger than the usual limit of 5, I wonder whether the editor (who apparently did most of the work in the -bis draft) and the other authors have considered moving the RFC 8335 authors (who did not provide text to this -bis) to the Contributors section.\n\n",
+      "createdAt": "2026-05-06T17:05:23Z",
+      "updatedAt": "2026-05-06T17:16:02Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "fenner",
+          "authorAssociation": "OWNER",
+          "body": "I haven't had this discussion; I was hoping for guidance like this because I didn't want to sound like I wanted to minimize the other authors' contributions.\n",
+          "createdAt": "2026-05-06T17:16:02Z",
+          "updatedAt": "2026-05-06T17:16:02Z"
+        }
+      ]
+    },
+    {
+      "number": 36,
+      "id": "I_kwDOLB4g0s8AAAABBdmYxw",
+      "title": "Sections 2 and 2.1",
+      "url": "https://github.com/fenner/probe-clarification/issues/36",
+      "state": "OPEN",
+      "author": "fenner",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [
+        "ad-review",
+        "review",
+        "discuss"
+      ],
+      "body": "_Comment by @evyncke_\n\nWhen the probed interface is identified by address, please be clear that this is a unicast address or can it also be multicast, any cast, or broadcast?\n\n",
+      "createdAt": "2026-05-06T17:05:26Z",
+      "updatedAt": "2026-05-06T17:16:21Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "fenner",
+          "authorAssociation": "OWNER",
+          "body": "Yes, it must be unicast.\n",
+          "createdAt": "2026-05-06T17:16:21Z",
+          "updatedAt": "2026-05-06T17:16:21Z"
+        }
+      ]
+    },
+    {
+      "number": 37,
+      "id": "I_kwDOLB4g0s8AAAABBdmZzQ",
+      "title": "Section 4.1",
+      "url": "https://github.com/fenner/probe-clarification/issues/37",
+      "state": "OPEN",
+      "author": "fenner",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [
+        "ad-review",
+        "review",
+        "discuss"
+      ],
+      "body": "_Comment by @evyncke_\n\nSuggest to extend the description of `No Such Table Entry` case when the Interface Identification Object is not an IPv[46] address, e.g., a data-link layer address as indicated by the AFI being neither 1 nor 2.\n\nIt is also unclear whether the state of the NDP/ARP cache entry is important, I guess that an cache entry in the 'unreachable' state should return 'not ok', but I was unable to find where it is specified in the text.\n\n",
+      "createdAt": "2026-05-06T17:05:28Z",
+      "updatedAt": "2026-05-06T17:16:51Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "fenner",
+          "authorAssociation": "OWNER",
+          "body": "On AFI being neither 1 nor 2, sure, I can do that.\n\nOn the topic of the state, I suppose \"unreachable\" being missing was an oversight. It makes sense to me.\n\nI couldn't find any mention of state in RFC 826; I imagine that different OSes might have different implementations of state in this case. Do you have a good reference that I can point to to allow implementors to understand what to report when?\n\nRFC 4861 defines the states to be\u00a0INCOMPLETE,\u00a0REACHABLE,\u00a0STALE,\u00a0DELAY, and PROBE. I guess \"unreachable\" includes INCOMPLETE, DELAY and PROBE? Obviously REACHABLE is not unreachable, and STALE kind of says \"not not reachable... yet\".?",
+          "createdAt": "2026-05-06T17:16:51Z",
+          "updatedAt": "2026-05-06T17:16:51Z"
+        }
+      ]
+    },
+    {
+      "number": 38,
+      "id": "I_kwDOLB4g0s8AAAABBdmawg",
+      "title": "Interface enumeration",
+      "url": "https://github.com/fenner/probe-clarification/issues/38",
+      "state": "OPEN",
+      "author": "fenner",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [
+        "ad-review",
+        "review",
+        "discuss"
+      ],
+      "body": "_Comment by @evyncke_\n\nShould there be a security consideration point about enumerating the interfaces as the if-index values can probably and quickly be enumerated ?\n\n",
+      "createdAt": "2026-05-06T17:05:31Z",
+      "updatedAt": "2026-05-06T17:19:00Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "fenner",
+          "authorAssociation": "OWNER",
+          "body": "Addresses and interface index values are considered together in this paragraph.  I've replaced the address considerations with ... to make the interface index considerations more clear. Does this address your issue?\n\n... interface index values can also give away information\nthat might not want to be shared. For example, a malicious party can\nuse PROBE to ... if interface index values are\nassigned densely, it can determine how many interfaces exist on the\nprobed node. \n",
+          "createdAt": "2026-05-06T17:19:00Z",
+          "updatedAt": "2026-05-06T17:19:00Z"
+        }
+      ]
+    },
+    {
+      "number": 39,
+      "id": "I_kwDOLB4g0s8AAAABBdmbig",
+      "title": "Dual-stack behaviour",
+      "url": "https://github.com/fenner/probe-clarification/issues/39",
+      "state": "OPEN",
+      "author": "fenner",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [
+        "ad-review",
+        "review",
+        "discuss"
+      ],
+      "body": "_Comment by @evyncke_\n\nAs I hope that sending an ICMPv4 Echo Extended Request to a router, asking about an interface that has only an IPv6 address is allowed, should there be text about this nice feature ?\n\n",
+      "createdAt": "2026-05-06T17:05:33Z",
+      "updatedAt": "2026-05-06T17:19:31Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "fenner",
+          "authorAssociation": "OWNER",
+          "body": "Sure, I thought it was obvious, but I can add text.\n",
+          "createdAt": "2026-05-06T17:19:31Z",
+          "updatedAt": "2026-05-06T17:19:31Z"
+        }
+      ]
+    },
+    {
+      "number": 40,
+      "id": "I_kwDOLB4g0s8AAAABBdmddQ",
+      "title": "Abstract",
+      "url": "https://github.com/fenner/probe-clarification/issues/40",
+      "state": "OPEN",
+      "author": "fenner",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [
+        "ad-review",
+        "review",
+        "comment"
+      ],
+      "body": "_Comment by @evyncke_\n\ns/This document describes a network diagnostic /This document _specifies_ a network diagnostic / ? as it is a proposed standard\n\n",
+      "createdAt": "2026-05-06T17:05:39Z",
+      "updatedAt": "2026-05-06T18:25:20Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "fenner",
+          "authorAssociation": "OWNER",
+          "body": "Sure.",
+          "createdAt": "2026-05-06T17:20:30Z",
+          "updatedAt": "2026-05-06T17:20:30Z"
+        }
+      ]
+    },
+    {
+      "number": 41,
+      "id": "I_kwDOLB4g0s8AAAABBdmfHw",
+      "title": "Section 4",
+      "url": "https://github.com/fenner/probe-clarification/issues/41",
+      "state": "OPEN",
+      "author": "fenner",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [
+        "ad-review",
+        "review",
+        "comment"
+      ],
+      "body": "_Comment by @evyncke_\n\nWhat about the IPv6 flow label ?\n\n",
+      "createdAt": "2026-05-06T17:05:44Z",
+      "updatedAt": "2026-05-06T18:25:20Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "fenner",
+          "authorAssociation": "OWNER",
+          "body": "I am not creative enough to come up with a use case for the flow label in this protocol. It's most obvious to say MBZ. Is that reasonable to you?",
+          "createdAt": "2026-05-06T17:23:44Z",
+          "updatedAt": "2026-05-06T17:23:44Z"
+        }
+      ]
+    },
+    {
+      "number": 42,
+      "id": "I_kwDOLB4g0s8AAAABBdmgcA",
+      "title": "Section 7",
+      "url": "https://github.com/fenner/probe-clarification/issues/42",
+      "state": "OPEN",
+      "author": "fenner",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [
+        "ad-review",
+        "review",
+        "comment"
+      ],
+      "body": "_Comment by @evyncke_\n\nIt is unclear whether the change history needs to be kept (there is no RFC Editor note), I would prefer to keep the diff with RFC 8335 while deleting the history of the drafts.\n\n",
+      "createdAt": "2026-05-06T17:05:47Z",
+      "updatedAt": "2026-05-06T18:25:21Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "fenner",
+          "authorAssociation": "OWNER",
+          "body": "I think I'll add another section with the diffs from RFC8335, and mark the current change log as to be removed.\n",
+          "createdAt": "2026-05-06T17:25:11Z",
+          "updatedAt": "2026-05-06T17:25:11Z"
+        }
+      ]
+    },
+    {
+      "number": 43,
+      "id": "I_kwDOLB4g0s8AAAABBdmhmg",
+      "title": "Acknowledgments",
+      "url": "https://github.com/fenner/probe-clarification/issues/43",
+      "state": "OPEN",
+      "author": "fenner",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [
+        "ad-review",
+        "review",
+        "comment"
+      ],
+      "body": "_Comment by @evyncke_\n\nShould the acknowlegments for RFC 8335 be removed or explicitely marked \"for RFC 8335\" ?\n\n",
+      "createdAt": "2026-05-06T17:05:51Z",
+      "updatedAt": "2026-05-06T18:25:22Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "fenner",
+          "authorAssociation": "OWNER",
+          "body": "I don't think so, but I'm happy to accept guidance here. Most of RFC 8335 is still there, so it makes sense to me to keep the acknowledgements of the people who made that happen.\n",
+          "createdAt": "2026-05-06T17:26:15Z",
+          "updatedAt": "2026-05-06T17:26:15Z"
+        }
+      ]
+    },
+    {
+      "number": 44,
+      "id": "I_kwDOLB4g0s8AAAABBdmi1g",
+      "title": "Return of deployment experience with RFC 8335",
+      "url": "https://github.com/fenner/probe-clarification/issues/44",
+      "state": "OPEN",
+      "author": "fenner",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [
+        "ad-review",
+        "review",
+        "comment"
+      ],
+      "body": "_Comment by @evyncke_\n\nA small section about the experience gained with RFC 8335 (dated 2018) would be useful, possibly in the appendix. E.g., whether the PROBE packets were able to be sent over the public Internet and/or through middleboxes (for some definitions of middleboxes ;-) ).\n\n",
+      "createdAt": "2026-05-06T17:05:55Z",
+      "updatedAt": "2026-05-06T18:25:23Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "fenner",
+          "authorAssociation": "OWNER",
+          "body": "I was able to send PROBE across the public Internet when I was testing out implementations a couple of years ago. I am not sure how to test with middleboxes.\n",
+          "createdAt": "2026-05-06T17:28:12Z",
+          "updatedAt": "2026-05-06T17:28:12Z"
+        }
+      ]
+    },
+    {
+      "number": 45,
+      "id": "I_kwDOLB4g0s8AAAABBdmkHw",
+      "title": "Use of SVG graphics",
+      "url": "https://github.com/fenner/probe-clarification/issues/45",
+      "state": "CLOSED",
+      "author": "fenner",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [
+        "ad-review",
+        "review",
+        "discuss",
+        "comment"
+      ],
+      "body": "_Comment by @evyncke_\n\nTo make a much nicer HTML rendering, suggest using the aasvg too to generate SVG graphics. It is worth a try especially as this I-D uses the Kramdown file format by starting the block with `~~~ aasvg` ;-)\n\n",
+      "createdAt": "2026-05-06T17:05:59Z",
+      "updatedAt": "2026-05-06T17:36:59Z",
+      "closedAt": "2026-05-06T17:36:59Z",
+      "comments": []
     }
   ],
   "pulls": [
