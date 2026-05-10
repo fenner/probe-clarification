@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-05-07T01:50:50.853438+00:00",
+  "timestamp": "2026-05-10T01:50:01.730383+00:00",
   "repo": "fenner/probe-clarification",
   "labels": [
     {
@@ -881,7 +881,7 @@
       ],
       "body": "_Comment by @evyncke_\n\nShould the acknowlegments for RFC 8335 be removed or explicitely marked \"for RFC 8335\" ?\n\n",
       "createdAt": "2026-05-06T17:05:51Z",
-      "updatedAt": "2026-05-06T18:25:22Z",
+      "updatedAt": "2026-05-08T13:57:08Z",
       "closedAt": null,
       "comments": [
         {
@@ -890,6 +890,13 @@
           "body": "I don't think so, but I'm happy to accept guidance here. Most of RFC 8335 is still there, so it makes sense to me to keep the acknowledgements of the people who made that happen.\n",
           "createdAt": "2026-05-06T17:26:15Z",
           "updatedAt": "2026-05-06T17:26:15Z"
+        },
+        {
+          "author": "evyncke",
+          "authorAssociation": "NONE",
+          "body": "Up to you",
+          "createdAt": "2026-05-08T13:57:08Z",
+          "updatedAt": "2026-05-08T13:57:08Z"
         }
       ]
     },
@@ -909,7 +916,7 @@
       ],
       "body": "_Comment by @evyncke_\n\nA small section about the experience gained with RFC 8335 (dated 2018) would be useful, possibly in the appendix. E.g., whether the PROBE packets were able to be sent over the public Internet and/or through middleboxes (for some definitions of middleboxes ;-) ).\n\n",
       "createdAt": "2026-05-06T17:05:55Z",
-      "updatedAt": "2026-05-06T18:25:23Z",
+      "updatedAt": "2026-05-08T13:58:11Z",
       "closedAt": null,
       "comments": [
         {
@@ -918,6 +925,13 @@
           "body": "I was able to send PROBE across the public Internet when I was testing out implementations a couple of years ago. I am not sure how to test with middleboxes.\n",
           "createdAt": "2026-05-06T17:28:12Z",
           "updatedAt": "2026-05-06T17:28:12Z"
+        },
+        {
+          "author": "evyncke",
+          "authorAssociation": "NONE",
+          "body": "What about the co-authors return of experience ? If there is none, then it is somehow annoying to spend time on this draft :-( ",
+          "createdAt": "2026-05-08T13:58:11Z",
+          "updatedAt": "2026-05-08T13:58:11Z"
         }
       ]
     },
