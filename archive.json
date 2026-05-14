@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-05-10T01:50:01.730383+00:00",
+  "timestamp": "2026-05-14T02:01:56.863561+00:00",
   "repo": "fenner/probe-clarification",
   "labels": [
     {
@@ -657,7 +657,7 @@
       ],
       "body": "_Comment by @evyncke_\n\nAs there are 6 authors, i.e., larger than the usual limit of 5, I wonder whether the editor (who apparently did most of the work in the -bis draft) and the other authors have considered moving the RFC 8335 authors (who did not provide text to this -bis) to the Contributors section.\n\n",
       "createdAt": "2026-05-06T17:05:23Z",
-      "updatedAt": "2026-05-06T17:16:02Z",
+      "updatedAt": "2026-05-14T00:58:39Z",
       "closedAt": null,
       "comments": [
         {
@@ -666,6 +666,13 @@
           "body": "I haven't had this discussion; I was hoping for guidance like this because I didn't want to sound like I wanted to minimize the other authors' contributions.\n",
           "createdAt": "2026-05-06T17:16:02Z",
           "updatedAt": "2026-05-06T17:16:02Z"
+        },
+        {
+          "author": "fenner",
+          "authorAssociation": "OWNER",
+          "body": "Just some notes, maybe incomplete:\n- Chris contributed the section about human-readable formatting\n- Reji contributed to the security & management considerations sections\n",
+          "createdAt": "2026-05-14T00:58:39Z",
+          "updatedAt": "2026-05-14T00:58:39Z"
         }
       ]
     },
