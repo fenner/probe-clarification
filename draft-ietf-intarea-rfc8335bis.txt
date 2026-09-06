@@ -94,27 +94,31 @@ Table of Contents
    5.  Use Cases
      5.1.  Caveats
    6.  Updates to RFC 4884
-   7.  Change History
-     7.1.  Changes from RFC 8335
-     7.2.  Changes from draft-fenner-intarea-probe-clarification-00
-     7.3.  Changes from draft-fenner-intarea-probe-clarification-01
-     7.4.  Changes from draft-fenner-intarea-probe-clarification-02
-     7.5.  Changes from draft-int-intarea-rfc8335bis-00
-     7.6.  Changes from draft-int-intarea-rfc8335bis-01
-     7.7.  Changes from draft-int-intarea-rfc8335bis-02
-     7.8.  Changes from draft-int-intarea-rfc8335bis-03
-   8.  IANA Considerations
-   9.  Manageability Considerations
-     9.1.  Control of Function and Policy
-     9.2.  Monitoring and Verifying Operation
-     9.3.  Deployment and Backward Compatibility
-     9.4.  Impact on Network Operation
-   10. Security Considerations
-   11. References
-     11.1.  Normative References
-     11.2.  Informative References
+   7.  Changes from RFC 8335
+   8.  Internet Draft Change History
+     8.1.  Changes from draft-fenner-intarea-probe-clarification-00
+     8.2.  Changes from draft-fenner-intarea-probe-clarification-01
+     8.3.  Changes from draft-fenner-intarea-probe-clarification-02
+     8.4.  Changes from draft-int-intarea-rfc8335bis-00
+     8.5.  Changes from draft-int-intarea-rfc8335bis-01
+     8.6.  Changes from draft-int-intarea-rfc8335bis-02
+     8.7.  Changes from draft-int-intarea-rfc8335bis-03
+     8.8.  Changes from draft-int-intarea-rfc8335bis-04
+   9.  IANA Considerations
+   10. Manageability Considerations
+     10.1.  Control of Function and Policy
+     10.2.  Monitoring and Verifying Operation
+     10.3.  Deployment and Backward Compatibility
+     10.4.  Impact on Network Operation
+   11. Security Considerations
+   12. References
+     12.1.  Normative References
+     12.2.  Informative References
    Appendix A.  The PROBE Application
      A.1.  Information Display
+   Appendix B.  Deployment Experience
+     B.1.  Naming is Very Important to Implementers
+     B.2.  Naming is Very Important to Operators
    Acknowledgments
    Authors' Addresses
 
@@ -223,7 +227,7 @@ Table of Contents
    which behave this way.  The ICMP Extension Structure checksum covers
    only the Interface Identification Object.  Any data following it is
    not covered by this checksum but is covered by the ICMP header
-   checksum, which protects the entire ICMP message (see Section 10 for
+   checksum, which protects the entire ICMP message (see Section 11 for
    further discussion).  New uses of ICMP Extensions, and in fact uses
    of Extended Echo using some object other than the Interface
    Identification Object, SHOULD NOT behave this way.  Uses other than
@@ -311,10 +315,9 @@ Table of Contents
    interface by address, that address can be a member of any address
    family.  For example, an ICMPv4 Extended Echo Request message can
    carry an Interface Identification Object that identifies the probed
-   interface by IPv4, IPv6, or IEEE 802 address.  Likewise, an ICMPv6
-   Extended Echo Request message can carry an Interface Identification
-   Object that identifies the probed interface by IPv4, IPv6, or IEEE
-   802 address.
+   interface by IPv4 or IPv6 address.  Likewise, an ICMPv6 Extended Echo
+   Request message can carry an Interface Identification Object that
+   identifies the probed interface by IPv4 or IPv6 address.
 
    The Interface Identification Object MAY be followed by an optional
    data section, which is not interpreted but is simply present to be
@@ -374,7 +377,7 @@ Table of Contents
 
    *  Reserved: This field MUST be set to 0 and ignored upon receipt.
 
-   *  Address: This variable-length field represents an address
+   *  Address: This variable-length field represents a unicast address
       associated with the probed interface.  If the address field would
       not otherwise terminate on a 32-bit boundary, it MUST be padded
       with zeroes.
@@ -499,6 +502,8 @@ Table of Contents
    *  Indicate that the packet is not source fragmented
 
       -  Do not include an IPv6 Fragmentation Header
+
+   *  This document does not specify any value for the Flow Label field
 
    In either case, the responding node MUST do the following:
 
@@ -632,9 +637,7 @@ Table of Contents
    document adds the ICMP Extended Echo Request message and the ICMP
    Extended Echo Reply message to that list.
 
-7.  Change History
-
-7.1.  Changes from RFC 8335
+7.  Changes from RFC 8335
 
    This document updates [RFC8335] to clarify the handling of extra data
    beyond the ICMP Extension Structure, that data is echoed in the
@@ -665,7 +668,11 @@ Table of Contents
    *  Clarified in Section 2.1 that the length of an ifName Object is
       adjusted when padding is added.
 
-7.2.  Changes from draft-fenner-intarea-probe-clarification-00
+8.  Internet Draft Change History
+
+   This section is to be removed before publishing as an RFC.
+
+8.1.  Changes from draft-fenner-intarea-probe-clarification-00
 
    *  Changed "NULL" to "NUL" when referring to the ASCII control
       character, per RFC20.
@@ -676,30 +683,30 @@ Table of Contents
    *  Added [] around the Data following the ICMP Extension Structure in
       Figure 1 and Figure 3 to indicate that it is optional.
 
-7.3.  Changes from draft-fenner-intarea-probe-clarification-01
+8.2.  Changes from draft-fenner-intarea-probe-clarification-01
 
    *  Updated the section on ICMP Extension header format to say that
       different ICMP Extension Option headers may be present, and if
       they are, the mechanism is not as specified in this memo.
 
-7.4.  Changes from draft-fenner-intarea-probe-clarification-02
+8.3.  Changes from draft-fenner-intarea-probe-clarification-02
 
    *  Made a stronger statement about not copying this behavior in
       Section 1.3
 
    *  Renamed to rfc8335bis and made WG document
 
-7.5.  Changes from draft-int-intarea-rfc8335bis-00
+8.4.  Changes from draft-int-intarea-rfc8335bis-00
 
    *  Changed "For the operations in this memo" to "In the PROBE
       application" to better align with draft-ietf-6man-
       icmpv6-reflection
 
-7.6.  Changes from draft-int-intarea-rfc8335bis-01
+8.5.  Changes from draft-int-intarea-rfc8335bis-01
 
    *  None
 
-7.7.  Changes from draft-int-intarea-rfc8335bis-02
+8.6.  Changes from draft-int-intarea-rfc8335bis-02
 
    *  Added reference to draft-ietf-6man-icmpv6-reflection
 
@@ -710,12 +717,12 @@ Table of Contents
    *  Added details of IPv4/IPv6 headers and avoidance of fragmentation
       to Section 4
 
-   *  Added IP address and interface index considerations to Section 10
+   *  Added IP address and interface index considerations to Section 11
 
-   *  Add new Section 9 (Manageability Considerations) immediately
-      before Section 10, per RFC 5706 Section 4.3 guidance.
+   *  Add new Section 10 (Manageability Considerations) immediately
+      before Section 11, per RFC 5706 Section 4.3 guidance.
 
-   *  Add to Section 10 details of Amplification risk, Covert channel
+   *  Add to Section 11 details of Amplification risk, Covert channel
       potential, On-path attacker modification, ICMP header checksum
       scope.
 
@@ -725,7 +732,7 @@ Table of Contents
    *  Clarify the wording of Section 1.3, including further wording
       about the checksum coverage.
 
-7.8.  Changes from draft-int-intarea-rfc8335bis-03
+8.7.  Changes from draft-int-intarea-rfc8335bis-03
 
    *  Manageability Considerations:
 
@@ -735,7 +742,22 @@ Table of Contents
       -  Clarify that response is the same size as the request, so there
          is no amplification vector.
 
-8.  IANA Considerations
+8.8.  Changes from draft-int-intarea-rfc8335bis-04
+
+   *  Marked this section as removeInRFC="true", while splitting off
+      Section 7
+
+   *  Clarified that the address object must identify a unicast address
+
+   *  Added Appendix B
+
+   *  Clarified that we do not specify the flow label
+
+   *  Removed "densely" from the concern of enumerating all interfaces,
+      since it only takes 4,294,967,295 packets to enumerate the entire
+      number space.
+
+9.  IANA Considerations
 
    IANA is requested to update the references for the below actions from
    [RFC8335] to refer to this document.
@@ -813,7 +835,7 @@ Table of Contents
    All codes mentioned above are assigned on an FCFS basis with a range
    of 0-255.
 
-9.  Manageability Considerations
+10.  Manageability Considerations
 
    This section discusses manageability aspects of PROBE.  PROBE is an
    on-demand diagnostic tool analogous to PING.  It does not run
@@ -822,10 +844,10 @@ Table of Contents
    subsections below address the aspects of [RFC5706] that are
    applicable to PROBE.
 
-9.1.  Control of Function and Policy
+10.1.  Control of Function and Policy
 
    Security configuration for implementations of the ICMP Extended Echo
-   functionality support are specified in Section 10.
+   functionality support are specified in Section 11.
 
    These parameters are local to each node and take effect immediately;
    no protocol restart or network-wide coordination is required.  An
@@ -836,7 +858,7 @@ Table of Contents
    No MIB module or YANG data model is defined for these parameters.  A
    YANG model may be defined in a separate document in the future.
 
-9.2.  Monitoring and Verifying Operation
+10.2.  Monitoring and Verifying Operation
 
    Correct operation of PROBE can be verified by sending an ICMP
    Extended Echo Request to a proxy node and examining the Code field of
@@ -856,7 +878,7 @@ Table of Contents
    assist operators in troubleshooting access-control configuration and
    detecting unexpected traffic.
 
-9.3.  Deployment and Backward Compatibility
+10.3.  Deployment and Backward Compatibility
 
    PROBE is deployed on individual nodes and invoked on demand by
    operators or network management applications.  It does not require
@@ -879,7 +901,7 @@ Table of Contents
    implementing this document interoperate with nodes implementing
    [RFC8335] without any transition mechanism or behavioral migration.
 
-9.4.  Impact on Network Operation
+10.4.  Impact on Network Operation
 
    Each PROBE invocation generates one ICMP Extended Echo Request and
    one ICMP Extended Echo Reply.  Each query is independent; there is no
@@ -889,11 +911,11 @@ Table of Contents
 
    Frequent automated use of PROBE (e.g., by a management application
    polling many interfaces) could increase ICMP traffic on the network.
-   Operators SHOULD apply rate-limiting at the responder (Section 10)
+   Operators SHOULD apply rate-limiting at the responder (Section 11)
    consistent with their existing ICMP rate-limiting policies to bound
    this load.
 
-10.  Security Considerations
+11.  Security Considerations
 
    The following are legitimate uses of PROBE:
 
@@ -919,9 +941,8 @@ Table of Contents
    Addresses and interface index values can also give away information
    that might not want to be shared.  For example, a malicious party can
    use PROBE to determine that a given IP address is assigned to any
-   interface on the probed node, or if interface index values are
-   assigned densely, it can determine how many interfaces exist on the
-   probed node.
+   interface on the probed node, or it can determine how many interfaces
+   exist on the probed node.
 
    Understanding these risks, network operators establish policies that
    restrict access to ICMP Extended Echo functionality.  In order to
@@ -977,9 +998,9 @@ Table of Contents
    Structure.  However, this is a non-cryptographic checksum intended
    for error detection, not protection against intentional modification.
 
-11.  References
+12.  References
 
-11.1.  Normative References
+12.1.  Normative References
 
    [RFC0792]  Postel, J., "Internet Control Message Protocol", STD 5,
               RFC 792, DOI 10.17487/RFC792, September 1981,
@@ -1025,7 +1046,7 @@ Table of Contents
               Management", RFC 8343, DOI 10.17487/RFC8343, March 2018,
               <https://www.rfc-editor.org/rfc/rfc8343>.
 
-11.2.  Informative References
+12.2.  Informative References
 
    [I-D.ietf-6man-icmpv6-reflection]
               Mizrahi, T., hexiaoming, X., Zhou, T., Bonica, R. P., and
@@ -1173,6 +1194,45 @@ A.1.  Information Display
       +---+---+---+------------------------------------------------+
 
               Table 1: Sample translations for bit settings
+
+Appendix B.  Deployment Experience
+
+   As described in Section 11, this feature defaults to "off", and is
+   expected to be tightly controlled by an operator in order to prevent
+   leakage of sensitive information.  Therefore, most deployments are
+   expected to effectively be within a domain in which the same
+   organization controls, e.g., middleboxes and firewalls, if those
+   devices do not pass these ICMP messages properly.  While individual
+   experiments have shown that this protocol can be used across pieces
+   of the public Internet, there are no broad experimental results.
+
+B.1.  Naming is Very Important to Implementers
+
+   The biggest lesson to take away from RFC8335 is that it was described
+   as similar to ping, which appears to have led implementors to
+   understand that the packet format was similar to ping, which led to
+   the unusual and awkward packet format described in this document, as
+   these implementations ended up violating RFC4884.
+
+   While it is tempting to relate a new development with something that
+   users are already familiar with, evidence is that this can result in
+   undesired misunderstanding and shortcuts.
+
+B.2.  Naming is Very Important to Operators
+
+   Initial implementations of the probe client displayed information in
+   a very similar way to ping, e.g.,
+
+   64 bytes from 192.0.2.2: icmp_seq=1 ttl=63 active=1 ipv4=0 ipv6=0
+
+             Figure 4: Sample output from initial probe client
+
+   A careful read will show that the ipv4 and ipv6 responses are "0",
+   perhaps meaning that the desired interface state is not present.
+   However, given that more than half of the line matches a successful
+   response from "ping", and that people are very good at pattern
+   matching, users are inclined to recognize this as success, not as
+   failure.  This experience led to the suggestions in Appendix A.1.
 
 Acknowledgments
 
