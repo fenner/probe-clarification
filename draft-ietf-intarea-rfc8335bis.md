@@ -946,8 +946,8 @@ information may include:
 Addresses and interface index values can also give away information
 that might not want to be shared. For example, a malicious party can
 use PROBE to determine that a given IP address is assigned to any
-interface on the probed node, or if interface index values are
-assigned densely, it can determine how many interfaces exist on the
+interface on the probed node, or
+it can determine how many interfaces exist on the
 probed node.
 
 Understanding these risks, network operators establish policies that
