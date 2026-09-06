@@ -749,6 +749,8 @@ Specifically,
 
 * Clarified that the address object must identify a unicast address
 
+* Added {{deployment}}
+
 * Removed "densely" from the concern of enumerating all interfaces,
   since it only takes 4,294,967,295 packets to enumerate the entire
   number space.
@@ -1100,6 +1102,45 @@ For example, an application may perform these steps:
 | 1 | 1 | 1 | Interface active, with ipv4 and ipv6 running |
 {: #BitCombinationTable title='Sample translations for bit settings' }
 
+# Deployment Experience {#deployment}
+
+As described in {{security}}, this feature defaults to "off", and
+is expected to be tightly controlled by an operator in order to
+prevent leakage of sensitive information. Therefore, most deployments
+are expected to effectively be within a domain in which the same
+organization controls, e.g., middleboxes and firewalls, if those
+devices do not pass these ICMP messages properly. While individual
+experiments have shown that this protocol can be used across pieces
+of the public Internet, there are no broad experimental results.
+
+## Naming is Very Important to Implementers
+
+The biggest lesson to take away from RFC8335 is that it was described
+as similar to ping, which appears to have led implementors to
+understand that the packet format was similar to ping, which led
+to the unusual and awkward packet format described in this document,
+as these implementations ended up violating RFC4884.
+
+While it is tempting to relate a new development with something that
+users are already familiar with, evidence is that this can result in
+undesired misunderstanding and shortcuts.
+
+## Naming is Very Important to Operators
+
+Initial implementations of the probe client displayed information in a
+very similar way to ping, e.g.,
+
+~~~
+64 bytes from 192.0.2.2: icmp_seq=1 ttl=63 active=1 ipv4=0 ipv6=0
+~~~
+{: #originaloutput title='Sample output from initial probe client' }
+
+A careful read will show that the ipv4 and ipv6 responses are "0",
+perhaps meaning that the desired interface state is not present.
+However, given that more than half of the line matches a successful
+response from "ping", and that people are very good at pattern
+matching, users are inclined to recognize this as success, not as
+failure. This experience led to the suggestions in {{applicationDisplay}}.
 
 # Acknowledgments {#Acknowledgments}
 {: numbered="no"}
