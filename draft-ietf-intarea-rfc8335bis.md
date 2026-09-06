@@ -96,7 +96,7 @@ informative:
 --- abstract
 
 
-This document describes a network diagnostic tool called PROBE. PROBE
+This document specifies a network diagnostic tool called PROBE. PROBE
 is similar to PING in that it can be used to query the status of a
 probed interface, but it differs from PING in that it does not require
 bidirectional connectivity between the probing and probed interfaces.
@@ -758,6 +758,8 @@ Specifically,
 * Removed "densely" from the concern of enumerating all interfaces,
   since it only takes 4,294,967,295 packets to enumerate the entire
   number space.
+
+* Use "specifies" instead of "describes" in abstract
 
 # IANA Considerations {#IANA}
 
