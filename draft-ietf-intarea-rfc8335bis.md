@@ -312,9 +312,9 @@ If the Interface Identification Object identifies the probed
 interface by address, that address can be a member of any address
 family. For example, an ICMPv4 Extended Echo Request message can carry
 an Interface Identification Object that identifies the probed interface
-by IPv4, IPv6, or IEEE 802 address. Likewise, an ICMPv6 Extended Echo
+by IPv4 or IPv6 address. Likewise, an ICMPv6 Extended Echo
 Request message can carry an Interface Identification Object that
-identifies the probed interface by IPv4, IPv6, or IEEE 802 address.
+identifies the probed interface by IPv4 or IPv6 address.
 
 The Interface Identification Object MAY be followed by an optional
 data section, which is not interpreted but is simply present to be
@@ -378,7 +378,7 @@ Payload fields are defined as follows:
 * Reserved: This field MUST be set to 0 and ignored upon
   receipt.
 
-* Address: This variable-length field represents an address
+* Address: This variable-length field represents a unicast address
   associated with the probed interface. If the address field would
   not otherwise terminate on a 32-bit boundary, it MUST be padded
   with zeroes.
@@ -746,6 +746,12 @@ Specifically,
 
 * Marked this section as removeInRFC="true", while splitting off
   {{changes}}
+
+* Clarified that the address object must identify a unicast address
+
+* Removed "densely" from the concern of enumerating all interfaces,
+  since it only takes 4,294,967,295 packets to enumerate the entire
+  number space.
 
 # IANA Considerations {#IANA}
 
