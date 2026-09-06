@@ -510,6 +510,8 @@ format the IPv6 header of an ICMPv6 Extended Echo Reply as follows:
 
     * Do not include an IPv6 Fragmentation Header
 
+* This document does not specify any value for the Flow Label field
+
 In either case, the responding node MUST do the following:
 
 * Copy the Source Address from the Extended Echo Request message to
@@ -750,6 +752,8 @@ Specifically,
 * Clarified that the address object must identify a unicast address
 
 * Added {{deployment}}
+
+* Clarified that we do not specify the flow label
 
 * Removed "densely" from the concern of enumerating all interfaces,
   since it only takes 4,294,967,295 packets to enumerate the entire
