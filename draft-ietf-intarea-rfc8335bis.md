@@ -642,9 +642,7 @@ Section 4.6 of {{RFC4884}} provides a list of extensible ICMP messages
 document adds the ICMP Extended Echo Request message and the ICMP
 Extended Echo Reply message to that list.
 
-# Change History
-
-## Changes from RFC 8335
+# Changes from RFC 8335 {#changes}
 
 This document updates {{RFC8335}} to clarify the handling of
 extra data beyond the ICMP Extension Structure, that data is
@@ -673,6 +671,9 @@ Specifically,
 
 * Clarified in {{IntIdObj}} that the length of an ifName Object is adjusted
   when padding is added.
+
+# Internet Draft Change History
+{: removeInRFC="true"}
 
 ## Changes from draft-fenner-intarea-probe-clarification-00
 
@@ -740,6 +741,11 @@ Specifically,
 
   * Clarify that response is the same size as the request, so there
     is no amplification vector.
+
+## Changes from draft-int-intarea-rfc8335bis-04
+
+* Marked this section as removeInRFC="true", while splitting off
+  {{changes}}
 
 # IANA Considerations {#IANA}
 
