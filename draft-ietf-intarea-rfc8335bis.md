@@ -768,6 +768,9 @@ Specifically,
   look in the IPv6 Neighbor Cache, and any other AFI means
   No Such Table Entry since there is no table.
 
+* Split the acknowledgements, and created a placeholder authors
+  section.
+
 # IANA Considerations {#IANA}
 
 IANA is requested to update the references for the below
@@ -1158,8 +1161,31 @@ failure. This experience led to the suggestions in {{applicationDisplay}}.
 # Acknowledgments {#Acknowledgments}
 {: numbered="no"}
 
-Thanks to Sowmini Varadhan, Jeff Haas, Carlos Pignataro, Jonathan
-Looney, Dave Thaler, Mikio Hara, Joel Halpern, Yaron Sheffer, Stefan
-Winter, Jean-Michel Combes, Amanda Barber, Joe Touch, Sue Hares,
+Thanks to Joe Touch, Sue Hares,
 Xaio Min, Tony Przygienda, Nick Buraglio and Tal Mizrahi for their
 thoughtful review of this document.
+
+# RFC8335 Acknowledgements
+{: numbered="no"}
+
+Thanks to Sowmini Varadhan, Jeff Haas, Carlos Pignataro, Jonathan
+Looney, Dave Thaler, Mikio Hara, Joel Halpern, Yaron Sheffer, Stefan
+Winter, Jean-Michel Combes, Amanda Barber, and Joe Touch for their
+thoughtful review of this document.
+
+# RFC8335 Authors
+{: numbered="no"}
+
+This is a placeholder section to address the six-author problem.
+Appropriate text will be put here when we agree on it.  Will this
+work? Example
+
+
+<ul spacing="compact" empty="true">
+<li>Bill Fenner (editor)</li>
+<li>Arista Networks</li>
+<li>5453 Great America Parkway</li>
+<li>Santa Clara, California 95054</li>
+<li>United States of America</li>
+<li>Email: fenner@fenron.com</li>
+</ul>
