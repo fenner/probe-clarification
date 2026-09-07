@@ -120,6 +120,8 @@ Table of Contents
      B.1.  Naming is Very Important to Implementers
      B.2.  Naming is Very Important to Operators
    Acknowledgments
+   RFC8335 Acknowledgements
+   RFC8335 Authors
    Authors' Addresses
 
 1.  Introduction
@@ -766,6 +768,9 @@ Table of Contents
       in the IPv6 Neighbor Cache, and any other AFI means No Such
       Table Entry since there is no table.
 
+   *  Split the acknowledgements, and created a placeholder authors
+      section.
+
 9.  IANA Considerations
 
    IANA is requested to update the references for the below actions from
@@ -1245,11 +1250,29 @@ B.2.  Naming is Very Important to Operators
 
 Acknowledgments
 
+   Thanks to Joe Touch, Sue Hares, Xaio Min, Tony Przygienda, Nick
+   Buraglio and Tal Mizrahi for their thoughtful review of this
+   document.
+
+RFC8335 Acknowledgements
+
    Thanks to Sowmini Varadhan, Jeff Haas, Carlos Pignataro, Jonathan
    Looney, Dave Thaler, Mikio Hara, Joel Halpern, Yaron Sheffer, Stefan
-   Winter, Jean-Michel Combes, Amanda Barber, Joe Touch, Sue Hares, Xaio
-   Min, Tony Przygienda, Nick Buraglio and Tal Mizrahi for their
+   Winter, Jean-Michel Combes, Amanda Barber, and Joe Touch for their
    thoughtful review of this document.
+
+RFC8335 Authors
+
+   This is a placeholder section to address the six-author problem.
+   Appropriate text will be put here when we agree on it.  Will this
+   work?  Example
+
+      Bill Fenner (editor)
+      Arista Networks
+      5453 Great America Parkway
+      Santa Clara, California 95054
+      United States of America
+      Email: fenner@fenron.com
 
 Authors' Addresses
 
