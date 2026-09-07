@@ -38,14 +38,6 @@ author:
   country: USA
   email: fenner@fenron.com
   role: editor
-- name: Ron Bonica
-  org: Juniper Networks
-  street: 2251 Corporate Park Drive
-  city: Herndon
-  code: '20171'
-  region: Virginia
-  country: USA
-  email: rbonica@juniper.net
 - name: Reji Thomas
   org: Arista Networks
   street: Global Tech Park
@@ -54,14 +46,6 @@ author:
   code: '560103'
   country: India
   email: reji.thomas@arista.com
-- name: Jen Linkova
-  org: Google
-  street: 1600 Amphitheatre Parkway
-  city: Mountain View
-  region: California
-  code: '94043'
-  country: USA
-  email: furry@google.com
 - name: Chris Lenart
   org: Verizon
   street: 22001 Loudoun County Parkway
@@ -771,6 +755,10 @@ Specifically,
 * Split the acknowledgements, and created a placeholder authors
   section.
 
+## Changes from draft-int-intarea-rfc8335bis-05
+
+* Moved Ron and Jen (so far) to RFC8335 authors section.
+
 # IANA Considerations {#IANA}
 
 IANA is requested to update the references for the below
@@ -1180,12 +1168,20 @@ This is a placeholder section to address the six-author problem.
 Appropriate text will be put here when we agree on it.  Will this
 work? Example
 
+<ul spacing="compact" empty="true">
+<li>Ron Bonica</li>
+<li>Juniper Networks</li>
+<li>2251 Corporate Park Drive</li>
+<li>Herndon, Virginia 20171</li>
+<li>United States of America</li>
+<li>Email: rbonica@juniper.net</li>
+</ul>
 
 <ul spacing="compact" empty="true">
-<li>Bill Fenner (editor)</li>
-<li>Arista Networks</li>
-<li>5453 Great America Parkway</li>
-<li>Santa Clara, California 95054</li>
+<li>Jen Linkova</li>
+<li>Google</li>
+<li>1600 Amphitheatre Parkway</li>
+<li>Mountain View, California 94043</li>
 <li>United States of America</li>
-<li>Email: fenner@fenron.com</li>
+<li>Email: furry@google.com</li>
 </ul>
