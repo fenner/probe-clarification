@@ -3,16 +3,11 @@
 
 
 int-area                                                  B. Fenner, Ed.
-Internet-Draft                                           Arista Networks
-Obsoletes: 8335 (if approved)                                  R. Bonica
-Updates: 4884 (if approved)                             Juniper Networks
-Intended status: Standards Track                               R. Thomas
-Expires: 11 March 2027                                   Arista Networks
-                                                              J. Linkova
-                                                                  Google
-                                                               C. Lenart
-                                                                 Verizon
-                                                            M. Boucadair
+Internet-Draft                                                 R. Thomas
+Obsoletes: 8335 (if approved)                            Arista Networks
+Updates: 4884 (if approved)                                    C. Lenart
+Intended status: Standards Track                                 Verizon
+Expires: 11 March 2027                                      M. Boucadair
                                                                   Orange
                                                         7 September 2026
 
@@ -104,6 +99,7 @@ Table of Contents
      8.6.  Changes from draft-int-intarea-rfc8335bis-02
      8.7.  Changes from draft-int-intarea-rfc8335bis-03
      8.8.  Changes from draft-int-intarea-rfc8335bis-04
+     8.9.  Changes from draft-int-intarea-rfc8335bis-05
    9.  IANA Considerations
    10. Manageability Considerations
      10.1.  Control of Function and Policy
@@ -771,6 +767,10 @@ Table of Contents
    *  Split the acknowledgements, and created a placeholder authors
       section.
 
+8.9.  Changes from draft-int-intarea-rfc8335bis-05
+
+   *  Moved Ron and Jen (so far) to RFC8335 authors section.
+
 9.  IANA Considerations
 
    IANA is requested to update the references for the below actions from
@@ -1267,12 +1267,19 @@ RFC8335 Authors
    Appropriate text will be put here when we agree on it.  Will this
    work?  Example
 
-      Bill Fenner (editor)
-      Arista Networks
-      5453 Great America Parkway
-      Santa Clara, California 95054
+      Ron Bonica
+      Juniper Networks
+      2251 Corporate Park Drive
+      Herndon, Virginia 20171
       United States of America
-      Email: fenner@fenron.com
+      Email: rbonica@juniper.net
+
+      Jen Linkova
+      Google
+      1600 Amphitheatre Parkway
+      Mountain View, California 94043
+      United States of America
+      Email: furry@google.com
 
 Authors' Addresses
 
@@ -1284,14 +1291,6 @@ Authors' Addresses
    Email: fenner@fenron.com
 
 
-   Ron Bonica
-   Juniper Networks
-   2251 Corporate Park Drive
-   Herndon, Virginia 20171
-   United States of America
-   Email: rbonica@juniper.net
-
-
    Reji Thomas
    Arista Networks
    Global Tech Park
@@ -1299,14 +1298,6 @@ Authors' Addresses
    Karnataka
    India
    Email: reji.thomas@arista.com
-
-
-   Jen Linkova
-   Google
-   1600 Amphitheatre Parkway
-   Mountain View, California 94043
-   United States of America
-   Email: furry@google.com
 
 
    Chris Lenart
