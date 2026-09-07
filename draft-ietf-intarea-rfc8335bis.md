@@ -578,7 +578,10 @@ interface that resides on the proxy node.
 The Code field MUST be set to (3) No Such Table Entry if the L-bit
 is clear and the address found in the Interface Identification Object
 does not appear in the IPv4 Address Resolution Protocol (ARP) table or
-the IPv6 Neighbor Cache.
+the IPv6 Neighbor Cache. More precisely, if the AFI is 1 (IPv4), the
+IPv4 ARP table is used. If the AFI is 2 (IPv6), the IPv6 Neighbor Cache
+is used. For any other AFI value, No Such Table Entry is used as there
+is no table to inspect.
 
 The Code field MUST be set to (4) Multiple Interfaces Satisfy Query
 if any of the following conditions apply:
@@ -760,6 +763,10 @@ Specifically,
   number space.
 
 * Use "specifies" instead of "describes" in abstract
+
+* Clarified that AFI=1 means look in the ARP table, AFI=2 means
+  look in the IPv6 Neighbor Cache, and any other AFI means
+  No Such Table Entry since there is no table.
 
 # IANA Considerations {#IANA}
 
