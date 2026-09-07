@@ -12,7 +12,7 @@
 <meta content="Chris Lenart" name="author">
 <meta content="Mohamed Boucadair" name="author">
 <meta content="
-       This document describes a network diagnostic tool called PROBE. PROBE
+       This document specifies a network diagnostic tool called PROBE. PROBE
 is similar to PING in that it can be used to query the status of a
 probed interface, but it differs from PING in that it does not require
 bidirectional connectivity between the probing and probed interfaces.
@@ -1058,7 +1058,7 @@ svg {
 </tr></thead>
 <tfoot><tr>
 <td class="left">Fenner, et al.</td>
-<td class="center">Expires 10 March 2027</td>
+<td class="center">Expires 11 March 2027</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1077,12 +1077,12 @@ svg {
 <a href="https://www.rfc-editor.org/rfc/rfc4884" class="eref">4884</a> (if approved)</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2026-09-06" class="published">6 September 2026</time>
+<time datetime="2026-09-07" class="published">7 September 2026</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Standards Track</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2027-03-10">10 March 2027</time></dd>
+<dd class="expires"><time datetime="2027-03-11">11 March 2027</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1116,7 +1116,7 @@ svg {
 <h1 id="title">PROBE: A Utility for Probing Interfaces</h1>
 <section id="section-abstract">
       <h2 id="abstract"><a href="#abstract" class="selfRef">Abstract</a></h2>
-<p id="section-abstract-1">This document describes a network diagnostic tool called PROBE. PROBE
+<p id="section-abstract-1">This document specifies a network diagnostic tool called PROBE. PROBE
 is similar to PING in that it can be used to query the status of a
 probed interface, but it differs from PING in that it does not require
 bidirectional connectivity between the probing and probed interfaces.
@@ -1161,7 +1161,7 @@ the probed interface is directly connected. This document updates RFC
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 10 March 2027.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 11 March 2027.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -2071,7 +2071,10 @@ interface that resides on the proxy node.<a href="#section-4.1-3" class="pilcrow
 <p id="section-4.1-4">The Code field <span class="bcp14">MUST</span> be set to (3) No Such Table Entry if the L-bit
 is clear and the address found in the Interface Identification Object
 does not appear in the IPv4 Address Resolution Protocol (ARP) table or
-the IPv6 Neighbor Cache.<a href="#section-4.1-4" class="pilcrow">¶</a></p>
+the IPv6 Neighbor Cache. More precisely, if the AFI is 1 (IPv4), the
+IPv4 ARP table is used. If the AFI is 2 (IPv6), the IPv6 Neighbor Cache
+is used. For any other AFI value, No Such Table Entry is used as there
+is no table to inspect.<a href="#section-4.1-4" class="pilcrow">¶</a></p>
 <p id="section-4.1-5">The Code field <span class="bcp14">MUST</span> be set to (4) Multiple Interfaces Satisfy Query
 if any of the following conditions apply:<a href="#section-4.1-5" class="pilcrow">¶</a></p>
 <ul class="normal">
@@ -2373,6 +2376,14 @@ is no amplification vector.<a href="#section-8.7-1.1.2.2.1" class="pilcrow">¶</
             <p id="section-8.8-1.5.1">Removed "densely" from the concern of enumerating all interfaces,
 since it only takes 4,294,967,295 packets to enumerate the entire
 number space.<a href="#section-8.8-1.5.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-8.8-1.6">
+            <p id="section-8.8-1.6.1">Use "specifies" instead of "describes" in abstract<a href="#section-8.8-1.6.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-8.8-1.7">
+            <p id="section-8.8-1.7.1">Clarified that AFI=1 means look in the ARP table, AFI=2 means
+look in the IPv6 Neighbor Cache, and any other AFI means
+No Such Table Entry since there is no table.<a href="#section-8.8-1.7.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
 </section>

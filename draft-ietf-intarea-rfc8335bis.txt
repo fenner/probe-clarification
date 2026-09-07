@@ -7,14 +7,14 @@ Internet-Draft                                           Arista Networks
 Obsoletes: 8335 (if approved)                                  R. Bonica
 Updates: 4884 (if approved)                             Juniper Networks
 Intended status: Standards Track                               R. Thomas
-Expires: 10 March 2027                                   Arista Networks
+Expires: 11 March 2027                                   Arista Networks
                                                               J. Linkova
                                                                   Google
                                                                C. Lenart
                                                                  Verizon
                                                             M. Boucadair
                                                                   Orange
-                                                        6 September 2026
+                                                        7 September 2026
 
 
                 PROBE: A Utility for Probing Interfaces
@@ -22,7 +22,7 @@ Expires: 10 March 2027                                   Arista Networks
 
 Abstract
 
-   This document describes a network diagnostic tool called PROBE.
+   This document specifies a network diagnostic tool called PROBE.
    PROBE is similar to PING in that it can be used to query the status
    of a probed interface, but it differs from PING in that it does not
    require bidirectional connectivity between the probing and probed
@@ -64,7 +64,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 10 March 2027.
+   This Internet-Draft will expire on 11 March 2027.
 
 Copyright Notice
 
@@ -571,7 +571,10 @@ Table of Contents
    The Code field MUST be set to (3) No Such Table Entry if the L-bit is
    clear and the address found in the Interface Identification Object
    does not appear in the IPv4 Address Resolution Protocol (ARP) table
-   or the IPv6 Neighbor Cache.
+   or the IPv6 Neighbor Cache.  More precisely, if the AFI is 1 (IPv4),
+   the IPv4 ARP table is used.  If the AFI is 2 (IPv6), the IPv6
+   Neighbor Cache is used.  For any other AFI value, No Such Table Entry
+   is used as there is no table to inspect.
 
    The Code field MUST be set to (4) Multiple Interfaces Satisfy Query
    if any of the following conditions apply:
@@ -756,6 +759,12 @@ Table of Contents
    *  Removed "densely" from the concern of enumerating all interfaces,
       since it only takes 4,294,967,295 packets to enumerate the entire
       number space.
+
+   *  Use "specifies" instead of "describes" in abstract
+
+   *  Clarified that AFI=1 means look in the ARP table, AFI=2 means look
+      in the IPv6 Neighbor Cache, and any other AFI means No Such
+      Table Entry since there is no table.
 
 9.  IANA Considerations
 
