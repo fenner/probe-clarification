@@ -54,11 +54,6 @@ author:
   code: '20147'
   country: USA
   email: chris.lenart@verizon.com
-- name: Mohamed Boucadair
-  org: Orange
-  city: Rennes 35000
-  country: France
-  email: mohamed.boucadair@orange.com
 normative:
   RFC4884:
   RFC0826:
@@ -757,7 +752,7 @@ Specifically,
 
 ## Changes from draft-int-intarea-rfc8335bis-05
 
-* Moved Ron and Jen (so far) to RFC8335 authors section.
+* Moved historical authors to RFC8335 authors section.
 
 # IANA Considerations {#IANA}
 
@@ -1164,10 +1159,6 @@ thoughtful review of this document.
 # RFC8335 Authors
 {: numbered="no"}
 
-This is a placeholder section to address the six-author problem.
-Appropriate text will be put here when we agree on it.  Will this
-work? Example
-
 <ul spacing="compact" empty="true">
 <li>Ron Bonica</li>
 <li>Juniper Networks</li>
@@ -1177,6 +1168,8 @@ work? Example
 <li>Email: rbonica@juniper.net</li>
 </ul>
 
+<t></t>
+
 <ul spacing="compact" empty="true">
 <li>Jen Linkova</li>
 <li>Google</li>
@@ -1184,4 +1177,14 @@ work? Example
 <li>Mountain View, California 94043</li>
 <li>United States of America</li>
 <li>Email: furry@google.com</li>
+</ul>
+
+<t></t>
+
+<ul spacing="compact" empty="true">
+<li>Mohamed Boucadair</li>
+<li>Orange</li>
+<li>Rennes 35000</li>
+<li>France</li>
+<li>Email: mohamed.boucadair@orange.com</li>
 </ul>
