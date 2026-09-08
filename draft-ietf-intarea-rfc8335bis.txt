@@ -7,9 +7,7 @@ Internet-Draft                                                 R. Thomas
 Obsoletes: 8335 (if approved)                            Arista Networks
 Updates: 4884 (if approved)                                    C. Lenart
 Intended status: Standards Track                                 Verizon
-Expires: 11 March 2027                                      M. Boucadair
-                                                                  Orange
-                                                        7 September 2026
+Expires: 12 March 2027                                  8 September 2026
 
 
                 PROBE: A Utility for Probing Interfaces
@@ -59,7 +57,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 11 March 2027.
+   This Internet-Draft will expire on 12 March 2027.
 
 Copyright Notice
 
@@ -769,7 +767,7 @@ Table of Contents
 
 8.9.  Changes from draft-int-intarea-rfc8335bis-05
 
-   *  Moved Ron and Jen (so far) to RFC8335 authors section.
+   *  Moved historical authors to RFC8335 authors section.
 
 9.  IANA Considerations
 
@@ -1263,10 +1261,6 @@ RFC8335 Acknowledgements
 
 RFC8335 Authors
 
-   This is a placeholder section to address the six-author problem.
-   Appropriate text will be put here when we agree on it.  Will this
-   work?  Example
-
       Ron Bonica
       Juniper Networks
       2251 Corporate Park Drive
@@ -1274,12 +1268,20 @@ RFC8335 Authors
       United States of America
       Email: rbonica@juniper.net
 
+
       Jen Linkova
       Google
       1600 Amphitheatre Parkway
       Mountain View, California 94043
       United States of America
       Email: furry@google.com
+
+
+      Mohamed Boucadair
+      Orange
+      Rennes 35000
+      France
+      Email: mohamed.boucadair@orange.com
 
 Authors' Addresses
 
@@ -1306,10 +1308,3 @@ Authors' Addresses
    Ashburn, Virginia 20147
    United States of America
    Email: chris.lenart@verizon.com
-
-
-   Mohamed Boucadair
-   Orange
-   Rennes 35000
-   France
-   Email: mohamed.boucadair@orange.com
