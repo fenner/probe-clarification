@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-09-08T02:55:56.652147+00:00",
+  "timestamp": "2026-09-13T02:59:16.104552+00:00",
   "repo": "fenner/probe-clarification",
   "labels": [
     {
@@ -646,7 +646,7 @@
       "id": "I_kwDOLB4g0s8AAAABBdmYAg",
       "title": "Confirmation of the SIX authors",
       "url": "https://github.com/fenner/probe-clarification/issues/35",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "fenner",
       "authorAssociation": "OWNER",
       "assignees": [],
@@ -657,8 +657,8 @@
       ],
       "body": "_Comment by @evyncke_\n\nAs there are 6 authors, i.e., larger than the usual limit of 5, I wonder whether the editor (who apparently did most of the work in the -bis draft) and the other authors have considered moving the RFC 8335 authors (who did not provide text to this -bis) to the Contributors section.\n\n",
       "createdAt": "2026-05-06T17:05:23Z",
-      "updatedAt": "2026-05-14T00:58:39Z",
-      "closedAt": null,
+      "updatedAt": "2026-09-12T20:15:55Z",
+      "closedAt": "2026-09-12T20:15:55Z",
       "comments": [
         {
           "author": "fenner",
@@ -673,6 +673,13 @@
           "body": "Just some notes, maybe incomplete:\n- Chris contributed the section about human-readable formatting\n- Reji contributed to the security & management considerations sections\n",
           "createdAt": "2026-05-14T00:58:39Z",
           "updatedAt": "2026-05-14T00:58:39Z"
+        },
+        {
+          "author": "fenner",
+          "authorAssociation": "OWNER",
+          "body": "draft-int-intarea-rfc8335bis-06 reduces the author count of this doc to 3.",
+          "createdAt": "2026-09-12T20:15:55Z",
+          "updatedAt": "2026-09-12T20:15:55Z"
         }
       ]
     },
